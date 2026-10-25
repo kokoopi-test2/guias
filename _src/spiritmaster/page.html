@@ -123,6 +123,10 @@
   mark.y { background: #fff2cc; } mark.o { background: #e69138; }
   .facts { margin: 6px 0 4px; padding-left: 20px; display: grid; gap: 4px; }
   .boss small { color: var(--muted); font-size: 12px; }
+  details.more { margin-top: 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--row); }
+  details.more > summary { cursor: pointer; padding: 14px 18px; font-weight: 800; color: var(--glow); list-style: none; }
+  details.more > summary::before { content: "▸ "; } details.more[open] > summary::before { content: "▾ "; }
+  details.more > .cards { padding: 0 14px 14px; margin-top: 0; }
   .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 620px), 1fr)); gap: 0 28px; }
   .gear { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
   @media (max-width: 860px) {
