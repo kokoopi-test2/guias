@@ -1,0 +1,5660 @@
+[
+{
+"sheet": "links",
+"merged": [
+"A14:F14"
+],
+"cells": [
+{
+"r": 2,
+"c": 1,
+"v": "Quest Log TW",
+"b": 1
+},
+{
+"r": 2,
+"c": 2,
+"v": "init - extend start build",
+"link": "https://questlog.gg/aion-2/en/character-builder/TheGhostTeamAndLuckOfFrost"
+},
+{
+"r": 4,
+"c": 1,
+"v": "Поиск персов на ТВ/КР",
+"b": 1
+},
+{
+"r": 4,
+"c": 2,
+"v": "shugo.gg",
+"link": "https://shugo.gg/"
+},
+{
+"r": 6,
+"c": 1,
+"v": "База ТВ персов c рейтингами",
+"b": 1
+},
+{
+"r": 6,
+"c": 2,
+"v": "Aion2 BnsHive",
+"link": "https://aion2.bnshive.com/ranking/abyss"
+},
+{
+"r": 8,
+"c": 1,
+"v": "DPS Metr с кучей функционала",
+"b": 1
+},
+{
+"r": 8,
+"c": 2,
+"v": "NotMeter",
+"link": "https://notmeter.com/"
+},
+{
+"r": 8,
+"c": 3,
+"v": "На тесте работал, но есть проблемы с отображением персонажей у которых ник из Кирилицы"
+},
+{
+"r": 10,
+"c": 1,
+"v": "Еще сайт с ПВЕ статой и ДПС метром",
+"b": 1
+},
+{
+"r": 10,
+"c": 2,
+"v": "aion.ing",
+"link": "https://aion.ing/aion2/stats.php"
+},
+{
+"r": 10,
+"c": 3,
+"v": "Для ТВ стал работать плохо, на глобале скорее всего не будет работать ДПС метр"
+},
+{
+"r": 12,
+"c": 1,
+"v": "Еще один ДПС метр, настраивают под глобал",
+"b": 1
+},
+{
+"r": 12,
+"c": 2,
+"v": "https://aion2t.com/dps-meter",
+"link": "https://aion2t.com/dps-meter"
+},
+{
+"r": 12,
+"c": 3,
+"v": "Но тоже есть баги, особенно с СМом (может разделить на 2 строчки персонажа и общий ДПС будет странный)"
+},
+{
+"r": 14,
+"c": 1,
+"v": "GLOBAL",
+"b": 1
+},
+{
+"r": 16,
+"c": 1,
+"v": "Leveling SM",
+"b": 1
+},
+{
+"r": 16,
+"c": 2,
+"v": "https://questlog.gg/aion-2/en/character-builder/TheParalyzingBurnOfSpring",
+"link": "https://questlog.gg/aion-2/en/character-builder/TheParalyzingBurnOfSpring"
+},
+{
+"r": 18,
+"c": 1,
+"v": "Будет обновлено после релиза глобала",
+"b": 1
+},
+{
+"r": 19,
+"c": 1,
+"v": "Тестовая сборка для глобала (в процессе) ",
+"b": 1
+},
+{
+"r": 19,
+"c": 2,
+"v": "https://questlog.gg/aion-2/en/character-builder/BloodyGlovesJumpOrigin",
+"link": "https://questlog.gg/aion-2/en/character-builder/BloodyGlovesJumpOrigin"
+},
+{
+"r": 19,
+"c": 6,
+"v": "# global theory in progress",
+"b": 1
+},
+{
+"r": 24,
+"c": 1,
+"v": "Full skip T1 dungeons. But need PVP Daevanion crystalls from Abyss monolith (16 lvl)",
+"b": 1
+},
+{
+"r": 24,
+"c": 4,
+"v": "Shugo Link"
+},
+{
+"r": 24,
+"c": 5,
+"v": "https://shugo.gg/character?id=GXf_uDNlKcYJYIHNvVUVBQWGY85op-37E6MEnLiQKGE%253D&server=1305&region=GLOBAL&name=WinSwin",
+"link": "https://shugo.gg/character?id=GXf_uDNlKcYJYIHNvVUVBQWGY85op-37E6MEnLiQKGE%253D&server=1305&region=GLOBAL&name=WinSwin"
+}
+],
+"images": [
+{
+"file": "img/s00_000.png",
+"r": 25,
+"c": 1,
+"w": 2048,
+"h": 1152
+}
+]
+},
+{
+"sheet": "Global",
+"merged": [
+"A1:I1",
+"G15:I24",
+"G2:I11"
+],
+"cells": [
+{
+"r": 1,
+"c": 1,
+"v": "z",
+"b": 1
+},
+{
+"r": 2,
+"c": 1,
+"v": "Слот",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 2,
+"c": 2,
+"v": "Cogni Insight",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 2,
+"c": 3,
+"v": "Fera Insight",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 2,
+"c": 4,
+"v": "Natura Insight",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 2,
+"c": 5,
+"v": "Varian Insight",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 2,
+"c": 6,
+"v": "Special Insight",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 2,
+"c": 7,
+"v": "pvE"
+},
+{
+"r": 3,
+"c": 1,
+"v": 1.0
+},
+{
+"r": 3,
+"c": 2,
+"v": "Attack bonus (16)"
+},
+{
+"r": 3,
+"c": 3,
+"v": "Attack bonus (16)"
+},
+{
+"r": 3,
+"c": 4,
+"v": "Attack bonus (16)"
+},
+{
+"r": 3,
+"c": 5,
+"v": "Attack bonus (16)"
+},
+{
+"r": 3,
+"c": 6,
+"v": "Attack bonus (16)"
+},
+{
+"r": 4,
+"c": 1,
+"v": 2.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 4,
+"c": 2,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 4,
+"c": 3,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 4,
+"c": 4,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 4,
+"c": 5,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 4,
+"c": 6,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 5,
+"c": 1,
+"v": 3.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 5,
+"c": 2,
+"v": "Critical Hit (30)"
+},
+{
+"r": 5,
+"c": 3,
+"v": "Critical Hit (30)"
+},
+{
+"r": 5,
+"c": 4,
+"v": "Critical Hit (30)"
+},
+{
+"r": 5,
+"c": 5,
+"v": "Critical Hit (30)"
+},
+{
+"r": 5,
+"c": 6,
+"v": "Critical Hit (30)"
+},
+{
+"r": 6,
+"c": 1,
+"v": 4.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 6,
+"c": 2,
+"v": "Damage Boost (3%)/Critical Damage Boost (3%)"
+},
+{
+"r": 6,
+"c": 3,
+"v": "PvE Damage Boost (4%)"
+},
+{
+"r": 6,
+"c": 4,
+"v": "PvE Damage Boost (4%)"
+},
+{
+"r": 6,
+"c": 5,
+"v": "PvE Damage Boost (4%)"
+},
+{
+"r": 6,
+"c": 6,
+"v": "Double Chance (3%)"
+},
+{
+"r": 7,
+"c": 1,
+"v": 5.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 7,
+"c": 2,
+"v": "Attack bonus (16)"
+},
+{
+"r": 7,
+"c": 3,
+"v": "Attack bonus (16)"
+},
+{
+"r": 7,
+"c": 4,
+"v": "Attack bonus (16)"
+},
+{
+"r": 7,
+"c": 5,
+"v": "Attack bonus (16)"
+},
+{
+"r": 7,
+"c": 6,
+"v": "Attack bonus (16)"
+},
+{
+"r": 8,
+"c": 1,
+"v": 6.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 8,
+"c": 2,
+"v": "Critical Hit (30)"
+},
+{
+"r": 8,
+"c": 3,
+"v": "Critical Hit (30)"
+},
+{
+"r": 8,
+"c": 4,
+"v": "Critical Hit (30)"
+},
+{
+"r": 8,
+"c": 5,
+"v": "Critical Hit (30)"
+},
+{
+"r": 8,
+"c": 6,
+"v": "Critical Hit (30)"
+},
+{
+"r": 9,
+"c": 1,
+"v": 7.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 9,
+"c": 2,
+"v": "Damage Tolerance(3%)/PvE Damage Tolerance(4%)"
+},
+{
+"r": 9,
+"c": 3,
+"v": "Damage Tolerance(3%)/PvE Damage Tolerance(4%)"
+},
+{
+"r": 9,
+"c": 4,
+"v": "PvE Damage Tolerance(4%)"
+},
+{
+"r": 9,
+"c": 5,
+"v": "PvE Damage Tolerance(4%)"
+},
+{
+"r": 9,
+"c": 6,
+"v": "Damage Toleraance (3%)"
+},
+{
+"r": 10,
+"c": 1,
+"v": 8.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 10,
+"c": 2,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 10,
+"c": 3,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 10,
+"c": 4,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 10,
+"c": 5,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 10,
+"c": 6,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 11,
+"c": 1,
+"v": 9.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 11,
+"c": 2,
+"v": "Critical Hit (30)"
+},
+{
+"r": 11,
+"c": 3,
+"v": "Critical Hit (30)"
+},
+{
+"r": 11,
+"c": 4,
+"v": "Critical Hit (30)"
+},
+{
+"r": 11,
+"c": 5,
+"v": "Critical Hit (30)"
+},
+{
+"r": 11,
+"c": 6,
+"v": "Critical Hit (30)"
+},
+{
+"r": 15,
+"c": 1,
+"v": "Слот",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 15,
+"c": 2,
+"v": "Cogni Insight",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 15,
+"c": 3,
+"v": "Fera Insight",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 15,
+"c": 4,
+"v": "Natura Insight",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 15,
+"c": 5,
+"v": "Varian Insight",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 15,
+"c": 6,
+"v": "Special Insight",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 15,
+"c": 7,
+"v": "pvP"
+},
+{
+"r": 16,
+"c": 1,
+"v": 1.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 16,
+"c": 2,
+"v": "Attack bonus (16)"
+},
+{
+"r": 16,
+"c": 3,
+"v": "Attack bonus (16)"
+},
+{
+"r": 16,
+"c": 4,
+"v": "Attack bonus (16)"
+},
+{
+"r": 16,
+"c": 5,
+"v": "Attack bonus (16)"
+},
+{
+"r": 16,
+"c": 6,
+"v": "Attack bonus (16)"
+},
+{
+"r": 17,
+"c": 1,
+"v": 2.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 17,
+"c": 2,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 17,
+"c": 3,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 17,
+"c": 4,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 17,
+"c": 5,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 17,
+"c": 6,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 18,
+"c": 1,
+"v": 3.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 18,
+"c": 2,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 18,
+"c": 3,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 18,
+"c": 4,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 18,
+"c": 5,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 18,
+"c": 6,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 19,
+"c": 1,
+"v": 4.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 19,
+"c": 2,
+"v": "Endurance Penetration (3%)"
+},
+{
+"r": 19,
+"c": 3,
+"v": "Endurance Penetration (3%)"
+},
+{
+"r": 19,
+"c": 4,
+"v": "Perfect Chance (3%) / Endurance Penetration (3%)"
+},
+{
+"r": 19,
+"c": 5,
+"v": "Endurance Penetration (3%)"
+},
+{
+"r": 19,
+"c": 6,
+"v": "Double Chance (3%)"
+},
+{
+"r": 20,
+"c": 1,
+"v": 5.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 20,
+"c": 2,
+"v": "Attack bonus (16)"
+},
+{
+"r": 20,
+"c": 3,
+"v": "Attack bonus (16)"
+},
+{
+"r": 20,
+"c": 4,
+"v": "Attack bonus (16)"
+},
+{
+"r": 20,
+"c": 5,
+"v": "Attack bonus (16)"
+},
+{
+"r": 20,
+"c": 6,
+"v": "Attack bonus (16)"
+},
+{
+"r": 21,
+"c": 1,
+"v": 6.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 21,
+"c": 2,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 21,
+"c": 3,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 21,
+"c": 4,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 21,
+"c": 5,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 21,
+"c": 6,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 22,
+"c": 1,
+"v": 7.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 22,
+"c": 2,
+"v": "Weapon Damage Tolerance(3%)"
+},
+{
+"r": 22,
+"c": 3,
+"v": "Weapon Damage Tolerance(3%)"
+},
+{
+"r": 22,
+"c": 4,
+"v": "Status Effect Resist (3%)"
+},
+{
+"r": 22,
+"c": 5,
+"v": "Status Effect Resist (3%)"
+},
+{
+"r": 22,
+"c": 6,
+"v": "Status Effect Resist (3%)"
+},
+{
+"r": 23,
+"c": 1,
+"v": 8.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 23,
+"c": 2,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 23,
+"c": 3,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 23,
+"c": 4,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 23,
+"c": 5,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 23,
+"c": 6,
+"v": "HP increase (2,4%)"
+},
+{
+"r": 24,
+"c": 1,
+"v": 9.0,
+"bg": "FFFFFFFF"
+},
+{
+"r": 24,
+"c": 2,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 24,
+"c": 3,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 24,
+"c": 4,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 24,
+"c": 5,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 24,
+"c": 6,
+"v": "Accuracy Bonus (40)"
+},
+{
+"r": 33,
+"c": 1,
+"v": "Slot",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 33,
+"c": 2,
+"v": "Weapon",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 33,
+"c": 3,
+"v": "Guard",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 33,
+"c": 4,
+"v": "Helm",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 33,
+"c": 5,
+"v": "Pauldrons",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 33,
+"c": 6,
+"v": "Breastplate",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 33,
+"c": 7,
+"v": "Greaves",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 33,
+"c": 8,
+"v": "Gloves",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 33,
+"c": 9,
+"v": "Cloak",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 33,
+"c": 10,
+"v": "Boots",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 34,
+"c": 1,
+"v": 1.0,
+"b": 1
+},
+{
+"r": 34,
+"c": 2,
+"v": "Might"
+},
+{
+"r": 34,
+"c": 3,
+"v": "Might"
+},
+{
+"r": 34,
+"c": 4,
+"v": "Smite"
+},
+{
+"r": 34,
+"c": 5,
+"v": "Smite"
+},
+{
+"r": 34,
+"c": 6,
+"v": "Perfect Chance",
+"bg": "FFFFFFFF"
+},
+{
+"r": 34,
+"c": 7,
+"v": "Attack increase"
+},
+{
+"r": 34,
+"c": 8,
+"v": "Combat speed"
+},
+{
+"r": 34,
+"c": 9,
+"v": "Smite"
+},
+{
+"r": 34,
+"c": 10,
+"v": "Move Speed"
+},
+{
+"r": 35,
+"c": 1,
+"v": 2.0,
+"b": 1
+},
+{
+"r": 35,
+"c": 2,
+"v": "Damage boost"
+},
+{
+"r": 35,
+"c": 3,
+"v": "Damage boost"
+},
+{
+"r": 35,
+"c": 4,
+"v": "Attack increase"
+},
+{
+"r": 35,
+"c": 5,
+"v": "Critical Damage Boost",
+"bg": "FFFFFFFF"
+},
+{
+"r": 35,
+"c": 6,
+"v": "Damage boost",
+"bg": "FFFFFFFF"
+},
+{
+"r": 35,
+"c": 7,
+"v": "Perfect Chance",
+"bg": "FFFFFFFF"
+},
+{
+"r": 35,
+"c": 8,
+"v": "Perfect Chance",
+"bg": "FFFFFFFF"
+},
+{
+"r": 35,
+"c": 9,
+"v": "Attack increase"
+},
+{
+"r": 35,
+"c": 10,
+"v": "Perfect Chance"
+},
+{
+"r": 36,
+"c": 1,
+"v": 3.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 36,
+"c": 2,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 36,
+"c": 3,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 37,
+"c": 1,
+"v": 4.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 37,
+"c": 2,
+"v": "Combat speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 37,
+"c": 3,
+"v": "Combat speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 38,
+"c": 1,
+"v": 5.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 38,
+"c": 2,
+"v": "Multi-hit Chance",
+"bg": "FFFFFFFF"
+},
+{
+"r": 38,
+"c": 3,
+"v": "Multi-hit Chance",
+"bg": "FFFFFFFF"
+},
+{
+"r": 39,
+"c": 1,
+"v": "6 (Philosopher)",
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 39,
+"c": 2,
+"v": "Weapon Damage Boost",
+"bg": "FFFFFFFF"
+},
+{
+"r": 39,
+"c": 3,
+"v": "Weapon Damage Boost",
+"bg": "FFFFFFFF"
+},
+{
+"r": 39,
+"c": 9,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 40,
+"c": 1,
+"v": "7 (Red item)",
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 40,
+"c": 2,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 40,
+"c": 3,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 40,
+"c": 4,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 40,
+"c": 5,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 40,
+"c": 6,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 40,
+"c": 7,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 40,
+"c": 8,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 40,
+"c": 9,
+"v": "Critical hit",
+"bg": "FFFFFFFF"
+},
+{
+"r": 40,
+"c": 10,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 42,
+"c": 1,
+"v": "Slot",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 42,
+"c": 2,
+"v": "Earrings 1",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 42,
+"c": 3,
+"v": "Earrings 2",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 42,
+"c": 4,
+"v": "Necklace",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 42,
+"c": 5,
+"v": "Ring 1",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 42,
+"c": 6,
+"v": "Ring 2",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 42,
+"c": 7,
+"v": "Bracelet 1",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 42,
+"c": 8,
+"v": "Bracelet 2",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 43,
+"c": 1,
+"v": 1.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 43,
+"c": 2,
+"v": "Move speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 43,
+"c": 3,
+"v": "Move speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 43,
+"c": 4,
+"v": "Combat speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 43,
+"c": 5,
+"v": "Might"
+},
+{
+"r": 43,
+"c": 6,
+"v": "Might"
+},
+{
+"r": 43,
+"c": 7,
+"v": "Justice",
+"bg": "FFFFFFFF"
+},
+{
+"r": 43,
+"c": 8,
+"v": "Justice",
+"bg": "FFFFFFFF"
+},
+{
+"r": 44,
+"c": 1,
+"v": 2.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 44,
+"c": 2,
+"v": "Might"
+},
+{
+"r": 44,
+"c": 3,
+"v": "Might"
+},
+{
+"r": 44,
+"c": 4,
+"v": "Might"
+},
+{
+"r": 44,
+"c": 5,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 44,
+"c": 6,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 44,
+"c": 7,
+"v": "Illusion",
+"bg": "FFFFFFFF"
+},
+{
+"r": 44,
+"c": 8,
+"v": "Illusion",
+"bg": "FFFFFFFF"
+},
+{
+"r": 45,
+"c": 1,
+"v": 3.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 45,
+"c": 2,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 45,
+"c": 3,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 45,
+"c": 4,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 45,
+"c": 5,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 45,
+"c": 6,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 45,
+"c": 7,
+"v": "Destruction",
+"bg": "FFFFFFFF"
+},
+{
+"r": 45,
+"c": 8,
+"v": "Destruction",
+"bg": "FFFFFFFF"
+},
+{
+"r": 46,
+"c": 1,
+"v": 4.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 46,
+"c": 2,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 46,
+"c": 3,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 46,
+"c": 4,
+"v": "Attack",
+"bg": "FFFFFFFF"
+},
+{
+"r": 46,
+"c": 5,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 46,
+"c": 6,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 46,
+"c": 7,
+"v": "Time",
+"bg": "FFFFFFFF"
+},
+{
+"r": 46,
+"c": 8,
+"v": "Time",
+"bg": "FFFFFFFF"
+},
+{
+"r": 47,
+"c": 1,
+"v": 5.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 47,
+"c": 2,
+"v": "Focused Eye (skill)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 47,
+"c": 3,
+"v": "Focused Eye (skill)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 47,
+"c": 4,
+"v": "Focused Eye (skill)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 47,
+"c": 5,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 47,
+"c": 6,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 47,
+"c": 7,
+"v": "Wisdom",
+"bg": "FFFFF2CC"
+},
+{
+"r": 47,
+"c": 8,
+"v": "Wisdom",
+"bg": "FFFFF2CC"
+},
+{
+"r": 48,
+"c": 1,
+"v": "6 (Philosopher)",
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 48,
+"c": 2,
+"v": "Hunter's Resolve (skill)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 48,
+"c": 3,
+"v": "Hunter's Resolve (skill)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 48,
+"c": 4,
+"v": "Hunter's Resolve (skill)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 48,
+"c": 5,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 48,
+"c": 6,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 48,
+"c": 7,
+"v": "Death",
+"bg": "FFFFFFFF"
+},
+{
+"r": 48,
+"c": 8,
+"v": "Death",
+"bg": "FFFFFFFF"
+},
+{
+"r": 49,
+"c": 1,
+"v": "7 (Red item)",
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 49,
+"c": 2,
+"v": "Concentrated Fire (skill)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 49,
+"c": 3,
+"v": "Concentrated Fire (skill)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 49,
+"c": 4,
+"v": "Concentrated Fire (skill)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 49,
+"c": 5,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 49,
+"c": 6,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 53,
+"c": 1,
+"v": "Slot",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 53,
+"c": 2,
+"v": "Weapon",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 53,
+"c": 3,
+"v": "Guard",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 53,
+"c": 4,
+"v": "Helm",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 53,
+"c": 5,
+"v": "Pauldrons",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 53,
+"c": 6,
+"v": "Breastplate",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 53,
+"c": 7,
+"v": "Greaves",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 53,
+"c": 8,
+"v": "Gloves",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 53,
+"c": 9,
+"v": "Cloak",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 53,
+"c": 10,
+"v": "Boots",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 54,
+"c": 1,
+"v": 1.0,
+"b": 1
+},
+{
+"r": 54,
+"c": 2,
+"v": "Might",
+"bg": "FFFFFFFF"
+},
+{
+"r": 54,
+"c": 3,
+"v": "Combat speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 54,
+"c": 4,
+"v": "Status Effect Resist",
+"bg": "FFFFFFFF"
+},
+{
+"r": 54,
+"c": 5,
+"v": "Status Effect Resist",
+"bg": "FFFFFFFF"
+},
+{
+"r": 54,
+"c": 6,
+"v": "Status Effect Resist",
+"bg": "FFFFFFFF"
+},
+{
+"r": 54,
+"c": 7,
+"v": "Status Effect Resist",
+"bg": "FFFFFFFF"
+},
+{
+"r": 54,
+"c": 8,
+"v": "Combat speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 54,
+"c": 9,
+"v": "Status Effect Resist",
+"bg": "FFFFFFFF"
+},
+{
+"r": 54,
+"c": 10,
+"v": "Move Speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 55,
+"c": 1,
+"v": 2.0,
+"b": 1
+},
+{
+"r": 55,
+"c": 2,
+"v": "Status Effect Chance",
+"bg": "FFFFFFFF"
+},
+{
+"r": 55,
+"c": 3,
+"v": "Might",
+"bg": "FFFFFFFF"
+},
+{
+"r": 55,
+"c": 4,
+"v": "Willpower",
+"bg": "FFFFFFFF"
+},
+{
+"r": 55,
+"c": 5,
+"v": "Critical Damage Boost",
+"bg": "FFFFFFFF"
+},
+{
+"r": 55,
+"c": 6,
+"v": "Willpower",
+"bg": "FFFFFFFF"
+},
+{
+"r": 55,
+"c": 7,
+"v": "Damage Tolerance",
+"bg": "FFFFFFFF"
+},
+{
+"r": 55,
+"c": 8,
+"v": "Endurance Penetration",
+"bg": "FFFFFFFF"
+},
+{
+"r": 55,
+"c": 9,
+"v": "Willpower",
+"bg": "FFFFFFFF"
+},
+{
+"r": 55,
+"c": 10,
+"v": "Endurance Penetration",
+"bg": "FFFFFFFF"
+},
+{
+"r": 56,
+"c": 1,
+"v": 3.0,
+"b": 1
+},
+{
+"r": 56,
+"c": 2,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 56,
+"c": 3,
+"v": "Status Effect Chance",
+"bg": "FFFFFFFF"
+},
+{
+"r": 56,
+"c": 4,
+"v": "Weapon Damage Tolerance",
+"bg": "FFFFFFFF"
+},
+{
+"r": 56,
+"c": 5,
+"v": "Endurance Penetration",
+"bg": "FFFFFFFF"
+},
+{
+"r": 56,
+"c": 6,
+"v": "Weapon Damage Boost",
+"bg": "FFFFFFFF"
+},
+{
+"r": 56,
+"c": 7,
+"v": "Smite Resist",
+"bg": "FFFFFFFF"
+},
+{
+"r": 56,
+"c": 8,
+"v": "Status Effect Resist",
+"bg": "FFFFFFFF"
+},
+{
+"r": 56,
+"c": 9,
+"v": "Criticaal Damage Tolerance",
+"bg": "FFFFFFFF"
+},
+{
+"r": 56,
+"c": 10,
+"v": "Status Effect Resist",
+"bg": "FFFFFFFF"
+},
+{
+"r": 57,
+"c": 1,
+"v": 4.0,
+"b": 1
+},
+{
+"r": 57,
+"c": 2,
+"v": "Combat speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 57,
+"c": 3,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 57,
+"c": 5,
+"v": "Willpower",
+"bg": "FFFFFFFF"
+},
+{
+"r": 57,
+"c": 6,
+"v": "Damage boost",
+"bg": "FFFFFFFF"
+},
+{
+"r": 57,
+"c": 7,
+"v": "Willpower",
+"bg": "FFFFFFFF"
+},
+{
+"r": 57,
+"c": 8,
+"v": "Willpower",
+"bg": "FFFFFFFF"
+},
+{
+"r": 57,
+"c": 9,
+"v": "Weapon Damage Tolerance",
+"bg": "FFFFFFFF"
+},
+{
+"r": 57,
+"c": 10,
+"v": "Willpower",
+"bg": "FFFFFFFF"
+},
+{
+"r": 58,
+"c": 1,
+"v": "5 (Philosopher)",
+"b": 1
+},
+{
+"r": 58,
+"c": 2,
+"v": "Weapon Damage boost",
+"bg": "FFFFFFFF"
+},
+{
+"r": 58,
+"c": 3,
+"v": "Weapon Damage boost",
+"bg": "FFFFFFFF"
+},
+{
+"r": 59,
+"c": 1,
+"v": "6 (Red item)",
+"b": 1
+},
+{
+"r": 59,
+"c": 2,
+"v": "Damage Boost",
+"bg": "FFFFFFFF"
+},
+{
+"r": 59,
+"c": 3,
+"v": "Damage Boost",
+"bg": "FFFFFFFF"
+},
+{
+"r": 59,
+"c": 4,
+"v": "Perfect Resist",
+"bg": "FFFFFFFF"
+},
+{
+"r": 61,
+"c": 1,
+"v": "Slot",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 61,
+"c": 2,
+"v": "Earrings 1",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 61,
+"c": 3,
+"v": "Earrings 2",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 61,
+"c": 4,
+"v": "Necklace",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 61,
+"c": 5,
+"v": "Ring 1",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 61,
+"c": 6,
+"v": "Ring 2",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 61,
+"c": 7,
+"v": "Bracelet 1",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 61,
+"c": 8,
+"v": "Bracelet 2",
+"bg": "FFC9DAF8",
+"b": 1
+},
+{
+"r": 62,
+"c": 1,
+"v": 1.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 62,
+"c": 2,
+"v": "Intelligence",
+"bg": "FFFFFFFF"
+},
+{
+"r": 62,
+"c": 3,
+"v": "Intelligence",
+"bg": "FFFFFFFF"
+},
+{
+"r": 62,
+"c": 4,
+"v": "Intelligence",
+"bg": "FFFFFFFF"
+},
+{
+"r": 62,
+"c": 5,
+"v": "Intelligence",
+"bg": "FFFFFFFF"
+},
+{
+"r": 62,
+"c": 6,
+"v": "Intelligence",
+"bg": "FFFFFFFF"
+},
+{
+"r": 62,
+"c": 7,
+"v": "Freedom",
+"bg": "FFE69138"
+},
+{
+"r": 62,
+"c": 8,
+"v": "Freedom",
+"bg": "FFE69138"
+},
+{
+"r": 63,
+"c": 1,
+"v": 2.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 63,
+"c": 2,
+"v": "Move speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 63,
+"c": 3,
+"v": "Move speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 63,
+"c": 4,
+"v": "Combat speed",
+"bg": "FFFFFFFF"
+},
+{
+"r": 63,
+"c": 5,
+"v": "Might"
+},
+{
+"r": 63,
+"c": 6,
+"v": "Might"
+},
+{
+"r": 63,
+"c": 7,
+"v": "Illusion",
+"bg": "FFFFFFFF"
+},
+{
+"r": 63,
+"c": 8,
+"v": "Illusion",
+"bg": "FFFFFFFF"
+},
+{
+"r": 64,
+"c": 1,
+"v": 3.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 64,
+"c": 2,
+"v": "Might"
+},
+{
+"r": 64,
+"c": 3,
+"v": "Might"
+},
+{
+"r": 64,
+"c": 4,
+"v": "Might"
+},
+{
+"r": 64,
+"c": 5,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 64,
+"c": 6,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 64,
+"c": 7,
+"v": "Destruction",
+"bg": "FFFFFFFF"
+},
+{
+"r": 64,
+"c": 8,
+"v": "Destruction",
+"bg": "FFFFFFFF"
+},
+{
+"r": 65,
+"c": 1,
+"v": 4.0,
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 65,
+"c": 2,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 65,
+"c": 3,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 65,
+"c": 4,
+"v": "Precision",
+"bg": "FFFFFFFF"
+},
+{
+"r": 65,
+"c": 5,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 65,
+"c": 6,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 65,
+"c": 7,
+"v": "Time",
+"bg": "FFFFFFFF"
+},
+{
+"r": 65,
+"c": 8,
+"v": "Time",
+"bg": "FFFFFFFF"
+},
+{
+"r": 66,
+"c": 1,
+"v": "5 (Philosopher)",
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 66,
+"c": 5,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 66,
+"c": 6,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 66,
+"c": 7,
+"v": "Justice",
+"bg": "FFFFFFFF"
+},
+{
+"r": 66,
+"c": 8,
+"v": "Justice",
+"bg": "FFFFFFFF"
+},
+{
+"r": 67,
+"c": 1,
+"v": "6 (Red item)",
+"bg": "FFFFFFFF",
+"b": 1
+},
+{
+"r": 67,
+"c": 5,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 67,
+"c": 6,
+"v": "Skill (optional)",
+"bg": "FFFFFFFF"
+},
+{
+"r": 67,
+"c": 7,
+"v": "Death",
+"bg": "FFFFFFFF"
+},
+{
+"r": 67,
+"c": 8,
+"v": "Death",
+"bg": "FFFFFFFF"
+},
+{
+"r": 72,
+"c": 2,
+"v": "Приоритет прокачки по уровням:",
+"bg": "FF1F1F1F"
+},
+{
+"r": 73,
+"c": 2,
+"v": "На 45 уровне у нас должно быть так: голем, бенедикт, коррозия - 5 уровня. Destructive Attack 7 уровня",
+"bg": "FF1F1F1F"
+},
+{
+"r": 74,
+"c": 2,
+"v": "Далее докачиваем Destructive Attack до 10 уровня.",
+"bg": "FF1F1F1F"
+},
+{
+"r": 75,
+"c": 2,
+"v": "По мере покупки стигм качаем в таком приоритете:",
+"bg": "FF1F1F1F"
+},
+{
+"r": 76,
+"c": 2,
+"v": "Голем до 15 уровня, Бенедикт 10 уровень, Destructive Attack до 15 уровня.",
+"bg": "FF1F1F1F"
+},
+{
+"r": 77,
+"c": 2,
+"v": "Следующий этап:",
+"bg": "FF1F1F1F"
+},
+{
+"r": 78,
+"c": 2,
+"v": "Голем 20 уровень, Destructive Attack - 20 уровень, Потом только Бенедикт на 20 уровень в нем нам 15 уровень не дает ничего для атаки.",
+"bg": "FF1F1F1F"
+},
+{
+"r": 79,
+"c": 2,
+"v": "И самым последним мы уже качаем Коррозию с 5 уровня до 20",
+"bg": "FF1F1F1F"
+}
+],
+"images": []
+},
+{
+"sheet": "Далее TW, частично теряет актуа",
+"merged": [],
+"cells": [],
+"images": []
+},
+{
+"sheet": "Skills, Manastones, etc",
+"merged": [],
+"cells": [
+{
+"r": 1,
+"c": 1,
+"v": "Иконка"
+},
+{
+"r": 1,
+"c": 2,
+"v": "Англ название"
+},
+{
+"r": 1,
+"c": 3,
+"v": "PVE Триподы + lvl"
+},
+{
+"r": 1,
+"c": 4,
+"v": "PVP Триподы + lvl"
+},
+{
+"r": 2,
+"c": 1,
+"v": " "
+},
+{
+"r": 2,
+"c": 2,
+"v": "Cold SHock + 1"
+},
+{
+"r": 2,
+"c": 3,
+"v": "16 LVL. Триподы: 3, 4"
+},
+{
+"r": 2,
+"c": 4,
+"v": "16 LVL, триподы 2, 5\nесли 20 LVL. Триподы: 2, 4, 5 "
+},
+{
+"r": 2,
+"c": 6,
+"v": "Основные ПВЕ стигмы",
+"bg": "FFFCE5CD",
+"b": 1
+},
+{
+"r": 3,
+"c": 2,
+"v": "Combustion + 1"
+},
+{
+"r": 3,
+"c": 3,
+"v": "20 LVL. Триподы: 2, 3, 5"
+},
+{
+"r": 3,
+"c": 4,
+"v": "20 LVL. Триподы: 2, 3, 4 \nдля масс пвп 3, 4, 5"
+},
+{
+"r": 3,
+"c": 6,
+"v": "Дополнительные ПВЕ стигмы",
+"bg": "FFFCE5CD",
+"b": 1
+},
+{
+"r": 4,
+"c": 2,
+"v": "Summon: Fire Spirit +1"
+},
+{
+"r": 4,
+"c": 3,
+"v": "16+ LVL. Триподы: 2, 5"
+},
+{
+"r": 4,
+"c": 4,
+"v": "12+ LVL. Триподы: 2, 4"
+},
+{
+"r": 5,
+"c": 2,
+"v": "Summon: Water Spirit +1"
+},
+{
+"r": 5,
+"c": 3,
+"v": "12+ LVL. Триподы: 2, 4"
+},
+{
+"r": 5,
+"c": 4,
+"v": "12+ LVL. Триподы: 2, 4"
+},
+{
+"r": 5,
+"c": 6,
+"v": "Основные ПВП стигмы",
+"bg": "FFFCE5CD",
+"b": 1
+},
+{
+"r": 6,
+"c": 2,
+"v": "Joinstrike: Curse +1"
+},
+{
+"r": 6,
+"c": 3,
+"v": "12+ LVL. Триподы: 3, 4"
+},
+{
+"r": 6,
+"c": 4,
+"v": "16+ LVL. Триподы: 2, 5"
+},
+{
+"r": 6,
+"c": 6,
+"v": "Дополнительные ПВП стигмы",
+"bg": "FFFCE5CD",
+"b": 1
+},
+{
+"r": 7,
+"c": 2,
+"v": "Rapid Scettershoot +1"
+},
+{
+"r": 7,
+"c": 3,
+"v": "don't use"
+},
+{
+"r": 7,
+"c": 4,
+"v": "don't use"
+},
+{
+"r": 8,
+"c": 2,
+"v": "Summon: Earth Spirit +1"
+},
+{
+"r": 8,
+"c": 3,
+"v": "12+ LVL. Триподы: 2, 4"
+},
+{
+"r": 8,
+"c": 4,
+"v": "16+ LVL. Триподы: 2, 5. \nНа 20 лвл, 2, 3, 5"
+},
+{
+"r": 8,
+"c": 6,
+"v": "Тиры статов для ПВЕ манастоуна",
+"bg": "FFFCE5CD",
+"b": 1
+},
+{
+"r": 9,
+"c": 2,
+"v": "Dimensional Control +1"
+},
+{
+"r": 9,
+"c": 3,
+"v": "16+ LVL. Триподы: 2, 3"
+},
+{
+"r": 9,
+"c": 4,
+"v": "12+ LVL. Триподы: 2, 4"
+},
+{
+"r": 9,
+"c": 6,
+"v": "S-tier",
+"bg": "FFFCE5CD",
+"b": 1
+},
+{
+"r": 9,
+"c": 7,
+"v": "Damage boost\nAttack\nAccuracy\nFront Attack Damage Boost"
+},
+{
+"r": 10,
+"c": 2,
+"v": "Summon: Wind Spirit +1"
+},
+{
+"r": 10,
+"c": 3,
+"v": "don't use"
+},
+{
+"r": 10,
+"c": 4,
+"v": "don't use"
+},
+{
+"r": 10,
+"c": 6,
+"v": "A-tier",
+"bg": "FFFCE5CD",
+"b": 1
+},
+{
+"r": 10,
+"c": 7,
+"v": "Critical Damage Boost\nWeapon Damage Boost\nFront Attack"
+},
+{
+"r": 11,
+"c": 2,
+"v": "Soul's Cry +1"
+},
+{
+"r": 11,
+"c": 3,
+"v": "don't use"
+},
+{
+"r": 11,
+"c": 4,
+"v": "12+ LVL. Триподы: 2, 4"
+},
+{
+"r": 11,
+"c": 6,
+"v": "B-tier",
+"bg": "FFFCE5CD",
+"b": 1
+},
+{
+"r": 11,
+"c": 7,
+"v": "из всего что можно оставить \nсовсем на маленькое время Critical Hit"
+},
+{
+"r": 12,
+"c": 2,
+"v": "Elemental Fusion +1"
+},
+{
+"r": 12,
+"c": 3,
+"v": "20 LVL. Триподы: 2, 3, 5"
+},
+{
+"r": 12,
+"c": 4,
+"v": "20 LVL. Триподы: 2, 3, 5"
+},
+{
+"r": 13,
+"c": 2,
+"v": "Defiance +1"
+},
+{
+"r": 13,
+"c": 3,
+"v": "8 LVL. Триподы: 3"
+},
+{
+"r": 13,
+"c": 4,
+"v": "16+ LVL. Триподы: 4, 5 или 3, 5"
+},
+{
+"r": 13,
+"c": 6,
+"v": "Тиры статов для ПВП манастоуна",
+"bg": "FFFCE5CD",
+"b": 1
+},
+{
+"r": 14,
+"c": 2,
+"v": "Spirit Strike +1"
+},
+{
+"r": 14,
+"c": 3,
+"v": "LVL +- 30"
+},
+{
+"r": 14,
+"c": 4,
+"v": "LVL 17-18"
+},
+{
+"r": 14,
+"c": 6,
+"v": "S-tier",
+"bg": "FFFCE5CD",
+"b": 1
+},
+{
+"r": 14,
+"c": 7,
+"v": "PVP Damage Boost\nPVP Accuracy\nAccuracy\n"
+},
+{
+"r": 15,
+"c": 2,
+"v": "Spirit Protection +1"
+},
+{
+"r": 15,
+"c": 3,
+"v": "LVL +- 15"
+},
+{
+"r": 15,
+"c": 4,
+"v": "LVL 25+"
+},
+{
+"r": 15,
+"c": 6,
+"v": "A-tier",
+"bg": "FFFCE5CD",
+"b": 1
+},
+{
+"r": 15,
+"c": 7,
+"v": "PVP-Attack\nAttack"
+},
+{
+"r": 16,
+"c": 2,
+"v": "Spirit's Descents +1"
+},
+{
+"r": 16,
+"c": 3,
+"v": "LVL +- 15"
+},
+{
+"r": 16,
+"c": 4,
+"v": "LVL 1+"
+},
+{
+"r": 17,
+"c": 2,
+"v": "Corrode +1"
+},
+{
+"r": 17,
+"c": 3,
+"v": "LVL +- 15"
+},
+{
+"r": 17,
+"c": 4,
+"v": "LVL 10+"
+},
+{
+"r": 18,
+"c": 2,
+"v": "Spirit Revitalization +1"
+},
+{
+"r": 18,
+"c": 3,
+"v": "LVL 20+"
+},
+{
+"r": 18,
+"c": 4,
+"v": "LVL +-15"
+},
+{
+"r": 19,
+"c": 2,
+"v": "Mental Focus +1"
+},
+{
+"r": 19,
+"c": 3,
+"v": "LVL +- 30"
+},
+{
+"r": 19,
+"c": 4,
+"v": "LVL 20+"
+},
+{
+"r": 20,
+"c": 2,
+"v": "Consecutive Countercurrent +1"
+},
+{
+"r": 20,
+"c": 3,
+"v": "LVL 10+"
+},
+{
+"r": 20,
+"c": 4,
+"v": "LVL 10+"
+},
+{
+"r": 21,
+"c": 2,
+"v": "Spirit Communion +1"
+},
+{
+"r": 21,
+"c": 3,
+"v": "LVL 1+"
+},
+{
+"r": 21,
+"c": 4,
+"v": "LVL 10+"
+},
+{
+"r": 22,
+"c": 2,
+"v": "Revitalization Contract +1"
+},
+{
+"r": 22,
+"c": 3,
+"v": "LVL 1+"
+},
+{
+"r": 22,
+"c": 4,
+"v": "LVL 25+"
+},
+{
+"r": 23,
+"c": 2,
+"v": "Element Unification +1"
+},
+{
+"r": 23,
+"c": 3,
+"v": "LVL +- 25"
+},
+{
+"r": 23,
+"c": 4,
+"v": "LVL 17-18"
+}
+],
+"images": [
+{
+"file": "img/s03_000.png",
+"r": 2,
+"c": 1,
+"w": 79,
+"h": 87
+},
+{
+"file": "img/s03_001.png",
+"r": 3,
+"c": 1,
+"w": 82,
+"h": 78
+},
+{
+"file": "img/s03_002.png",
+"r": 4,
+"c": 1,
+"w": 79,
+"h": 82
+},
+{
+"file": "img/s03_003.png",
+"r": 5,
+"c": 1,
+"w": 79,
+"h": 81
+},
+{
+"file": "img/s03_004.png",
+"r": 6,
+"c": 1,
+"w": 77,
+"h": 83
+},
+{
+"file": "img/s03_005.png",
+"r": 7,
+"c": 1,
+"w": 81,
+"h": 79
+},
+{
+"file": "img/s03_006.png",
+"r": 8,
+"c": 1,
+"w": 81,
+"h": 78
+},
+{
+"file": "img/s03_007.png",
+"r": 9,
+"c": 1,
+"w": 82,
+"h": 78
+},
+{
+"file": "img/s03_008.png",
+"r": 10,
+"c": 1,
+"w": 79,
+"h": 81
+},
+{
+"file": "img/s03_009.png",
+"r": 11,
+"c": 1,
+"w": 80,
+"h": 78
+},
+{
+"file": "img/s03_010.png",
+"r": 12,
+"c": 1,
+"w": 80,
+"h": 81
+},
+{
+"file": "img/s03_011.png",
+"r": 13,
+"c": 1,
+"w": 83,
+"h": 80
+},
+{
+"file": "img/s03_012.png",
+"r": 14,
+"c": 1,
+"w": 78,
+"h": 78
+},
+{
+"file": "img/s03_013.png",
+"r": 15,
+"c": 1,
+"w": 80,
+"h": 78
+},
+{
+"file": "img/s03_014.png",
+"r": 16,
+"c": 1,
+"w": 81,
+"h": 80
+},
+{
+"file": "img/s03_015.png",
+"r": 17,
+"c": 1,
+"w": 80,
+"h": 81
+},
+{
+"file": "img/s03_016.png",
+"r": 18,
+"c": 1,
+"w": 84,
+"h": 86
+},
+{
+"file": "img/s03_017.png",
+"r": 19,
+"c": 1,
+"w": 80,
+"h": 83
+},
+{
+"file": "img/s03_018.png",
+"r": 20,
+"c": 1,
+"w": 78,
+"h": 79
+},
+{
+"file": "img/s03_019.png",
+"r": 21,
+"c": 1,
+"w": 77,
+"h": 83
+},
+{
+"file": "img/s03_020.png",
+"r": 22,
+"c": 1,
+"w": 80,
+"h": 82
+},
+{
+"file": "img/s03_021.png",
+"r": 23,
+"c": 1,
+"w": 77,
+"h": 75
+},
+{
+"file": "img/s03_022.png",
+"r": 2,
+"c": 7,
+"w": 82,
+"h": 89
+},
+{
+"file": "img/s03_023.png",
+"r": 2,
+"c": 7,
+"w": 78,
+"h": 87
+},
+{
+"file": "img/s03_024.png",
+"r": 2,
+"c": 7,
+"w": 81,
+"h": 84
+},
+{
+"file": "img/s03_025.png",
+"r": 2,
+"c": 8,
+"w": 80,
+"h": 82
+},
+{
+"file": "img/s03_026.png",
+"r": 3,
+"c": 7,
+"w": 83,
+"h": 78
+},
+{
+"file": "img/s03_027.png",
+"r": 3,
+"c": 7,
+"w": 82,
+"h": 84
+},
+{
+"file": "img/s03_028.png",
+"r": 5,
+"c": 6,
+"w": 78,
+"h": 82
+},
+{
+"file": "img/s03_029.png",
+"r": 5,
+"c": 7,
+"w": 78,
+"h": 78
+},
+{
+"file": "img/s03_030.png",
+"r": 5,
+"c": 7,
+"w": 80,
+"h": 77
+},
+{
+"file": "img/s03_031.png",
+"r": 5,
+"c": 7,
+"w": 82,
+"h": 81
+},
+{
+"file": "img/s03_032.png",
+"r": 6,
+"c": 6,
+"w": 86,
+"h": 84
+},
+{
+"file": "img/s03_033.png",
+"r": 6,
+"c": 7,
+"w": 81,
+"h": 84
+},
+{
+"file": "img/s03_034.png",
+"r": 6,
+"c": 7,
+"w": 83,
+"h": 83
+},
+{
+"file": "img/s03_035.png",
+"r": 6,
+"c": 7,
+"w": 82,
+"h": 82
+},
+{
+"file": "img/s03_036.png",
+"r": 6,
+"c": 8,
+"w": 83,
+"h": 83
+},
+{
+"file": "img/s03_037.png",
+"r": 8,
+"c": 6,
+"w": 75,
+"h": 81
+},
+{
+"file": "img/s03_038.png",
+"r": 8,
+"c": 7,
+"w": 75,
+"h": 74
+},
+{
+"file": "img/s03_039.png",
+"r": 13,
+"c": 6,
+"w": 82,
+"h": 79
+},
+{
+"file": "img/s03_040.png",
+"r": 13,
+"c": 7,
+"w": 80,
+"h": 77
+}
+]
+},
+{
+"sheet": "Red PVP Gear",
+"merged": [],
+"cells": [],
+"images": [
+{
+"file": "img/s04_000.png",
+"r": 1,
+"c": 1,
+"w": 421,
+"h": 896
+},
+{
+"file": "img/s04_001.png",
+"r": 1,
+"c": 4,
+"w": 415,
+"h": 901
+},
+{
+"file": "img/s04_002.png",
+"r": 1,
+"c": 8,
+"w": 418,
+"h": 903
+},
+{
+"file": "img/s04_003.png",
+"r": 1,
+"c": 11,
+"w": 419,
+"h": 901
+},
+{
+"file": "img/s04_004.png",
+"r": 1,
+"c": 15,
+"w": 415,
+"h": 897
+},
+{
+"file": "img/s04_005.png",
+"r": 1,
+"c": 18,
+"w": 417,
+"h": 897
+},
+{
+"file": "img/s04_006.png",
+"r": 1,
+"c": 22,
+"w": 420,
+"h": 896
+},
+{
+"file": "img/s04_007.png",
+"r": 44,
+"c": 1,
+"w": 417,
+"h": 889
+},
+{
+"file": "img/s04_008.png",
+"r": 44,
+"c": 4,
+"w": 420,
+"h": 894
+},
+{
+"file": "img/s04_009.png",
+"r": 44,
+"c": 8,
+"w": 424,
+"h": 895
+},
+{
+"file": "img/s04_010.png",
+"r": 44,
+"c": 11,
+"w": 412,
+"h": 898
+},
+{
+"file": "img/s04_011.png",
+"r": 44,
+"c": 15,
+"w": 420,
+"h": 899
+},
+{
+"file": "img/s04_012.png",
+"r": 44,
+"c": 18,
+"w": 425,
+"h": 896
+},
+{
+"file": "img/s04_013.png",
+"r": 44,
+"c": 22,
+"w": 422,
+"h": 849
+},
+{
+"file": "img/s04_014.png",
+"r": 88,
+"c": 1,
+"w": 412,
+"h": 710
+}
+]
+},
+{
+"sheet": "Red PVE Gear",
+"merged": [],
+"cells": [
+{
+"r": 47,
+"c": 20,
+"v": "INFO",
+"bg": "FFFFF2CC",
+"b": 1
+},
+{
+"r": 50,
+"c": 20,
+"v": "Меняем корозию на Element Unification",
+"bg": "FFFFF2CC"
+},
+{
+"r": 51,
+"c": 20,
+"v": "Если не красная вещь, скипаем  Крит хит и философским камнем добираем Spirit Revitalization",
+"bg": "FFFFF2CC"
+},
+{
+"r": 52,
+"c": 20,
+"v": "(либо наоборот, что раньше наролите)",
+"bg": "FFFFF2CC"
+},
+{
+"r": 54,
+"c": 20,
+"v": "Приоритетные статы которые ТОЧНО должны быть в вещах: ",
+"bg": "FFFFF2CC"
+},
+{
+"r": 55,
+"c": 20,
+"v": "Attack Increase",
+"bg": "FFFFF2CC"
+},
+{
+"r": 56,
+"c": 20,
+"v": "Smite",
+"bg": "FFFFF2CC"
+},
+{
+"r": 57,
+"c": 20,
+"v": "Perfect Chance",
+"bg": "FFFFF2CC"
+},
+{
+"r": 58,
+"c": 20,
+"v": "Attack Speed",
+"bg": "FFFFF2CC"
+},
+{
+"r": 59,
+"c": 20,
+"v": "Move Speed",
+"bg": "FFFFF2CC"
+},
+{
+"r": 60,
+"c": 20,
+"v": "Damage Boost",
+"bg": "FFFFF2CC"
+},
+{
+"r": 61,
+"c": 20,
+"v": "Critical Damage Boost",
+"bg": "FFFFF2CC"
+},
+{
+"r": 62,
+"c": 20,
+"v": "Attack",
+"bg": "FFFFF2CC"
+},
+{
+"r": 64,
+"c": 20,
+"v": "В красных вещах где взяли Spirit Strike, Mental Focus и 2 скилла выше - можно добивать оставшийся слот Mental Focus",
+"bg": "FFFFF2CC"
+},
+{
+"r": 66,
+"c": 20,
+"v": "Spirit Strike и Mental Focus должны быть всегда ",
+"bg": "FFFFF2CC",
+"b": 1
+},
+{
+"r": 68,
+"c": 20,
+"v": "В ЛСах приоритет:",
+"bg": "FFFFF2CC"
+},
+{
+"r": 69,
+"c": 20,
+"v": "Damage Boost  → Front Attack Damage Boost → Attack → Accuracy → Critical Damabe Boost → Weapon Damage Boost →  Front Attack  → Crit Hit",
+"bg": "FFFFF2CC"
+},
+{
+"r": 70,
+"c": 20,
+"v": "Идеально - если есть 2 желтых стата из первых 4",
+"bg": "FFFFF2CC"
+}
+],
+"images": [
+{
+"file": "img/s05_000.png",
+"r": 1,
+"c": 1,
+"w": 414,
+"h": 903
+},
+{
+"file": "img/s05_001.png",
+"r": 1,
+"c": 4,
+"w": 417,
+"h": 900
+},
+{
+"file": "img/s05_002.png",
+"r": 1,
+"c": 7,
+"w": 417,
+"h": 902
+},
+{
+"file": "img/s05_003.png",
+"r": 1,
+"c": 11,
+"w": 419,
+"h": 898
+},
+{
+"file": "img/s05_004.png",
+"r": 1,
+"c": 14,
+"w": 423,
+"h": 894
+},
+{
+"file": "img/s05_005.png",
+"r": 1,
+"c": 18,
+"w": 421,
+"h": 894
+},
+{
+"file": "img/s05_006.png",
+"r": 1,
+"c": 21,
+"w": 420,
+"h": 898
+},
+{
+"file": "img/s05_007.png",
+"r": 44,
+"c": 1,
+"w": 414,
+"h": 896
+},
+{
+"file": "img/s05_008.png",
+"r": 44,
+"c": 4,
+"w": 418,
+"h": 897
+},
+{
+"file": "img/s05_009.png",
+"r": 44,
+"c": 8,
+"w": 413,
+"h": 894
+},
+{
+"file": "img/s05_010.png",
+"r": 44,
+"c": 11,
+"w": 422,
+"h": 837
+},
+{
+"file": "img/s05_011.png",
+"r": 44,
+"c": 15,
+"w": 427,
+"h": 845
+}
+]
+},
+{
+"sheet": "DPS Meter",
+"merged": [
+"G61:J61",
+"A12:A19",
+"A21:A29",
+"D9:F9",
+"A2:A10",
+"A31:A39"
+],
+"cells": [
+{
+"r": 1,
+"c": 1,
+"v": "Сумон",
+"b": 1
+},
+{
+"r": 1,
+"c": 2,
+"v": "С персом",
+"b": 1
+},
+{
+"r": 1,
+"c": 3,
+"v": "Чистый",
+"b": 1
+},
+{
+"r": 2,
+"c": 1,
+"v": "Вода",
+"b": 1
+},
+{
+"r": 2,
+"c": 7,
+"v": "Древний голем + огненный",
+"b": 1
+},
+{
+"r": 2,
+"c": 11,
+"v": "Ротация",
+"b": 1
+},
+{
+"r": 9,
+"c": 4,
+"v": "Скиллы в макросе (замер)",
+"b": 1
+},
+{
+"r": 12,
+"c": 1,
+"v": "Огонь",
+"b": 1
+},
+{
+"r": 15,
+"c": 7,
+"v": "Фулл скиллы",
+"b": 1
+},
+{
+"r": 21,
+"c": 1,
+"v": "Земля",
+"b": 1
+},
+{
+"r": 31,
+"c": 1,
+"v": "Ветер",
+"b": 1
+},
+{
+"r": 61,
+"c": 2,
+"v": "Комбо 1. Макрос T → ПКМ → E"
+},
+{
+"r": 61,
+"c": 7,
+"v": "Комбо 2. Макрос T → ПКМ "
+},
+{
+"r": 131,
+"c": 2,
+"v": "После обновы 26 августа"
+},
+{
+"r": 185,
+"c": 2,
+"v": "Атака спереди"
+},
+{
+"r": 185,
+"c": 7,
+"v": "Атака сзади",
+"b": 1
+},
+{
+"r": 185,
+"c": 17,
+"v": "Атака сбоку"
+},
+{
+"r": 273,
+"c": 2,
+"v": "Предыдущая неделя, пинг 130"
+},
+{
+"r": 273,
+"c": 7,
+"v": "Текущая неделя пинг 130 (02,09)"
+},
+{
+"r": 273,
+"c": 16,
+"v": "Текущая неделя пинг 130 (04,09) - после мини тех работ"
+},
+{
+"r": 324,
+"c": 2,
+"v": "Перед патчем 08,09"
+}
+],
+"images": [
+{
+"file": "img/s06_000.png",
+"r": 31,
+"c": 3,
+"w": 338,
+"h": 180
+},
+{
+"file": "img/s06_001.png",
+"r": 2,
+"c": 2,
+"w": 337,
+"h": 179
+},
+{
+"file": "img/s06_002.png",
+"r": 21,
+"c": 3,
+"w": 338,
+"h": 184
+},
+{
+"file": "img/s06_003.png",
+"r": 11,
+"c": 2,
+"w": 337,
+"h": 170
+},
+{
+"file": "img/s06_004.png",
+"r": 31,
+"c": 2,
+"w": 347,
+"h": 168
+},
+{
+"file": "img/s06_005.png",
+"r": 2,
+"c": 2,
+"w": 335,
+"h": 165
+},
+{
+"file": "img/s06_006.png",
+"r": 11,
+"c": 2,
+"w": 337,
+"h": 170
+},
+{
+"file": "img/s06_007.png",
+"r": 21,
+"c": 2,
+"w": 342,
+"h": 169
+},
+{
+"file": "img/s06_008.png",
+"r": 10,
+"c": 4,
+"w": 178,
+"h": 379
+},
+{
+"file": "img/s06_009.png",
+"r": 3,
+"c": 6,
+"w": 362,
+"h": 189
+},
+{
+"file": "img/s06_010.png",
+"r": 16,
+"c": 7,
+"w": 347,
+"h": 205
+},
+{
+"file": "img/s06_011.png",
+"r": 37,
+"c": 10,
+"w": 1047,
+"h": 320
+},
+{
+"file": "img/s06_012.png",
+"r": 2,
+"c": 10,
+"w": 1022,
+"h": 713
+},
+{
+"file": "img/s06_013.png",
+"r": 80,
+"c": 1,
+"w": 1022,
+"h": 875
+},
+{
+"file": "img/s06_014.png",
+"r": 80,
+"c": 6,
+"w": 1034,
+"h": 885
+},
+{
+"file": "img/s06_015.png",
+"r": 63,
+"c": 1,
+"w": 782,
+"h": 334
+},
+{
+"file": "img/s06_016.png",
+"r": 63,
+"c": 6,
+"w": 829,
+"h": 345
+},
+{
+"file": "img/s06_017.png",
+"r": 132,
+"c": 1,
+"w": 1094,
+"h": 953
+},
+{
+"file": "img/s06_018.png",
+"r": 186,
+"c": 1,
+"w": 1100,
+"h": 943
+},
+{
+"file": "img/s06_019.png",
+"r": 188,
+"c": 6,
+"w": 1092,
+"h": 943
+},
+{
+"file": "img/s06_020.png",
+"r": 186,
+"c": 15,
+"w": 1091,
+"h": 935
+},
+{
+"file": "img/s06_021.png",
+"r": 228,
+"c": 1,
+"w": 1098,
+"h": 944
+},
+{
+"file": "img/s06_022.png",
+"r": 275,
+"c": 1,
+"w": 1092,
+"h": 945
+},
+{
+"file": "img/s06_023.png",
+"r": 274,
+"c": 6,
+"w": 1095,
+"h": 939
+},
+{
+"file": "img/s06_024.png",
+"r": 244,
+"c": 6,
+"w": 783,
+"h": 334
+},
+{
+"file": "img/s06_025.png",
+"r": 274,
+"c": 15,
+"w": 1095,
+"h": 955
+},
+{
+"file": "img/s06_026.png",
+"r": 324,
+"c": 1,
+"w": 1116,
+"h": 947
+}
+]
+},
+{
+"sheet": "Замер духов AtkSpeed",
+"merged": [],
+"cells": [],
+"images": [
+{
+"file": "img/s07_000.png",
+"r": 1,
+"c": 1,
+"w": 996,
+"h": 861
+},
+{
+"file": "img/s07_001.png",
+"r": 42,
+"c": 1,
+"w": 996,
+"h": 858
+},
+{
+"file": "img/s07_002.png",
+"r": 1,
+"c": 11,
+"w": 988,
+"h": 858
+},
+{
+"file": "img/s07_003.png",
+"r": 42,
+"c": 11,
+"w": 1093,
+"h": 945
+}
+]
+},
+{
+"sheet": "Боссы",
+"merged": [
+"A51:A53",
+"A27:A50",
+"A3:A26"
+],
+"cells": [
+{
+"r": 1,
+"c": 1,
+"v": "​",
+"bg": "FF171717"
+},
+{
+"r": 2,
+"c": 1,
+"v": "племя",
+"bg": "FF000000",
+"b": 1
+},
+{
+"r": 2,
+"c": 2,
+"v": "Область появления",
+"bg": "FF000000",
+"b": 1
+},
+{
+"r": 2,
+"c": 3,
+"v": "Босс Монстр",
+"bg": "FF000000",
+"b": 1
+},
+{
+"r": 2,
+"c": 4,
+"v": "Время возрождения (старое)",
+"bg": "FF000000",
+"b": 1
+},
+{
+"r": 2,
+"c": 5,
+"v": "Время возрождения (изменено)",
+"bg": "FF000000",
+"b": 1
+},
+{
+"r": 3,
+"c": 1,
+"v": "Небесные существа",
+"bg": "FF171717"
+},
+{
+"r": 3,
+"c": 2,
+"v": "Долина Кантас",
+"bg": "FF171717"
+},
+{
+"r": 3,
+"c": 3,
+"v": "Кернон на Западе",
+"bg": "FF171717"
+},
+{
+"r": 3,
+"c": 4,
+"v": "1 час",
+"bg": "FF171717"
+},
+{
+"r": 3,
+"c": 5,
+"v": "30 минут",
+"bg": "FF171717"
+},
+{
+"r": 4,
+"c": 2,
+"v": "Долина Кантас",
+"bg": "FF171717"
+},
+{
+"r": 4,
+"c": 3,
+"v": "Найкель Востока",
+"bg": "FF171717"
+},
+{
+"r": 4,
+"c": 4,
+"v": "1 час",
+"bg": "FF171717"
+},
+{
+"r": 4,
+"c": 5,
+"v": "30 минут",
+"bg": "FF171717"
+},
+{
+"r": 5,
+"c": 2,
+"v": "Болото реки Элун",
+"bg": "FF171717"
+},
+{
+"r": 5,
+"c": 3,
+"v": "Гнилой Кутар",
+"bg": "FF171717"
+},
+{
+"r": 5,
+"c": 4,
+"v": "1 час",
+"bg": "FF171717"
+},
+{
+"r": 5,
+"c": 5,
+"v": "30 минут",
+"bg": "FF171717"
+},
+{
+"r": 6,
+"c": 2,
+"v": "Среднее течение реки Элун",
+"bg": "FF171717"
+},
+{
+"r": 6,
+"c": 3,
+"v": "Корин в полном цвету",
+"bg": "FF171717"
+},
+{
+"r": 6,
+"c": 4,
+"v": "2 часа",
+"bg": "FF171717"
+},
+{
+"r": 6,
+"c": 5,
+"v": "1 час",
+"bg": "FF171717"
+},
+{
+"r": 7,
+"c": 2,
+"v": "руины крепости",
+"bg": "FF171717"
+},
+{
+"r": 7,
+"c": 3,
+"v": "Страж Тигант",
+"bg": "FF171717"
+},
+{
+"r": 7,
+"c": 4,
+"v": "3 часа",
+"bg": "FF171717"
+},
+{
+"r": 7,
+"c": 5,
+"v": "1 час 30 минут",
+"bg": "FF171717"
+},
+{
+"r": 8,
+"c": 2,
+"v": "руины крепости",
+"bg": "FF171717"
+},
+{
+"r": 8,
+"c": 3,
+"v": "Безумный боец ​​Кусан",
+"bg": "FF171717"
+},
+{
+"r": 8,
+"c": 4,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 8,
+"c": 5,
+"v": "2 часа",
+"bg": "FF171717"
+},
+{
+"r": 9,
+"c": 2,
+"v": "руины крепости",
+"bg": "FF171717"
+},
+{
+"r": 9,
+"c": 3,
+"v": "Священнические учения",
+"bg": "FF171717"
+},
+{
+"r": 9,
+"c": 4,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 9,
+"c": 5,
+"v": "2 часа",
+"bg": "FF171717"
+},
+{
+"r": 10,
+"c": 2,
+"v": "Толбасский лес",
+"bg": "FF171717"
+},
+{
+"r": 10,
+"c": 3,
+"v": "Пхинунготни Пнин",
+"bg": "FF171717"
+},
+{
+"r": 10,
+"c": 4,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 10,
+"c": 5,
+"v": "3 часа",
+"bg": "FF171717"
+},
+{
+"r": 11,
+"c": 2,
+"v": "Толбасский лес",
+"bg": "FF171717"
+},
+{
+"r": 11,
+"c": 3,
+"v": "Злой Сарус",
+"bg": "FF171717"
+},
+{
+"r": 11,
+"c": 4,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 11,
+"c": 5,
+"v": "3 часа",
+"bg": "FF171717"
+},
+{
+"r": 12,
+"c": 2,
+"v": "Деревня Аулау",
+"bg": "FF171717"
+},
+{
+"r": 12,
+"c": 3,
+"v": "Ученый Раулла",
+"bg": "FF171717"
+},
+{
+"r": 12,
+"c": 4,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 12,
+"c": 5,
+"v": "2 часа",
+"bg": "FF171717"
+},
+{
+"r": 13,
+"c": 2,
+"v": "Деревня Аулау",
+"bg": "FF171717"
+},
+{
+"r": 13,
+"c": 3,
+"v": "Чейзер Тоуло",
+"bg": "FF171717"
+},
+{
+"r": 13,
+"c": 4,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 13,
+"c": 5,
+"v": "2 часа",
+"bg": "FF171717"
+},
+{
+"r": 14,
+"c": 2,
+"v": "Деревня Аулау",
+"bg": "FF171717"
+},
+{
+"r": 14,
+"c": 3,
+"v": "Лесной воин Ураму",
+"bg": "FF171717"
+},
+{
+"r": 14,
+"c": 4,
+"v": "8 часов",
+"bg": "FF171717"
+},
+{
+"r": 14,
+"c": 5,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 15,
+"c": 2,
+"v": "Артамийское плато",
+"bg": "FF171717"
+},
+{
+"r": 15,
+"c": 3,
+"v": "Отступница Лейла",
+"bg": "FF171717"
+},
+{
+"r": 15,
+"c": 4,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 15,
+"c": 5,
+"v": "3 часа",
+"bg": "FF171717"
+},
+{
+"r": 16,
+"c": 2,
+"v": "Артамейское ущелье",
+"bg": "FF171717"
+},
+{
+"r": 16,
+"c": 3,
+"v": "Черное щупальце Рава",
+"bg": "FF171717"
+},
+{
+"r": 16,
+"c": 4,
+"v": "8 часов",
+"bg": "FF171717"
+},
+{
+"r": 16,
+"c": 5,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 17,
+"c": 2,
+"v": "Артамийское плато",
+"bg": "FF171717"
+},
+{
+"r": 17,
+"c": 3,
+"v": "Центурион Демирос",
+"bg": "FF171717"
+},
+{
+"r": 17,
+"c": 4,
+"v": "8 часов",
+"bg": "FF171717"
+},
+{
+"r": 17,
+"c": 5,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 18,
+"c": 2,
+"v": "Артамийское плато",
+"bg": "FF171717"
+},
+{
+"r": 18,
+"c": 3,
+"v": "Святой Ансас",
+"bg": "FF171717"
+},
+{
+"r": 18,
+"c": 4,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 18,
+"c": 5,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 19,
+"c": 2,
+"v": "Плантация Драна",
+"bg": "FF171717"
+},
+{
+"r": 19,
+"c": 3,
+"v": "Мошав Жнец",
+"bg": "FF171717"
+},
+{
+"r": 19,
+"c": 4,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 19,
+"c": 5,
+"v": "3 часа",
+"bg": "FF171717"
+},
+{
+"r": 20,
+"c": 2,
+"v": "Плантация Драна",
+"bg": "FF171717"
+},
+{
+"r": 20,
+"c": 3,
+"v": "Оружие наблюдения Кнэш",
+"bg": "FF171717"
+},
+{
+"r": 20,
+"c": 4,
+"v": "8 часов",
+"bg": "FF171717"
+},
+{
+"r": 20,
+"c": 5,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 21,
+"c": 2,
+"v": "Крепость Легиона Нахид",
+"bg": "FF171717"
+},
+{
+"r": 21,
+"c": 3,
+"v": "Исследователь Сетрам",
+"bg": "FF171717"
+},
+{
+"r": 21,
+"c": 4,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 21,
+"c": 5,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 22,
+"c": 2,
+"v": "Сад Доброго Бога",
+"bg": "FF171717"
+},
+{
+"r": 22,
+"c": 3,
+"v": "Кассия Снов",
+"bg": "FF171717"
+},
+{
+"r": 22,
+"c": 4,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 22,
+"c": 5,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 23,
+"c": 2,
+"v": "Южное Артамейское плато",
+"bg": "FF171717"
+},
+{
+"r": 23,
+"c": 3,
+"v": "Тартан тишины",
+"bg": "FF171717"
+},
+{
+"r": 23,
+"c": 4,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 23,
+"c": 5,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 24,
+"c": 2,
+"v": "Восточно-Артамское плато",
+"bg": "FF171717"
+},
+{
+"r": 24,
+"c": 3,
+"v": "Кашьяпа, правитель душ",
+"bg": "FF171717"
+},
+{
+"r": 24,
+"c": 4,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 24,
+"c": 5,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 25,
+"c": 2,
+"v": "Рыжий лес",
+"bg": "FF171717"
+},
+{
+"r": 25,
+"c": 3,
+"v": "Командир легиона Рагта",
+"bg": "FF171717"
+},
+{
+"r": 25,
+"c": 4,
+"v": "24 часа",
+"bg": "FF171717"
+},
+{
+"r": 25,
+"c": 5,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 26,
+"c": 2,
+"v": "Вечный остров",
+"bg": "FF171717"
+},
+{
+"r": 26,
+"c": 3,
+"v": "Вечный Гартуа",
+"bg": "FF171717"
+},
+{
+"r": 26,
+"c": 4,
+"v": "24 часа",
+"bg": "FF171717"
+},
+{
+"r": 26,
+"c": 5,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 27,
+"c": 1,
+"v": "Демоны",
+"bg": "FF171717"
+},
+{
+"r": 27,
+"c": 2,
+"v": "Место крушения Дредгиона",
+"bg": "FF171717"
+},
+{
+"r": 27,
+"c": 3,
+"v": "Расплавленный данар",
+"bg": "FF171717"
+},
+{
+"r": 27,
+"c": 4,
+"v": "1 час",
+"bg": "FF171717"
+},
+{
+"r": 27,
+"c": 5,
+"v": "30 минут",
+"bg": "FF171717"
+},
+{
+"r": 28,
+"c": 2,
+"v": "Безымянное кладбище",
+"bg": "FF171717"
+},
+{
+"r": 28,
+"c": 3,
+"v": "Черный Воин Аэд",
+"bg": "FF171717"
+},
+{
+"r": 28,
+"c": 4,
+"v": "1 час",
+"bg": "FF171717"
+},
+{
+"r": 28,
+"c": 5,
+"v": "30 минут",
+"bg": "FF171717"
+},
+{
+"r": 29,
+"c": 2,
+"v": "Сторожевая башня святилища",
+"bg": "FF171717"
+},
+{
+"r": 29,
+"c": 3,
+"v": "Верный Раджит",
+"bg": "FF171717"
+},
+{
+"r": 29,
+"c": 4,
+"v": "1 час",
+"bg": "FF171717"
+},
+{
+"r": 29,
+"c": 5,
+"v": "30 минут",
+"bg": "FF171717"
+},
+{
+"r": 30,
+"c": 2,
+"v": "Сторожевая башня святилища",
+"bg": "FF171717"
+},
+{
+"r": 30,
+"c": 3,
+"v": "Берсерк Балг",
+"bg": "FF171717"
+},
+{
+"r": 30,
+"c": 4,
+"v": "2 часа",
+"bg": "FF171717"
+},
+{
+"r": 30,
+"c": 5,
+"v": "1 час",
+"bg": "FF171717"
+},
+{
+"r": 31,
+"c": 2,
+"v": "Мосланский лес",
+"bg": "FF171717"
+},
+{
+"r": 31,
+"c": 3,
+"v": "Кровавый Воин Раннар",
+"bg": "FF171717"
+},
+{
+"r": 31,
+"c": 4,
+"v": "3 часа",
+"bg": "FF171717"
+},
+{
+"r": 31,
+"c": 5,
+"v": "1,5 часа",
+"bg": "FF171717"
+},
+{
+"r": 32,
+"c": 2,
+"v": "Мосланский лес",
+"bg": "FF171717"
+},
+{
+"r": 32,
+"c": 3,
+"v": "Хищник Гарсан",
+"bg": "FF171717"
+},
+{
+"r": 32,
+"c": 4,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 32,
+"c": 5,
+"v": "2 часа",
+"bg": "FF171717"
+},
+{
+"r": 33,
+"c": 2,
+"v": "Уртумхейм",
+"bg": "FF171717"
+},
+{
+"r": 33,
+"c": 3,
+"v": "Обманщик Трид",
+"bg": "FF171717"
+},
+{
+"r": 33,
+"c": 4,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 33,
+"c": 5,
+"v": "2 часа",
+"bg": "FF171717"
+},
+{
+"r": 34,
+"c": 2,
+"v": "Лес Очищения",
+"bg": "FF171717"
+},
+{
+"r": 34,
+"c": 3,
+"v": "Blue Wave Кельпина",
+"bg": "FF171717"
+},
+{
+"r": 34,
+"c": 4,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 34,
+"c": 5,
+"v": "2 часа",
+"bg": "FF171717"
+},
+{
+"r": 35,
+"c": 2,
+"v": "Дранатус",
+"bg": "FF171717"
+},
+{
+"r": 35,
+"c": 3,
+"v": "Штабной офицер Русана",
+"bg": "FF171717"
+},
+{
+"r": 35,
+"c": 4,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 35,
+"c": 5,
+"v": "3 часа",
+"bg": "FF171717"
+},
+{
+"r": 36,
+"c": 2,
+"v": "Дранатус",
+"bg": "FF171717"
+},
+{
+"r": 36,
+"c": 3,
+"v": "Суперинтендант Нута",
+"bg": "FF171717"
+},
+{
+"r": 36,
+"c": 4,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 36,
+"c": 5,
+"v": "2 часа",
+"bg": "FF171717"
+},
+{
+"r": 37,
+"c": 2,
+"v": "Руины Васфельда",
+"bg": "FF171717"
+},
+{
+"r": 37,
+"c": 3,
+"v": "Ссылки командиров сил специального назначения",
+"bg": "FF171717"
+},
+{
+"r": 37,
+"c": 4,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 37,
+"c": 5,
+"v": "3 часа",
+"bg": "FF171717"
+},
+{
+"r": 38,
+"c": 2,
+"v": "Руины Васфельда",
+"bg": "FF171717"
+},
+{
+"r": 38,
+"c": 3,
+"v": "Богохульник Ноблуд",
+"bg": "FF171717"
+},
+{
+"r": 38,
+"c": 4,
+"v": "8 часов",
+"bg": "FF171717"
+},
+{
+"r": 38,
+"c": 5,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 39,
+"c": 2,
+"v": "Руины Васфельда",
+"bg": "FF171717"
+},
+{
+"r": 39,
+"c": 3,
+"v": "Архонт Аксиос Потерянной Души",
+"bg": "FF171717"
+},
+{
+"r": 39,
+"c": 4,
+"v": "8 часов",
+"bg": "FF171717"
+},
+{
+"r": 39,
+"c": 5,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 40,
+"c": 2,
+"v": "Пафнитское захоронение",
+"bg": "FF171717"
+},
+{
+"r": 40,
+"c": 3,
+"v": "Зависимый Хадирун",
+"bg": "FF171717"
+},
+{
+"r": 40,
+"c": 4,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 40,
+"c": 5,
+"v": "3 часа",
+"bg": "FF171717"
+},
+{
+"r": 41,
+"c": 2,
+"v": "Западный каньон Гриваде",
+"bg": "FF171717"
+},
+{
+"r": 41,
+"c": 3,
+"v": "Палач Барсиен",
+"bg": "FF171717"
+},
+{
+"r": 41,
+"c": 4,
+"v": "8 часов",
+"bg": "FF171717"
+},
+{
+"r": 41,
+"c": 5,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 42,
+"c": 2,
+"v": "Восточная часть каньона Гриваде",
+"bg": "FF171717"
+},
+{
+"r": 42,
+"c": 3,
+"v": "Оружие Дракан Юнит Гурута",
+"bg": "FF171717"
+},
+{
+"r": 42,
+"c": 4,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 42,
+"c": 5,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 43,
+"c": 2,
+"v": "Деревня Черного Когтя",
+"bg": "FF171717"
+},
+{
+"r": 43,
+"c": 3,
+"v": "Ветеран Шуджакан",
+"bg": "FF171717"
+},
+{
+"r": 43,
+"c": 4,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 43,
+"c": 5,
+"v": "3 часа",
+"bg": "FF171717"
+},
+{
+"r": 44,
+"c": 2,
+"v": "Деревня Черного Когтя",
+"bg": "FF171717"
+},
+{
+"r": 44,
+"c": 3,
+"v": "Карука из Видения",
+"bg": "FF171717"
+},
+{
+"r": 44,
+"c": 4,
+"v": "8 часов",
+"bg": "FF171717"
+},
+{
+"r": 44,
+"c": 5,
+"v": "4 часа",
+"bg": "FF171717"
+},
+{
+"r": 45,
+"c": 2,
+"v": "Крепость Рагта",
+"bg": "FF171717"
+},
+{
+"r": 45,
+"c": 3,
+"v": "Вишведа Тьмы",
+"bg": "FF171717"
+},
+{
+"r": 45,
+"c": 4,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 45,
+"c": 5,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 46,
+"c": 2,
+"v": "Площадь Импетузиум",
+"bg": "FF171717"
+},
+{
+"r": 46,
+"c": 3,
+"v": "Шарп Шрайк",
+"bg": "FF171717"
+},
+{
+"r": 46,
+"c": 4,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 46,
+"c": 5,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 47,
+"c": 2,
+"v": "Лес Очищения",
+"bg": "FF171717"
+},
+{
+"r": 47,
+"c": 3,
+"v": "Тартан тишины",
+"bg": "FF171717"
+},
+{
+"r": 47,
+"c": 4,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 47,
+"c": 5,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 48,
+"c": 2,
+"v": "Пафнитское захоронение",
+"bg": "FF171717"
+},
+{
+"r": 48,
+"c": 3,
+"v": "Кашьяпа, правитель душ",
+"bg": "FF171717"
+},
+{
+"r": 48,
+"c": 4,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 48,
+"c": 5,
+"v": "6 часов",
+"bg": "FF171717"
+},
+{
+"r": 49,
+"c": 2,
+"v": "Крепость Рагта",
+"bg": "FF171717"
+},
+{
+"r": 49,
+"c": 3,
+"v": "Командир легиона Рагта",
+"bg": "FF171717"
+},
+{
+"r": 49,
+"c": 4,
+"v": "24 часа",
+"bg": "FF171717"
+},
+{
+"r": 49,
+"c": 5,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 50,
+"c": 2,
+"v": "Бессмертный остров",
+"bg": "FF171717"
+},
+{
+"r": 50,
+"c": 3,
+"v": "Бессмертный Гартуа",
+"bg": "FF171717"
+},
+{
+"r": 50,
+"c": 4,
+"v": "24 часа",
+"bg": "FF171717"
+},
+{
+"r": 50,
+"c": 5,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 51,
+"c": 1,
+"v": "Бездна",
+"bg": "FF171717"
+},
+{
+"r": 51,
+"c": 2,
+"v": "Нижняя Решанта",
+"bg": "FF171717"
+},
+{
+"r": 51,
+"c": 3,
+"v": "Наблюдатель Кайра",
+"bg": "FF171717"
+},
+{
+"r": 51,
+"c": 4,
+"v": "1 час",
+"bg": "FF171717"
+},
+{
+"r": 51,
+"c": 5,
+"v": "1 час",
+"bg": "FF171717"
+},
+{
+"r": 52,
+"c": 2,
+"v": "Архипелаг Крыла Сиэля, Правое Крыло Сиэля",
+"bg": "FF171717"
+},
+{
+"r": 52,
+"c": 3,
+"v": "Spirit King Agro",
+"bg": "FF171717"
+},
+{
+"r": 52,
+"c": 4,
+"v": "24 часа",
+"bg": "FF171717"
+},
+{
+"r": 52,
+"c": 5,
+"v": "12 часов",
+"bg": "FF171717"
+},
+{
+"r": 53,
+"c": 2,
+"v": "Корни Эрешранты",
+"bg": "FF171717"
+},
+{
+"r": 53,
+"c": 3,
+"v": "Божество-хранитель Нахма",
+"bg": "FF171717"
+},
+{
+"r": 53,
+"c": 4,
+"v": "воскресенье",
+"bg": "FF171717"
+},
+{
+"r": 53,
+"c": 5,
+"v": "Суббота, Воскресенье",
+"bg": "FF171717"
+},
+{
+"r": 54,
+"c": 1,
+"v": "※ Вероятность появления Наблюдателя Кая увеличивается в 2 раза.",
+"bg": "FF171717"
+},
+{
+"r": 55,
+"c": 1,
+"v": "​",
+"bg": "FF171717",
+"b": 1
+}
+],
+"images": []
+},
+{
+"sheet": "Devanion old, not actual",
+"merged": [],
+"cells": [],
+"images": [
+{
+"file": "img/s09_000.png",
+"r": 1,
+"c": 1,
+"w": 621,
+"h": 220
+},
+{
+"file": "img/s09_001.png",
+"r": 15,
+"c": 1,
+"w": 1187,
+"h": 1178
+},
+{
+"file": "img/s09_002.png",
+"r": 13,
+"c": 4,
+"w": 169,
+"h": 46
+},
+{
+"file": "img/s09_003.png",
+"r": 11,
+"c": 12,
+"w": 145,
+"h": 53
+},
+{
+"file": "img/s09_004.png",
+"r": 15,
+"c": 9,
+"w": 1186,
+"h": 1187
+},
+{
+"file": "img/s09_005.png",
+"r": 55,
+"c": 4,
+"w": 157,
+"h": 41
+},
+{
+"file": "img/s09_006.png",
+"r": 57,
+"c": 1,
+"w": 1175,
+"h": 1182
+},
+{
+"file": "img/s09_007.png",
+"r": 54,
+"c": 12,
+"w": 169,
+"h": 43
+},
+{
+"file": "img/s09_008.png",
+"r": 57,
+"c": 9,
+"w": 1181,
+"h": 1174
+},
+{
+"file": "img/s09_009.png",
+"r": 99,
+"c": 1,
+"w": 1172,
+"h": 1178
+},
+{
+"file": "img/s09_010.png",
+"r": 97,
+"c": 4,
+"w": 140,
+"h": 45
+},
+{
+"file": "img/s09_011.png",
+"r": 100,
+"c": 9,
+"w": 1169,
+"h": 1171
+},
+{
+"file": "img/s09_012.png",
+"r": 97,
+"c": 12,
+"w": 146,
+"h": 46
+}
+]
+},
+{
+"sheet": "Крафт",
+"merged": [],
+"cells": [
+{
+"r": 1,
+"c": 1,
+"v": "Предмет",
+"b": 1
+},
+{
+"r": 1,
+"c": 2,
+"v": "Кол-во",
+"b": 1
+},
+{
+"r": 1,
+"c": 3,
+"v": "Цена",
+"b": 1
+},
+{
+"r": 1,
+"c": 4,
+"v": "Итого",
+"b": 1
+},
+{
+"r": 1,
+"c": 6,
+"v": "Предмет",
+"b": 1
+},
+{
+"r": 1,
+"c": 7,
+"v": "Кол-во",
+"b": 1
+},
+{
+"r": 1,
+"c": 8,
+"v": "Цена",
+"b": 1
+},
+{
+"r": 1,
+"c": 9,
+"v": "Итого",
+"b": 1
+},
+{
+"r": 2,
+"c": 1,
+"v": "Guard"
+},
+{
+"r": 2,
+"c": 2,
+"v": 5.0
+},
+{
+"r": 2,
+"c": 3,
+"v": 2262000.0
+},
+{
+"r": 2,
+"c": 4,
+"v": "=B2*C2"
+},
+{
+"r": 2,
+"c": 6,
+"v": "Т5 гвард"
+},
+{
+"r": 2,
+"c": 7,
+"v": 1.0
+},
+{
+"r": 2,
+"c": 8,
+"v": 0.0
+},
+{
+"r": 2,
+"c": 9,
+"v": "=G2*H2"
+},
+{
+"r": 3,
+"c": 1,
+"v": "Артисан"
+},
+{
+"r": 3,
+"c": 2,
+"v": 50.0
+},
+{
+"r": 3,
+"c": 3,
+"v": 2300000.0
+},
+{
+"r": 3,
+"c": 4,
+"v": "=B3*C3"
+},
+{
+"r": 3,
+"c": 6,
+"v": "Артисан"
+},
+{
+"r": 3,
+"c": 7,
+"v": 18.0
+},
+{
+"r": 3,
+"c": 8,
+"v": 2300000.0
+},
+{
+"r": 3,
+"c": 9,
+"v": "=G3*H3"
+},
+{
+"r": 4,
+"c": 1,
+"v": "Робуст"
+},
+{
+"r": 4,
+"c": 2,
+"v": 122.0
+},
+{
+"r": 4,
+"c": 3,
+"v": 70000.0
+},
+{
+"r": 4,
+"c": 4,
+"v": "=B4*C4"
+},
+{
+"r": 4,
+"c": 6,
+"v": "Робуст"
+},
+{
+"r": 4,
+"c": 7,
+"v": 122.0
+},
+{
+"r": 4,
+"c": 8,
+"v": 70000.0
+},
+{
+"r": 4,
+"c": 9,
+"v": "=G4*H4"
+},
+{
+"r": 5,
+"c": 1,
+"v": "Майнд"
+},
+{
+"r": 5,
+"c": 2,
+"v": 18.0
+},
+{
+"r": 5,
+"c": 3,
+"v": 3630000.0
+},
+{
+"r": 5,
+"c": 4,
+"v": "=B5*C5"
+},
+{
+"r": 5,
+"c": 6,
+"v": "Belief"
+},
+{
+"r": 5,
+"c": 7,
+"v": 40.0
+},
+{
+"r": 5,
+"c": 8,
+"v": 254000.0
+},
+{
+"r": 5,
+"c": 9,
+"v": "=G5*H5"
+},
+{
+"r": 6,
+"c": 1,
+"v": "Вилл"
+},
+{
+"r": 6,
+"c": 2,
+"v": 27.0
+},
+{
+"r": 6,
+"c": 3,
+"v": 3700000.0
+},
+{
+"r": 6,
+"c": 4,
+"v": "=B6*C6"
+},
+{
+"r": 6,
+"c": 6,
+"v": "Flame"
+},
+{
+"r": 6,
+"c": 7,
+"v": 40.0
+},
+{
+"r": 6,
+"c": 8,
+"v": 2200000.0
+},
+{
+"r": 6,
+"c": 9,
+"v": "=G6*H6"
+},
+{
+"r": 7,
+"c": 1,
+"v": "Ego"
+},
+{
+"r": 7,
+"c": 2,
+"v": 42.0
+},
+{
+"r": 7,
+"c": 3,
+"v": 140000.0
+},
+{
+"r": 7,
+"c": 4,
+"v": "=B7*C7"
+},
+{
+"r": 7,
+"c": 6,
+"v": "Kina"
+},
+{
+"r": 7,
+"c": 7,
+"v": 50000000.0
+},
+{
+"r": 7,
+"c": 8,
+"v": 1.0
+},
+{
+"r": 7,
+"c": 9,
+"v": "=G7*H7"
+},
+{
+"r": 8,
+"c": 1,
+"v": "Maddened"
+},
+{
+"r": 8,
+"c": 2,
+"v": 19.0
+},
+{
+"r": 8,
+"c": 3,
+"v": 49000.0
+},
+{
+"r": 8,
+"c": 4,
+"v": "=B8*C8"
+},
+{
+"r": 8,
+"c": 6,
+"v": "Maddened"
+},
+{
+"r": 8,
+"c": 7,
+"v": 19.0
+},
+{
+"r": 8,
+"c": 8,
+"v": 49000.0
+},
+{
+"r": 8,
+"c": 9,
+"v": "=G8*H8"
+},
+{
+"r": 9,
+"c": 1,
+"v": "Orichalum"
+},
+{
+"r": 9,
+"c": 2,
+"v": 121.0
+},
+{
+"r": 9,
+"c": 3,
+"v": 345000.0
+},
+{
+"r": 9,
+"c": 4,
+"v": "=B9*C9"
+},
+{
+"r": 9,
+"c": 6,
+"v": "Orichalum"
+},
+{
+"r": 9,
+"c": 7,
+"v": 46.0
+},
+{
+"r": 9,
+"c": 8,
+"v": 345000.0
+},
+{
+"r": 9,
+"c": 9,
+"v": "=G9*H9"
+},
+{
+"r": 10,
+"c": 1,
+"v": "Odyle"
+},
+{
+"r": 10,
+"c": 2,
+"v": 70.0
+},
+{
+"r": 10,
+"c": 3,
+"v": 312000.0
+},
+{
+"r": 10,
+"c": 4,
+"v": "=B10*C10"
+},
+{
+"r": 10,
+"c": 6,
+"v": "Odyle"
+},
+{
+"r": 10,
+"c": 7,
+"v": 26.0
+},
+{
+"r": 10,
+"c": 8,
+"v": 312000.0
+},
+{
+"r": 10,
+"c": 9,
+"v": "=G10*H10"
+},
+{
+"r": 11,
+"c": 1,
+"v": "Итого"
+},
+{
+"r": 11,
+"c": 4,
+"v": "=SUM(D2:D10)"
+},
+{
+"r": 11,
+"c": 6,
+"v": "Итого"
+},
+{
+"r": 11,
+"c": 9,
+"v": "=SUM(I2:I10)"
+}
+],
+"images": []
+},
+{
+"sheet": "Бравлер",
+"merged": [],
+"cells": [],
+"images": [
+{
+"file": "img/s11_000.png",
+"r": 1,
+"c": 1,
+"w": 466,
+"h": 883
+},
+{
+"file": "img/s11_001.png",
+"r": 1,
+"c": 5,
+"w": 447,
+"h": 846
+},
+{
+"file": "img/s11_002.png",
+"r": 1,
+"c": 10,
+"w": 462,
+"h": 854
+},
+{
+"file": "img/s11_003.png",
+"r": 1,
+"c": 14,
+"w": 480,
+"h": 886
+},
+{
+"file": "img/s11_004.png",
+"r": 1,
+"c": 19,
+"w": 434,
+"h": 847
+},
+{
+"file": "img/s11_005.png",
+"r": 43,
+"c": 1,
+"w": 474,
+"h": 869
+},
+{
+"file": "img/s11_006.png",
+"r": 43,
+"c": 5,
+"w": 429,
+"h": 817
+},
+{
+"file": "img/s11_007.png",
+"r": 43,
+"c": 10,
+"w": 435,
+"h": 801
+},
+{
+"file": "img/s11_008.png",
+"r": 44,
+"c": 14,
+"w": 433,
+"h": 812
+}
+]
+},
+{
+"sheet": "Син",
+"merged": [],
+"cells": [],
+"images": [
+{
+"file": "img/s12_000.png",
+"r": 1,
+"c": 1,
+"w": 422,
+"h": 838
+},
+{
+"file": "img/s12_001.png",
+"r": 1,
+"c": 4,
+"w": 426,
+"h": 833
+},
+{
+"file": "img/s12_002.png",
+"r": 1,
+"c": 8,
+"w": 425,
+"h": 836
+},
+{
+"file": "img/s12_003.png",
+"r": 1,
+"c": 12,
+"w": 424,
+"h": 829
+},
+{
+"file": "img/s12_004.png",
+"r": 1,
+"c": 15,
+"w": 419,
+"h": 776
+},
+{
+"file": "img/s12_005.png",
+"r": 1,
+"c": 19,
+"w": 418,
+"h": 790
+},
+{
+"file": "img/s12_006.png",
+"r": 1,
+"c": 22,
+"w": 424,
+"h": 818
+},
+{
+"file": "img/s12_007.png",
+"r": 40,
+"c": 1,
+"w": 418,
+"h": 799
+},
+{
+"file": "img/s12_008.png",
+"r": 40,
+"c": 5,
+"w": 427,
+"h": 858
+},
+{
+"file": "img/s12_009.png",
+"r": 40,
+"c": 9,
+"w": 417,
+"h": 773
+},
+{
+"file": "img/s12_010.png",
+"r": 40,
+"c": 13,
+"w": 421,
+"h": 772
+}
+]
+}
+]
