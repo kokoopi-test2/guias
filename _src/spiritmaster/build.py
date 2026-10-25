@@ -28,8 +28,10 @@ def img(name, cap="", cls="shot", big=1600):
     p.save(os.path.join(OUT, "img", dst), "WEBP", quality=86, method=6)
     w, h = p.size
     c = f"<figcaption>{cap}</figcaption>" if cap else ""
+    # width 100% capped at the picture's own width: the box is reserved from width/height before it loads, so a jump to a
+    # section never lands short while pictures above it load (AMO 2026-10-26: «pincho en los enlaces y no redirige»)
     return (f'<figure class="{cls}"><a href="img/{dst}" class="zoom"><img src="img/{dst}" width="{w}" height="{h}" '
-            f'loading="lazy" alt="{e(strip(cap)) or "captura"}"></a>{c}</figure>')
+            f'style="max-width:{w}px" loading="lazy" decoding="async" alt="{e(strip(cap)) or "captura"}"></a>{c}</figure>')
 
 
 def strip(s):

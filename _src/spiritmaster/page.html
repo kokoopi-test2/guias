@@ -13,10 +13,10 @@
   :root { --bg: #070d18; --glow: #7fe9ff; --violet: #b49bff; --ink: #eaf6ff; --muted: #9fb4cc; --card: rgba(17, 29, 50, .78);
     --line: rgba(127, 233, 255, .22); --row: rgba(127, 233, 255, .05); --gold: #ffcf6e; }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  html { scroll-padding-top: 80px; }
   body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 "Outfit", "Segoe UI", system-ui, sans-serif; overflow-x: hidden;
     background-image: radial-gradient(900px 500px at 85% -10%, rgba(127,233,255,.16), transparent 60%),
-                      radial-gradient(700px 400px at -10% 30%, rgba(160,120,255,.12), transparent 60%); background-attachment: fixed; }
+                      radial-gradient(700px 400px at -10% 30%, rgba(160,120,255,.12), transparent 60%); }
   main { max-width: 1680px; margin: 0 auto; padding: 32px clamp(16px, 2.5vw, 40px) 64px; }
   .brand { color: var(--muted); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
   .brand b { color: var(--glow); }
@@ -26,12 +26,12 @@
   .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
   .meta span { font-size: 13px; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
   nav { position: sticky; top: 0; z-index: 5; margin: 22px -16px 0; padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 6px;
-    background: rgba(7,13,24,.86); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); scrollbar-width: none; }
+    background: #070d18; border-bottom: 1px solid var(--line); scrollbar-width: none; }
   nav::-webkit-scrollbar { display: none; }
   nav a { flex: none; font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; padding: 7px 13px; border-radius: 999px;
     border: 1px solid var(--line); background: var(--card); white-space: nowrap; }
   nav a.on { background: var(--glow); color: #071224; border-color: var(--glow); }
-  section { margin-top: 44px; background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 26px 22px; backdrop-filter: blur(6px); }
+  section { margin-top: 44px; background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 26px 22px; }
   h2 { font-size: clamp(26px, 4vw, 36px); margin: 0 0 6px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
   .tag { font-size: 12px; font-weight: 800; letter-spacing: .12em; padding: 4px 10px; border-radius: 8px; background: linear-gradient(135deg, var(--glow), #5aa8ff); color: #071224; }
   h3 { font-size: 20px; margin: 30px 0 10px; color: var(--glow); }
@@ -113,7 +113,6 @@
   .sub { max-width: 980px; }
   .ins table { font-size: 13px; } .ins td { padding: 7px 8px; } .ins th { padding: 8px; font-size: 13px; }
   figure.shot a { display: inline-block; max-width: 100%; }
-  figure.shot img { width: auto; max-width: 100%; }
   .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); gap: 14px; margin-top: 16px; }
   .card { padding: 14px; border-radius: 14px; border: 1px solid var(--line); background: var(--row); }
   .card .shot { margin: 8px 0 0; }
@@ -175,10 +174,13 @@
   const upBtn = document.getElementById('top');
   addEventListener('scroll', () => upBtn.classList.toggle('on', scrollY > 900), { passive: true });
   addEventListener('keydown', ev => { if (ev.key === 'Escape') lb.click(); });
+  const nav = document.getElementById('nav');
+  const pad = () => document.documentElement.style.scrollPaddingTop = (getComputedStyle(nav).position === 'sticky' ? nav.offsetHeight + 12 : 12) + 'px';
+  pad(); addEventListener('resize', pad);
   const links = [...document.querySelectorAll('#nav a')];
   const io = new IntersectionObserver(es => es.forEach(x => { if (x.isIntersecting) {
     links.forEach(l => l.classList.toggle('on', l.hash === '#' + x.target.id));
-    const on = links.find(l => l.classList.contains('on')); if (on) on.scrollIntoView({ block: 'nearest', inline: 'center' }); } }),
+    } }),
     { rootMargin: '-45% 0px -50% 0px' });
   document.querySelectorAll('section[id]').forEach(s => io.observe(s));
 </script>
