@@ -121,7 +121,7 @@ body = ('<h3>Webs y herramientas</h3><div class="links">'
         + link("Build de prueba para Global (en proceso)", "https://questlog.gg/aion-2/en/character-builder/BloodyGlovesJumpOrigin", "questlog.gg",
                "Teoría para Global, todavía en proceso.")
         + link("Personaje de referencia en shugo.gg (WinSwin, servidor 1305, Global)",
-               "https://shugo.gg/character?id=GXf_uDNlKcYJYIHNvVUVBQWGY85op-37E6MEnLiQKGE%253D&server=1305&region=GLOBAL&name=WinSwin",
+               "https://shugo.gg/character?id=GXf_uDNlKcYJYIHNvVUVBQWGY85op-37E6MEnLiQKGE%3D&server=1305&region=GLOBAL&name=WinSwin",
                "Shugo Link",
                "Se salta por completo las mazmorras T1. Eso sí, necesita los Daevanion Crystal de PvP que da el monolito del Abismo (nivel 16).")
         + "</div>" + img("s00_000.png", "La captura que acompaña a la build: personaje en el mundo con el inventario abierto."))
