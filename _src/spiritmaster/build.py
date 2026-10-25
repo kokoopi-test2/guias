@@ -1,5 +1,6 @@
 """Builds the Spiritmaster guide page from the extracted sheet (sheet.json + img/) into the guides repo."""
 import html
+import re
 import json
 import os
 from PIL import Image
@@ -38,7 +39,8 @@ def strip(s):
 
 def table(head, rows, cls=""):
     th = "".join(f"<th>{h}</th>" for h in head)
-    tr = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows)
+    lab = [re.sub(r"<[^>]+>", "", h) for h in head]  # each cell knows its column: on a phone a row becomes a card
+    tr = "".join("<tr>" + "".join(f'<td data-l="{e(lab[k])}">{c}</td>' for k, c in enumerate(r)) + "</tr>" for r in rows)
     return f'<div class="tw {cls}"><table><thead><tr>{th}</tr></thead><tbody>{tr}</tbody></table></div>'
 
 
@@ -129,10 +131,9 @@ section("enlaces", "Enlaces", "Todo lo que la hoja original enlaza, con lo que d
 ins_head = ["Casilla", "Cogni Insight", "Fera Insight", "Natura Insight", "Varian Insight", "Special Insight"]
 gear_head = ["Línea", "Weapon", "Guard", "Helm", "Pauldrons", "Breastplate", "Greaves", "Gloves", "Cloak", "Boots"]
 acc_head = ["Línea", "Earrings 1", "Earrings 2", "Necklace", "Ring 1", "Ring 2", "Bracelet 1", "Bracelet 2"]
-body = ('<h3>Pet Insight (Genus Insight) · PvE</h3><p>Qué estadística poner en cada casilla según el tipo de Insight.</p>'
-        + table(ins_head, grid_rows("Global", 3, 11, 6, fix), "num")
-        + '<h3>Pet Insight (Genus Insight) · PvP</h3>'
-        + table(ins_head, grid_rows("Global", 16, 24, 6, fix), "num")
+body = ('<p>Qué estadística poner en cada casilla según el tipo de Insight.</p><div class="grid2">'
+        + '<div><h3>Pet Insight (Genus Insight) · PvE</h3>' + table(ins_head, grid_rows("Global", 3, 11, 6, fix), "ins") + '</div>'
+        + '<div><h3>Pet Insight (Genus Insight) · PvP</h3>' + table(ins_head, grid_rows("Global", 16, 24, 6, fix), "ins") + '</div></div>'
         + '<h3>Estadísticas del equipo · tabla 1 (daño: para PvE)</h3><p>Qué estadística buscar en cada línea de cada pieza. La línea marcada «Philosopher\'s Stone» solo sale usando esa piedra en la pieza, y la marcada «objeto rojo», solo en piezas rojas. La hoja no titula estas tablas: por sus estadísticas, la primera es de daño (PvE) y la segunda de resistencias (PvP).</p>'
         + table(gear_head, grid_rows("Global", 34, 40, 10, fix, slot), "wide")
         + '<h3>Accesorios · tabla 1 (PvE)</h3><p class="note">Ojo: Focused Eye, Hunter\'s Resolve y Concentrated Fire son habilidades de Ranger. La hoja original las pone así en esta tabla; si juegas Spiritmaster, en esas líneas busca tus habilidades.</p>'

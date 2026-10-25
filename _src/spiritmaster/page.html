@@ -17,7 +17,7 @@
   body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.55 "Outfit", "Segoe UI", system-ui, sans-serif; overflow-x: hidden;
     background-image: radial-gradient(900px 500px at 85% -10%, rgba(127,233,255,.16), transparent 60%),
                       radial-gradient(700px 400px at -10% 30%, rgba(160,120,255,.12), transparent 60%); background-attachment: fixed; }
-  main { max-width: 1120px; margin: 0 auto; padding: 36px 16px 64px; }
+  main { max-width: 1680px; margin: 0 auto; padding: 32px clamp(16px, 2.5vw, 40px) 64px; }
   .brand { color: var(--muted); font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
   .brand b { color: var(--glow); }
   h1 { font-size: clamp(38px, 7vw, 64px); line-height: 1.02; margin: 12px 0 10px; font-weight: 800;
@@ -25,10 +25,10 @@
   .sub { color: var(--muted); font-size: 18px; margin: 0 0 18px; max-width: 760px; }
   .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; }
   .meta span { font-size: 13px; padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
-  nav { position: sticky; top: 0; z-index: 5; margin: 22px -16px 0; padding: 10px 16px; display: flex; gap: 8px; overflow-x: auto;
+  nav { position: sticky; top: 0; z-index: 5; margin: 22px -16px 0; padding: 10px 16px; display: flex; flex-wrap: wrap; gap: 6px;
     background: rgba(7,13,24,.86); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); scrollbar-width: none; }
   nav::-webkit-scrollbar { display: none; }
-  nav a { flex: none; font-size: 14px; font-weight: 600; color: var(--ink); text-decoration: none; padding: 7px 13px; border-radius: 999px;
+  nav a { flex: none; font-size: 13px; font-weight: 600; color: var(--ink); text-decoration: none; padding: 7px 13px; border-radius: 999px;
     border: 1px solid var(--line); background: var(--card); white-space: nowrap; }
   nav a.on { background: var(--glow); color: #071224; border-color: var(--glow); }
   section { margin-top: 44px; background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 26px 22px; backdrop-filter: blur(6px); }
@@ -48,14 +48,15 @@
   .lk { display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--row); }
   .lk b { font-size: 16px; }
   .btn { flex: none; display: inline-block; padding: 9px 15px; border-radius: 11px; background: var(--glow); color: #071224; font-weight: 800; text-decoration: none; font-size: 14px; }
-  .tw { overflow-x: auto; border-radius: 14px; border: 1px solid var(--line); margin: 10px 0; }
+  .tw { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); margin: 10px 0; }
   table { border-collapse: collapse; width: 100%; font-size: 14px; }
-  th { text-align: left; background: rgba(127,233,255,.12); color: var(--glow); font-weight: 600; padding: 10px 12px; white-space: nowrap; position: sticky; top: 0; }
+  th { text-align: left; background: rgba(127,233,255,.12); color: var(--glow); font-weight: 600; padding: 9px 10px; vertical-align: bottom; }
   td { padding: 9px 12px; border-top: 1px solid rgba(127,233,255,.1); vertical-align: middle; }
   tbody tr:nth-child(even) td { background: var(--row); }
   td:first-child { color: var(--muted); white-space: nowrap; }
-  .wide table { min-width: 900px; }
-  .num td, .boss td { white-space: nowrap; }
+  .wide table { font-size: 13px; }
+  .wide td, .wide th { padding: 8px 9px; }
+  .num td { white-space: nowrap; }
   .boss td:first-child { white-space: normal; min-width: 170px; }
   .boss .new { color: var(--gold); }
   .skills td:first-child { width: 64px; }
@@ -109,6 +110,23 @@
   .label { max-width: 190px; margin: 0 0 8px; }
   .label a { border: 0; background: none; }
   @media (max-width: 600px) { .how dl { grid-template-columns: 1fr; gap: 2px; } .how dd { margin-bottom: 8px; } .kala { flex-direction: column; } }
+  .sub { max-width: 980px; }
+  .ins table { font-size: 13px; } .ins td { padding: 7px 8px; } .ins th { padding: 8px; font-size: 13px; }
+  .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 620px), 1fr)); gap: 0 28px; }
+  .gear { grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+  @media (max-width: 860px) {
+    .tw { border: 0; overflow: visible; }
+    .tw table, .tw tbody, .tw tr, .tw td { display: block; width: 100%; }
+    .tw thead { display: none; }
+    .tw tr { border: 1px solid var(--line); border-radius: 14px; margin: 0 0 10px; padding: 6px 0; background: var(--row); }
+    .tw tbody tr:nth-child(even) td { background: none; }
+    .tw td { border: 0; padding: 5px 14px; display: flex; gap: 12px; justify-content: space-between; white-space: normal; text-align: right; }
+    .tw td::before { content: attr(data-l); color: var(--glow); font-weight: 600; text-align: left; flex: none; max-width: 48%; }
+    .tw td:first-child { font-weight: 800; color: var(--ink); font-size: 15px; }
+    .tw td[data-l=""]::before { content: none; }
+    .tw td[data-l=""] { justify-content: flex-start; }
+    .skills td:first-child { width: auto; }
+  }
   footer { margin-top: 40px; color: var(--muted); font-size: 14px; text-align: center; }
   @media (max-width: 600px) { section { padding: 20px 14px; border-radius: 18px; } .lk { flex-direction: column; align-items: flex-start; }
     .gear { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); } }
