@@ -238,27 +238,35 @@ def fig(i, cap):
     return img(f"s06_{i:03d}.png", cap, "shot")
 body = ('<p>Todas las mediciones son contra el muñeco de entrenamiento (Melee Training Scarecrow) con la ventana Combat Analysis del juego. '
         '«Con el personaje» es tu daño total con el espíritu mientras tú también atacas (3 minutos); «solo el espíritu» es él sin ti (1 minuto).</p>'
-        '<h3>Daño de cada espíritu (Summon)</h3><div class="pairs">'
-        f'<div><h4>Water Spirit</h4>{fig(5, "Con el personaje · 3 min · 87,08M")}{fig(1, "Solo el espíritu · 1 min · 8,96M")}</div>'
-        f'<div><h4>Fire Spirit</h4>{fig(6, "Con el personaje · 3 min · 90,48M")}{fig(3, "Solo el espíritu · 1 min · 11,01M")}</div>'
-        f'<div><h4>Earth Spirit</h4>{fig(7, "Con el personaje · 3 min · 87,28M")}{fig(2, "Solo el espíritu · 1 min · 11,44M")}</div>'
-        f'<div><h4>Wind Spirit</h4>{fig(4, "Con el personaje · 3 min · 77,07M")}{fig(0, "Solo el espíritu · 1 min · 7,05M")}</div></div>'
-        + '<h3>Ancient Spirit + Fire Spirit</h3>' + fig(9, "Ancient Spirit + Fire Spirit · 3 min · 152,59M")
-        + '<h3>Habilidades en la macro (medición)</h3>' + fig(8, "Las habilidades que van en la macro, en este orden")
-        + '<h3>Con todas las habilidades</h3>' + fig(10, "Todas las habilidades · 3 min · 230,32M (1,26M de DPS)")
-        + '<h3>Rotación</h3>' + fig(12, "Desglose por habilidad de la rotación") + fig(11, "Final del desglose: el resto de habilidades")
-        + '<h3>Combos</h3><div class="pairs">'
-        f'<div><h4>Combo 1 · macro T → clic derecho → E</h4>{fig(15, "Barra de habilidades del combo 1")}{fig(13, "Resultado del combo 1 · 3:30 · 259,58M")}</div>'
-        f'<div><h4>Combo 2 · macro T → clic derecho</h4>{fig(16, "Barra de habilidades del combo 2")}{fig(14, "Resultado del combo 2 · 3:26 · 257,14M")}</div></div>'
-        '<h3>Tras la actualización del 26 de agosto</h3>' + fig(17, "1:06 · 115,07M · 1,74M de DPS")
-        + '<h3>Atacando de frente, por detrás y de lado</h3><div class="trio">'
-        + fig(18, "De frente · 2:44 · 290,37M") + fig(19, "Por detrás · 2:44 · 291,96M") + fig(20, "De lado · 2:44 · 285,68M") + "</div>"
-        + fig(21, "Otra medición de frente · 2:45 · 307,19M")
-        + '<h3>Comparación por semanas (ping 130)</h3><div class="trio">'
-        + fig(22, "Semana anterior · 2:45 · 346,11M") + fig(23, "Esta semana (02/09) · 2:44 · 372,35M")
-        + fig(25, "Esta semana (04/09), tras un mantenimiento corto · 2:44 · 388,96M") + "</div>"
-        + fig(24, "Barra de habilidades usada en estas mediciones")
-        + '<h3>Antes del parche del 08/09</h3>' + fig(26, "2:44 · 410,13M · 2,49M de DPS"))
+        + table(["Prueba", "Tiempo", "Daño total", "Qué te dice"], [
+            ["Solo el espíritu: Earth / Fire / Water / Wind", "1:00", "11,44M / 11,01M / 8,96M / 7,05M", "Earth y Fire son los que más pegan solos; Wind, el que menos"],
+            ["Con el personaje: Fire / Earth / Water / Wind", "3:00", "90,48M / 87,28M / 87,08M / 77,07M", "Con Fire sacas más daño total; con Wind, menos"],
+            ["Ancient Spirit + Fire Spirit", "3:02", "152,59M", "Los dos juntos rinden mucho más: 152M frente a unos 90M con uno solo"],
+            ["Con todas las habilidades", "3:01", "230,32M (1,26M de DPS)", "La referencia de la rotación completa"],
+            ["Combo 1 / Combo 2", "3:30 / 3:26", "259,58M / 257,14M", "Los dos combos rinden casi igual"],
+            ["De frente / por detrás / de lado", "2:44", "290,37M / 291,96M / 285,68M", "En estas pruebas, la posición apenas cambia el daño"],
+            ["Semana anterior → 02/09 → 04/09", "2:44-2:45", "346,11M → 372,35M → 388,96M", "De una semana a otra, el daño fue subiendo"],
+            ["Antes del parche del 08/09", "2:44", "410,13M (2,49M de DPS)", "La medición más alta de la hoja"]], "sum")
+        + '<div class="cards">'
+        + f'<div class="card"><h4>Water Spirit</h4>{fig(5, "Con el personaje · 3 min · 87,08M")}{fig(1, "Solo el espíritu · 1 min · 8,96M")}</div>'
+        + f'<div class="card"><h4>Fire Spirit</h4>{fig(6, "Con el personaje · 3 min · 90,48M")}{fig(3, "Solo el espíritu · 1 min · 11,01M")}</div>'
+        + f'<div class="card"><h4>Earth Spirit</h4>{fig(7, "Con el personaje · 3 min · 87,28M")}{fig(2, "Solo el espíritu · 1 min · 11,44M")}</div>'
+        + f'<div class="card"><h4>Wind Spirit</h4>{fig(4, "Con el personaje · 3 min · 77,07M")}{fig(0, "Solo el espíritu · 1 min · 7,05M")}</div>'
+        + f'<div class="card"><h4>Ancient Spirit + Fire Spirit</h4>{fig(9, "3 min · 152,59M")}</div>'
+        + f'<div class="card"><h4>Con todas las habilidades</h4>{fig(10, "3 min · 230,32M (1,26M de DPS)")}</div>'
+        + f'<div class="card"><h4>Habilidades en la macro (medición)</h4>{fig(8, "Las habilidades que van en la macro, en este orden")}</div>'
+        + f'<div class="card"><h4>Combo 1 · macro T → clic derecho → E</h4>{fig(15, "Barra de habilidades del combo 1")}{fig(13, "Resultado · 3:30 · 259,58M")}</div>'
+        + f'<div class="card"><h4>Combo 2 · macro T → clic derecho</h4>{fig(16, "Barra de habilidades del combo 2")}{fig(14, "Resultado · 3:26 · 257,14M")}</div>'
+        + f'<div class="card wide2"><h4>Rotación</h4>{fig(12, "Desglose por habilidad de la rotación")}{fig(11, "Final del desglose: el resto de habilidades")}</div>'
+        + f'<div class="card"><h4>Tras la actualización del 26 de agosto</h4>{fig(17, "1:06 · 115,07M · 1,74M de DPS")}</div>'
+        + f'<div class="card"><h4>De frente</h4>{fig(18, "2:44 · 290,37M")}{fig(21, "Otra medición de frente · 2:45 · 307,19M")}</div>'
+        + f'<div class="card"><h4>Por detrás</h4>{fig(19, "2:44 · 291,96M")}</div>'
+        + f'<div class="card"><h4>De lado</h4>{fig(20, "2:44 · 285,68M")}</div>'
+        + f'<div class="card"><h4>Semana anterior (ping 130)</h4>{fig(22, "2:45 · 346,11M")}</div>'
+        + f'<div class="card"><h4>Esta semana, 02/09 (ping 130)</h4>{fig(23, "2:44 · 372,35M")}</div>'
+        + f'<div class="card"><h4>Esta semana, 04/09, tras un mantenimiento corto</h4>{fig(25, "2:44 · 388,96M")}{fig(24, "Barra de habilidades usada en estas mediciones")}</div>'
+        + f'<div class="card"><h4>Antes del parche del 08/09</h4>{fig(26, "2:44 · 410,13M · 2,49M de DPS")}</div>'
+        + '</div>')
 section("dps", "Medidor de DPS", "Mediciones del daño del Spiritmaster: cada espíritu, combos, rotación y su evolución con los parches.", body, "TW")
 
 # ---------------------------------------------------------------- 7. spirits attack speed
