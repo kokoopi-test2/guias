@@ -213,7 +213,7 @@ SKH = ["", "Habilidad", "PvE · nivel y Specialty", "PvP · nivel y Specialty"]
 SKP = ["", "Habilidad", "PvE · nivel", "PvP · nivel"]
 body = ('<ul class="facts"><li><b>Nivel</b> es al que subir la habilidad. Con puntos llegas a nivel 10; el resto sale de +1: nodos Daevanion (hasta +4), una Arcana (hasta +4) y las líneas «Lv. +1» del equipo. La hoja escribe «+1» junto a cada nombre.</li>'
         '<li><b>Specialty</b> son las mejoras numeradas de las habilidades activas (las pasivas no tienen). Tienes 3 huecos, que se abren con la habilidad a nivel 8, 12 y 20; las opciones 1 a 3 piden nivel 8, la 4 nivel 12 y la 5 nivel 16. «Specialty 2, 4» = marca la 2 y la 4. Por eso «Nivel 16+ · Specialty 2, 5»: la 5 no sale antes.</li>'
-        '<li>El «Lv.» que se ve en cada icono es el que tenía el autor, no el recomendado. Algunos marcan Lv. 25: son de TW.</li></ul>'
+        '<li>El «Lv.» que se ve en cada icono es el que tenía el autor, no el recomendado. Algunos marcan Lv. 25: en Global (Temporada 1) las Stigma llegan a nivel 20; el 25 es de TW.</li></ul>'
         + '<div class="grid2"><div><h3>Activas</h3>' + table(SKH, rows[:12], "skills") + '</div><div><h3>Pasivas</h3>' + table(SKP, rows[12:], "skills") + '</div></div>'
         + '<h3>Qué estigmas llevar</h3><div class="legs">' + leg + "</div><h3>Manastones</h3><div class='legs'>" + mana + "</div>")
 section("habilidades", "Habilidades, estigmas y manastones", "Cada habilidad del Spiritmaster con su nivel y sus Specialty para PvE y para PvP.", body, "TW")
