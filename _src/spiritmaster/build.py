@@ -67,22 +67,28 @@ def grid_rows(sheet, r0, r1, ncol, fix=lambda s: s, first=None):
         row = [fix(v(g[r].get(k))) for k in range(1, ncol + 1)]
         if first:
             row[0] = first(row[0])
-        out.append([e(x) for x in row])
+        hl = {k: g[r][k + 1].get("bg") for k in range(ncol) if g[r].get(k + 1) and g[r][k + 1].get("bg") in MARK}
+        out.append([f'<mark class="{MARK[hl[k]]}">{e(x)}</mark>' if k in hl else e(x) for k, x in enumerate(row)])
     return out
 
 
+MARK = {"FFFFF2CC": "y", "FFE69138": "o"}  # the sheet's yellow and orange cells
 TYPO = {"Damage Toleraance": "Damage Tolerance", "Criticaal Damage Tolerance": "Critical Damage Tolerance",
         "Critical Damabe Boost": "Critical Damage Boost", "Weapon Damage boost": "Weapon Damage Boost",
-        "Damage boost": "Damage Boost", "Attack increase": "Attack Increase", "Combat speed": "Combat Speed",
+        "Damage boost": "Damage Boost", "Combat speed": "Combat Speed",
         "Move speed": "Move Speed", "Critical hit": "Critical Hit", "Damage Tolerance(3%)": "Damage Tolerance (3%)",
         "PvE Damage Tolerance(4%)": "PvE Damage Tolerance (4%)", "Weapon Damage Tolerance(3%)": "Weapon Damage Tolerance (3%)",
-        "Skill (optional)": "Skill (opcional)"}
+        "Skill (optional)": "Habilidad a elegir (opcional)"}
+
+
+GOD = {"Justice": "Nezekan", "Freedom": "Vaizel", "Illusion": "Kaisinel", "Life": "Yustiel", "Time": "Siel",
+       "Destruction": "Zikel", "Death": "Triniel", "Wisdom": "Lumiel", "Destiny": "Marchutan", "Space": "Israphel"}
 
 
 def fix(s):
     for a, b in TYPO.items():
         s = s.replace(a, b)
-    return s.replace("(skill)", "(skill)")
+    return f"{s} [{GOD[s]}]" if s in GOD else s
 
 
 def slot(s):
@@ -96,7 +102,7 @@ sections = []
 def section(id_, title, sub, body, tag=""):
     t = f'<span class="tag">{tag}</span>' if tag else ""
     box = f'<div class="box"><span>Qué es y para qué te sirve</span>{BOX[id_]}</div>' if id_ in BOX else ""
-    sections.append((id_, title, f'<section id="{id_}"><h2>{t}{title}</h2>' + (f'<p class="lead">{sub}</p>' if sub else "") + box + body + "</section>"))
+    sections.append((id_, title, f'<section id="{id_}"><h2>{t}{title}</h2>' + box + body + "</section>"))
 
 
 # ---------------------------------------------------------------- 1. links
@@ -117,13 +123,13 @@ body = ('<h3>Webs y herramientas</h3><div class="links">'
                "También tiene bugs, sobre todo con el Spiritmaster: puede partir al personaje en 2 líneas y el DPS total sale raro.")
         + '</div><h3>Global</h3><div class="links">'
         + link("Build para subir de nivel (Leveling SM)", "https://questlog.gg/aion-2/en/character-builder/TheParalyzingBurnOfSpring", "questlog.gg",
-               "Se actualizará cuando salga Global.")
+               "Nota de la hoja, de antes del lanzamiento de Global: «se actualizará cuando salga Global».")
         + link("Build de prueba para Global (en proceso)", "https://questlog.gg/aion-2/en/character-builder/BloodyGlovesJumpOrigin", "questlog.gg",
                "Teoría para Global, todavía en proceso.")
         + link("Personaje de referencia en shugo.gg (WinSwin, servidor 1305, Global)",
                "https://shugo.gg/character?id=GXf_uDNlKcYJYIHNvVUVBQWGY85op-37E6MEnLiQKGE%3D&server=1305&region=GLOBAL&name=WinSwin",
                "Shugo Link",
-               "Se salta por completo las mazmorras T1. Eso sí, necesita los Daevanion Crystal de PvP que da el monolito del Abismo (nivel 16).")
+               "Se salta por completo las mazmorras T1 (las del primer nivel de dificultad). Eso sí, necesita los Daevanion Crystal de PvP (en Global, Daevanion Crystal: Azphel) que da el monolito del Abismo de nivel 16.")
         + "</div>" + img("s00_000.png", "La captura que acompaña a la build: personaje en el mundo con el inventario abierto."))
 section("enlaces", "Enlaces", "Todo lo que la hoja original enlaza, con lo que dice de cada web.", body)
 
@@ -134,16 +140,15 @@ acc_head = ["Línea", "Earrings 1", "Earrings 2", "Necklace", "Ring 1", "Ring 2"
 body = ('<p>Qué estadística poner en cada casilla según el tipo de Insight.</p><div class="grid2">'
         + '<div><h3>Pet Insight (Genus Insight) · PvE</h3>' + table(ins_head, grid_rows("Global", 3, 11, 6, fix), "ins") + '</div>'
         + '<div><h3>Pet Insight (Genus Insight) · PvP</h3>' + table(ins_head, grid_rows("Global", 16, 24, 6, fix), "ins") + '</div></div>'
-        + '<h3>Estadísticas del equipo · tabla 1 (daño: para PvE)</h3><p>Qué estadística buscar en cada línea de cada pieza. La línea marcada «Philosopher\'s Stone» solo sale usando esa piedra en la pieza, y la marcada «objeto rojo», solo en piezas rojas. La hoja no titula estas tablas: por sus estadísticas, la primera es de daño (PvE) y la segunda de resistencias (PvP).</p>'
+        + '<h3>Estadísticas del equipo · tabla 1 (daño: para PvE)</h3><p>Cada «Línea» es una de las estadísticas de <b>Soul Binding</b> de la pieza (la lista que sale bajo «Soul Binding Rate» en el tooltip). La línea «Philosopher\'s Stone» solo sale usando la Soul Fuse Philosopher\'s Stone en esa pieza. La línea «objeto rojo» es para piezas rojas (Heroic), que <b>en Global todavía no existen</b>: hoy no se puede conseguir. La hoja no titula estas tablas: por sus estadísticas, la primera es de daño (PvE) y la segunda de resistencias (PvP).</p>'
         + table(gear_head, grid_rows("Global", 34, 40, 10, fix, slot), "wide")
-        + '<h3>Accesorios · tabla 1 (PvE)</h3><p class="note">Ojo: Focused Eye, Hunter\'s Resolve y Concentrated Fire son habilidades de Ranger. La hoja original las pone así en esta tabla; si juegas Spiritmaster, en esas líneas busca tus habilidades.</p>'
+        + '<h3>Accesorios · tabla 1 (PvE)</h3><p class="note">Ojo: Focused Eye, Hunter\'s Resolve y Concentrated Fire son habilidades de Ranger; la hoja original las pone así en esta tabla. Para un Spiritmaster, el equipo de la propia hoja lleva en pendientes y collar <b>Spirit Strike, Mental Focus, Element Unification, Spirit Revitalization, Spirit Protection y Revitalization Contract</b>, y en anillos <b>Elemental Fusion, Combustion, Cold Shock, Jointstrike: Curse, Summon: Fire Spirit, Summon: Earth Spirit y Dimensional Control</b>.</p>'
         + table(acc_head, grid_rows("Global", 43, 49, 8, fix, slot), "wide")
         + '<h3>Estadísticas del equipo · tabla 2 (resistencias: para PvP)</h3>'
         + table(gear_head, grid_rows("Global", 54, 59, 10, fix, slot), "wide")
         + '<h3>Accesorios · tabla 2 (PvP)</h3>'
         + table(acc_head, grid_rows("Global", 62, 67, 8, fix, slot), "wide")
-        + '<p class="note">En los brazaletes, cada estadística lleva el nombre de un dios: Justice [Nezekan], Freedom [Vaizel], Time [Siel], '
-          'Destruction [Zikel], Life [Yustiel], Illusion [Kaisinel], como se ve en el tooltip del brazalete de la sección de equipo PvP.</p>'
+        + '<p class="note">En los brazaletes cada estadística lleva su dios entre corchetes, como en el cliente. Las celdas <mark class="y">amarilla</mark> y <mark class="o">naranja</mark> están resaltadas así en la hoja original.</p>'
         + '<h3>Prioridad para subir las estigmas</h3><ol class="steps">'
           '<li><b>Al nivel 45</b>Summon: Ancient Spirit (el «gólem»), Enhance: Spirit\'s Benediction y Jointstrike: Corrode a nivel 5; Jointstrike: Destructive Attack a nivel 7.</li>'
           '<li><b>Después</b>Sube Jointstrike: Destructive Attack hasta nivel 10.</li>'
@@ -152,7 +157,9 @@ body = ('<p>Qué estadística poner en cada casilla según el tipo de Insight.</
           '<li><b>Lo último</b>Jointstrike: Corrode del nivel 5 al 20.</li></ol>')
 section("global", "Global", "Insight de la mascota, estadísticas de cada pieza y el orden para subir las estigmas.", body, "GLOBAL")
 
-sections.append(("tw", "Datos de TW", '<div class="divider"><b>A partir de aquí, datos de TW (Taiwán)</b><span>La hoja original avisa: en parte van perdiendo actualidad respecto a Global.</span></div>'))
+sections.append(("tw", "Datos de TW", '<div class="divider"><b>A partir de aquí, datos de TW (Taiwán)</b><span>La hoja original avisa: en parte van perdiendo actualidad respecto a Global. '
+    'Casi todo el equipo de estas capturas (Archon High Commander, Nemesis y Horned Dragon Lord, Soaring Daeva, Durvati…) todavía no existe en Global, así que lleva el nombre de la captura; '
+    'los Ebony Dragon Lord sí existen en Global.</span></div>'))
 
 # ---------------------------------------------------------------- 3. skills
 SK = ["Cold Shock", "Combustion", "Summon: Fire Spirit", "Summon: Water Spirit", "Jointstrike: Curse", "Rapid Scattershot",
@@ -186,7 +193,7 @@ for i, name in enumerate(SK):
     r = i + 2
     ic = img(f"s03_{i:03d}.png", "", "icon")
     kind = "Activa" if i < 12 else "Pasiva"
-    rows.append([ic, f"<b>{name}</b> <small>+1</small><br><span class='k'>{kind}</span>", tri(v(g[r].get(3))), tri(v(g[r].get(4)))])
+    rows.append([ic, f"<b>{name}</b>", tri(v(g[r].get(3))), tri(v(g[r].get(4)))])
 legend = {2: "Estigmas PvE principales", 3: "Estigmas PvE adicionales", 5: "Estigmas PvP principales", 6: "Estigmas PvP adicionales"}
 groups = {}
 for im in S["Skills, Manastones, etc"]["images"][22:]:
@@ -197,11 +204,15 @@ for r, title in legend.items():
 mana = (f'<div class="leg"><b>Manastones PvE · tiers de estadísticas</b><div class="icons">' + "".join(img(f, "", "icon") for f in groups.get(8, [])) + "</div>"
         '<ul class="tiers"><li><i>S</i>Damage Boost · Attack · Accuracy · Front Attack Damage Boost</li>'
         '<li><i>A</i>Critical Damage Boost · Weapon Damage Boost · Front Attack</li>'
-        '<li><i>B</i>Lo que quede que se pueda aprovechar; Critical Hit solo para muy poco tiempo</li></ul></div>'
+        '<li><i>B</i>Lo que quede que se pueda aprovechar; Critical Hit solo para muy poco tiempo</li></ul>'
+        '<p class="note">Smite y Double Chance son la misma estadística: el equipo la llama Smite.</p></div>'
         f'<div class="leg"><b>Manastones PvP · tiers de estadísticas</b><div class="icons">' + "".join(img(f, "", "icon") for f in groups.get(13, [])) + "</div>"
         '<ul class="tiers"><li><i>S</i>PvP Damage Boost · PvP Accuracy · Accuracy</li><li><i>A</i>PvP Attack · Attack</li></ul></div>')
-body = ('<p>«Specialty» son las mejoras que eliges dentro de cada habilidad: los números dicen cuáles marcar. «Nivel» es el nivel al que subir la habilidad. El «+1» junto al nombre es como sale en el equipo, que sube esa habilidad +1 de nivel.</p>'
-        + table(["", "Habilidad", "PvE · nivel y Specialty", "PvP · nivel y Specialty"], rows, "skills")
+SKH = ["", "Habilidad", "PvE · nivel y Specialty", "PvP · nivel y Specialty"]
+body = ('<ul class="facts"><li><b>Nivel</b> es al que subir la habilidad. Con puntos llegas a nivel 10; el resto sale de +1: nodos Daevanion (hasta +4), una Arcana (hasta +4) y las líneas «Lv. +1» del equipo (la hoja escribe «+1» junto a cada nombre por eso).</li>'
+        '<li><b>Specialty</b> son las mejoras numeradas dentro de la habilidad; se abren con la habilidad a nivel 8, 12 y 20. «Specialty 2, 4» = marca la 2 y la 4.</li>'
+        '<li>El «Lv.» que se ve en cada icono es el que tenía el autor, no el recomendado. Algunos marcan Lv. 25: son de TW.</li></ul>'
+        + '<div class="grid2"><div><h3>Activas</h3>' + table(SKH, rows[:12], "skills") + '</div><div><h3>Pasivas</h3>' + table(SKH, rows[12:], "skills") + '</div></div>'
         + '<h3>Qué estigmas llevar</h3><div class="legs">' + leg + "</div><h3>Manastones</h3><div class='legs'>" + mana + "</div>")
 section("habilidades", "Habilidades, estigmas y manastones", "Cada habilidad del Spiritmaster con su nivel y sus Specialty para PvE y para PvP.", body, "TW")
 
@@ -209,28 +220,28 @@ section("habilidades", "Habilidades, estigmas y manastones", "Cada habilidad del
 PVP = ["Guard", "Helm", "Pauldrons", "Breastplate", "Greaves", "Gloves", "Cloak", "Boots", "Earrings", "Earrings",
        "Necklace", "Ring", "Ring", "Bracelet", "Brooch"]
 NAMEP = ["+20 Archon High Commander"] * 13 + ["+20 Faded Shadow Bracelet", "+15 Kaldrix Brooch"]
-body = '<p class="warn">Estos objetos son de TW y todavía no existen en Global: el nombre es el que sale en la captura.</p>' + '<div class="gear">' + "".join(
-    img(f"s04_{i:03d}.png", f"<b>{PVP[i]}</b>{NAMEP[i] if i > 12 else NAMEP[i] + ' ' + PVP[i]}", "tip") for i in range(15)) + "</div>"
+body = '<div class="gear">' + "".join(
+    img(f"s04_{i:03d}.png", f"<b>{PVP[i]}</b>{NAMEP[i]}", "tip") for i in range(15)) + "</div>"
 section("pvp", "Equipo rojo PvP", "El set completo, pieza a pieza, con sus estadísticas, habilidades y manastones. Toca una pieza para verla en grande.", body, "TW")
 
 # ---------------------------------------------------------------- 5. red PvE gear
-PVE = [("Helm", "+20 Splendent Nemesis Dragon"), ("Pauldrons", "+20 Splendent Horned Dragon Lord"), ("Top", "+20 Splendent Nemesis Dragon"),
-       ("Legs", "+20 Splendent Nemesis Dragon"), ("Gloves", "+20 Splendent Nemesis Dragon"), ("Cloak", "+20 Splendent Nemesis Dragon"),
-       ("Shoes", "+20 Horned Dragon Lord Boots"), ("Earrings", "+20 Horned Dragon Lord Earrings"), ("Earrings", "+20 Horned Dragon Lord Earrings"),
-       ("Necklace", "+20 Horned Dragon Lord Necklace"), ("Ring", "+20 Horned Dragon Lord Ring"), ("Ring", "+20 Splendent Horned Dragon Lord Ring")]
+PVE = [("Helm", "+20 Splendent Nemesis Dragon L…"), ("Pauldrons", "+20 Splendent Horned Dragon Lo…"), ("Breastplate", "+20 Splendent Nemesis Dragon L…"),
+       ("Greaves", "+20 Splendent Nemesis Dragon L…"), ("Gloves", "+20 Splendent Nemesis Dragon L…"), ("Cloak", "+20 Splendent Nemesis Dragon L…"),
+       ("Boots", "+20 Horned Dragon Lord Boots"), ("Earrings", "+20 Horned Dragon Lord Earrings"), ("Earrings", "+20 Horned Dragon Lord Earrings"),
+       ("Necklace", "+20 Horned Dragon Lord Necklace"), ("Ring", "+20 Horned Dragon Lord Ring"), ("Ring", "+20 Splendent Horned Dragon Lo…")]
 info = ('<div class="info"><h3>Notas de la hoja</h3>'
         '<p>Cambia Corrode por <b>Element Unification</b>.</p>'
         '<p>Si la pieza no es roja, sáltate Critical Hit y con la Philosopher\'s Stone consigue <b>Spirit Revitalization</b> (o al revés, lo que te salga antes).</p>'
         '<p><b>Estadísticas que SÍ o SÍ tienen que estar en el equipo:</b></p>'
-        '<ul class="chips"><li>Attack Increase</li><li>Smite</li><li>Perfect Chance</li><li>Combat Speed <small>(la hoja pone «Attack Speed»)</small></li><li>Move Speed</li>'
+        '<ul class="chips"><li>Attack increase</li><li>Smite</li><li>Perfect Chance</li><li>Combat Speed <small>(la hoja pone «Attack Speed»)</small></li><li>Move Speed</li>'
         '<li>Damage Boost</li><li>Critical Damage Boost</li><li>Attack</li></ul>'
         '<p>En las piezas rojas donde ya tengas Spirit Strike, Mental Focus y las 2 habilidades de arriba, la casilla que queda puedes rematarla con Mental Focus.</p>'
         '<p><b>Spirit Strike y Mental Focus tienen que estar siempre.</b></p>'
-        '<p><b>Prioridad en los manastones de nivel alto:</b></p>'
+        '<p><b>Prioridad en las «ЛС»</b> (así las abrevia la hoja; por las estadísticas, son las Manastones):</p>'
         '<ol class="prio"><li>Damage Boost</li><li>Front Attack Damage Boost</li><li>Attack</li><li>Accuracy</li><li>Critical Damage Boost</li>'
         '<li>Weapon Damage Boost</li><li>Front Attack</li><li>Critical Hit</li></ol>'
-        '<p>Lo ideal: 2 estadísticas amarillas de las 4 primeras.</p></div>')
-body = '<p class="warn">Estos objetos son de TW y todavía no existen en Global: el nombre es el que sale en la captura.</p>' + info + '<div class="gear">' + "".join(img(f"s05_{i:03d}.png", f"<b>{s}</b>{n}", "tip") for i, (s, n) in enumerate(PVE)) + "</div>"
+        '<p>Lo ideal: 2 estadísticas amarillas (las líneas en amarillo del tooltip) de las 4 primeras.</p></div>')
+body = info + '<div class="gear">' + "".join(img(f"s05_{i:03d}.png", f"<b>{s}</b>{n}", "tip") for i, (s, n) in enumerate(PVE)) + "</div>"
 section("pve", "Equipo rojo PvE", "El set PvE pieza a pieza y qué estadísticas tiene que llevar.", body, "TW")
 
 # ---------------------------------------------------------------- 6. DPS meter
@@ -243,8 +254,10 @@ body = ('<p>Todas las mediciones son contra el muñeco de entrenamiento (Melee T
             ["Con el personaje: Fire / Earth / Water / Wind", "3:00", "90,48M / 87,28M / 87,08M / 77,07M", "Con Fire sacas más daño total; con Wind, menos"],
             ["Ancient Spirit + Fire Spirit", "3:02", "152,59M", "Los dos juntos rinden mucho más: 152M frente a unos 90M con uno solo"],
             ["Con todas las habilidades", "3:01", "230,32M (1,26M de DPS)", "La referencia de la rotación completa"],
-            ["Combo 1 / Combo 2", "3:30 / 3:26", "259,58M / 257,14M", "Los dos combos rinden casi igual"],
+            ["Combo 1 / Combo 2", "3:30 / 3:26", "259,58M / 257,14M (1,23M / 1,24M de DPS)", "Por segundo, el combo 2 rinde un pelín más"],
+            ["Tras la actualización del 26 de agosto", "1:06", "115,07M (1,74M de DPS)", "Medición corta tras el parche"],
             ["De frente / por detrás / de lado", "2:44", "290,37M / 291,96M / 285,68M", "En estas pruebas, la posición apenas cambia el daño"],
+            ["Otra medición de frente", "2:45", "307,19M", "La misma prueba repetida"],
             ["Semana anterior → 02/09 → 04/09", "2:44-2:45", "346,11M → 372,35M → 388,96M", "De una semana a otra, el daño fue subiendo"],
             ["Antes del parche del 08/09", "2:44", "410,13M (2,49M de DPS)", "La medición más alta de la hoja"]], "sum")
         + '<div class="cards">'
@@ -254,17 +267,17 @@ body = ('<p>Todas las mediciones son contra el muñeco de entrenamiento (Melee T
         + f'<div class="card"><h4>Wind Spirit</h4>{fig(4, "Con el personaje · 3 min · 77,07M")}{fig(0, "Solo el espíritu · 1 min · 7,05M")}</div>'
         + f'<div class="card"><h4>Ancient Spirit + Fire Spirit</h4>{fig(9, "3 min · 152,59M")}</div>'
         + f'<div class="card"><h4>Con todas las habilidades</h4>{fig(10, "3 min · 230,32M (1,26M de DPS)")}</div>'
-        + f'<div class="card"><h4>Habilidades en la macro (medición)</h4>{fig(8, "Las habilidades que van en la macro, en este orden")}</div>'
+        + f'<div class="card"><h4>Habilidades en la macro (medición)</h4>{fig(8, "Las habilidades de la macro en sus casillas: la 0 es la de abajo")}</div>'
         + f'<div class="card"><h4>Combo 1 · macro T → clic derecho → E</h4>{fig(15, "Barra de habilidades del combo 1")}{fig(13, "Resultado · 3:30 · 259,58M")}</div>'
         + f'<div class="card"><h4>Combo 2 · macro T → clic derecho</h4>{fig(16, "Barra de habilidades del combo 2")}{fig(14, "Resultado · 3:26 · 257,14M")}</div>'
         + f'<div class="card wide2"><h4>Rotación</h4>{fig(12, "Desglose por habilidad de la rotación")}{fig(11, "Final del desglose: el resto de habilidades")}</div>'
         + f'<div class="card"><h4>Tras la actualización del 26 de agosto</h4>{fig(17, "1:06 · 115,07M · 1,74M de DPS")}</div>'
         + f'<div class="card"><h4>De frente</h4>{fig(18, "2:44 · 290,37M")}{fig(21, "Otra medición de frente · 2:45 · 307,19M")}</div>'
         + f'<div class="card"><h4>Por detrás</h4>{fig(19, "2:44 · 291,96M")}</div>'
-        + f'<div class="card"><h4>De lado</h4>{fig(20, "2:44 · 285,68M")}</div>'
+        + f'<div class="card"><h4>De lado</h4>{fig(20, "2:44 · 285,68M")}{fig(24, "Barra de habilidades de las pruebas de frente, detrás y lado")}</div>'
         + f'<div class="card"><h4>Semana anterior (ping 130)</h4>{fig(22, "2:45 · 346,11M")}</div>'
         + f'<div class="card"><h4>Esta semana, 02/09 (ping 130)</h4>{fig(23, "2:44 · 372,35M")}</div>'
-        + f'<div class="card"><h4>Esta semana, 04/09, tras un mantenimiento corto</h4>{fig(25, "2:44 · 388,96M")}{fig(24, "Barra de habilidades usada en estas mediciones")}</div>'
+        + f'<div class="card"><h4>Esta semana, 04/09, tras un mantenimiento corto</h4>{fig(25, "2:44 · 388,96M")}</div>'
         + f'<div class="card"><h4>Antes del parche del 08/09</h4>{fig(26, "2:44 · 410,13M · 2,49M de DPS")}</div>'
         + '</div>')
 section("dps", "Medidor de DPS", "Mediciones del daño del Spiritmaster: cada espíritu, combos, rotación y su evolución con los parches.", body, "TW")
@@ -305,11 +318,26 @@ AS = [("Dredgion Crash Site", "Melted Danar", "1 h", "30 min"), ("Nameless Cemet
 AB = [("Lower Reshanta", "Watcher Kaira", "1 h", "1 h"),
       ("Archipelago of Siel's Wings · Siel's Right Wing", "Argo, the Spirit King", "24 h", "12 h"),
       ("Reshanta's Root", "Guardian Lord Nahma", "Domingo", "Sábado y domingo")]
-H = ["Zona", "Jefe", "Antes", "Ahora"]
-body = ('<h3>Elyos · Verteron</h3>' + table(H, [[e(a), f"<b>{e(b)}</b>", c, f"<b class='new'>{d}</b>"] for a, b, c, d in EL], "boss")
-        + '<h3>Asmodians · Altgard</h3>' + table(H, [[e(a), f"<b>{e(b)}</b>", c, f"<b class='new'>{d}</b>"] for a, b, c, d in AS], "boss")
-        + '<p class="note">* Sin confirmar en Global: la hoja pone en Altgard estos tres nombres, que también salen en Verteron. Lagta Fortress sí es una zona de Altgard.</p>'
-        + '<h3>Abismo</h3>' + table(H, [[e(a), f"<b>{e(b)}</b>", c, f"<b class='new'>{d}</b>"] for a, b, c, d in AB], "boss")
+H = ["Zona", "Jefe", "Antes (TW)", "Ahora (TW)"]
+SHEETZONE = {"Bodyguard Teegant": "ruinas de la fortaleza", "Furious Saursus": "Tolbas Forest", "Chaser Taulo": "Aullaeu Village",
+             "Heretic Layla": "meseta de Altamia", "Centurion Demiros": "meseta de Altamia", "Divine Ansas": "meseta de Altamia",
+             "Harvest Manager Moshav": "Drana Plantation", "Sentinel K'nash": "Drana Plantation",
+             "Phantasm Kasia": "«jardín del buen dios»", "High Commander Lagta": "«bosque rojo»",
+             "Desecrator Newbold": "Basfelt Ruins", "Executioner Barthien": "cañón oeste de Gribade",
+             "Drakan Battalion Weapon Guruta": "cañón este de Gribade"}
+
+
+def brow(a, b, c, d, side):
+    z = e(a) + (f"<br><small>la hoja: {e(SHEETZONE[b])}</small>" if side == "EL" and b in SHEETZONE or side == "AS" and b in SHEETZONE and b != "High Commander Lagta" else "")
+    return [z, f"<b>{e(b)}</b>", c, f"<b class='new'>{d}</b>"]
+
+
+body = ('<p class="note">Los tiempos son los de TW. <b>En Global cada jefe vuelve a salir contando desde que lo matan</b>, y Guardian Lord Nahma sale el domingo y el viernes a las 21:00. '
+        'Zona y nombre van como en la base de datos de Global; donde la hoja ponía otra zona, la ves debajo en pequeño.</p>'
+        '<div class="grid2"><div><h3>Elyos · Verteron</h3>' + table(H, [brow(*r, "EL") for r in EL], "boss") + '</div>'
+        + '<div><h3>Asmodians · Altgard</h3>' + table(H, [brow(*r, "AS") for r in AS], "boss")
+        + '<p class="note">* Sin confirmar en Global: la hoja pone en Altgard estos tres nombres, que también salen en Verteron. Lagta Fortress sí es una zona de Altgard.</p></div></div>'
+        + '<h3>Abismo</h3>' + table(H, [brow(*r, "AB") for r in AB], "boss")
         + '<p class="note">※ La probabilidad de que aparezca Watcher Kaira se ha duplicado.</p>')
 section("jefes", "Jefes de campo", "Todos los jefes de campo con su zona y su tiempo de reaparición.", body, "TW")
 
@@ -323,14 +351,14 @@ body = (img("s09_000.png", "Progreso de cada tablero: Nezekan 86/88, Zikel 85/88
             ("s09_007.png", "s09_008.png", "<b>Triniel</b>108/116 nodos (en la imagen, «Trinelle»)"),
             ("s09_010.png", "s09_009.png", "<b>Ariel</b>21/152 nodos"),
             ("s09_012.png", "s09_011.png", "<b>Azphel</b>42/152 nodos (en la imagen, «Aspel»)"))) + "</div>")
-section("daevanion", "Daevanion (antiguo)", "Los tableros Daevanion de la hoja, nodo a nodo.", body, "TW")
+section("daevanion", "Daevanion (antiguo)", "Los tableros Daevanion de la hoja, tal cual.", body, "TW")
 
 # ---------------------------------------------------------------- 10. craft
 C1 = [("Guard", 5, 2262000), ("Artisan's Refining Stone*", 50, 2300000), ("Robust Balaur Scale*", 122, 70000), ("Wrathful Mind", 18, 3630000),
       ("Wrathful Will", 27, 3700000), ("Wrathful Ego", 42, 140000), ("Maddened Wrathful Curse / Heartblood*", 19, 49000), ("Orichalcum Ingot*", 121, 345000),
       ("Odyle", 70, 312000)]
 C2 = [("T5 Guard", 1, 0), ("Artisan's Refining Stone*", 18, 2300000), ("Robust Balaur Scale*", 122, 70000), ("Wrathful Belief", 40, 254000),
-      ("Wrathful Flame", 40, 2200000), ("Kinah", 50000000, 1), ("Maddened Wrathful Curse / Heartblood*", 19, 49000), ("Orichalcum Ingot*", 46, 345000), ("Odyle", 26, 312000)]
+      ("Wrathful Flame", 40, 2200000), ("Kina", 50000000, 1), ("Maddened Wrathful Curse / Heartblood*", 19, 49000), ("Orichalcum Ingot*", 46, 345000), ("Odyle", 26, 312000)]
 
 
 def fmt(n):
@@ -341,10 +369,10 @@ def craft(rows, title):
     body = [[f"<b>{e(a)}</b>", fmt(b), fmt(c), fmt(b * c)] for a, b, c in rows]
     tot = sum(b * c for _, b, c in rows)
     body.append(["<b>Total</b>", "", "", f"<b>{fmt(tot)}</b>"])
-    return f"<h3>{title}</h3>" + table(["Material", "Cantidad", "Precio (Kinah)", "Total (Kinah)"], body, "num")
+    return f"<h3>{title}</h3>" + table(["Material", "Cantidad", "Precio (Kina)", "Total (Kina)"], body, "num")
 
 
-body = (craft(C1, "Opción A · fabricando 5 Guard") + craft(C2, "Opción B · partiendo de un Guard T5")
+body = (craft(C1, "Opción A · con 5 Guard como material") + craft(C2, "Opción B · partiendo de un Guard T5")
         + '<p class="note">* La hoja solo da el nombre corto («Артисан», «Робуст», «Maddened», «Orichalum», mal escrito). En el cliente de Global son: Artisan\'s Refining Stone (o Artisan\'s Ultimate Refining Stone, la hoja no dice cuál), Robust Balaur Scale (o Enhanced Robust Balaur Scale), Maddened Wrathful Curse o Maddened Wrathful Heartblood (no se sabe cuál de los dos) y Orichalcum Ingot (u Orichalcum Ore).</p>')
 section("crafteo", "Crafteo", "Lo que cuesta fabricar el Guard, material a material.", body, "TW")
 
@@ -352,13 +380,13 @@ section("crafteo", "Crafteo", "Lo que cuesta fabricar el Guard, material a mater
 BR = [("Pauldrons", "+15 Soaring Daeva"), ("Breastplate", "+15 Soaring Daeva"), ("Greaves", "+15 Soaring Daeva"), ("Gloves", "+15 Soaring Daeva"),
       ("Boots", "+15 Soaring Daeva"), ("Cloak", "+15 Soaring Daeva"), ("Earrings", "+15 Soaring Daeva"),
       ("Ring", "+15 Splendent Ebony Dragon Lord"), ("Ring", "+15 Ebony Dragon Lord")]
-body = '<p class="warn">El Brawler es una clase de KR y TW que todavía no ha llegado a Global, y estos objetos tampoco existen allí: el nombre es el que sale en la captura.</p>' + '<div class="gear">' + "".join(img(f"s11_{i:03d}.png", f"<b>{s}</b>{n} {s}", "tip") for i, (s, n) in enumerate(BR)) + "</div>"
+body = '<p class="warn">El Brawler es una clase de KR y TW que todavía no ha llegado a Global.</p>' + '<div class="gear">' + "".join(img(f"s11_{i:03d}.png", f"<b>{s}</b>{n}", "tip") for i, (s, n) in enumerate(BR)) + "</div>"
 section("brawler", "Brawler", "Equipo de referencia de un Brawler, pieza a pieza.", body, "TW")
 AS2 = [("Helm", "+15 Durvati Helm"), ("Pauldrons", "+15 Durvati Pauldrons"), ("Breastplate", "+15 Durvati Breastplate"),
        ("Greaves", "+15 Durvati Greaves"), ("Gloves", "+10 Faded Shadow Gloves"), ("Boots", "+12 Lava Heart Boots"),
        ("Cloak", "+15 Durvati Cloak"), ("Earrings", "+15 Scattered Radiance Earrings"), ("Necklace", "+15 Ebony Dragon Lord Necklace"),
        ("Ring", "+15 Ebony Dragon Lord Ring"), ("Ring", "+15 Ebony Dragon Lord Ring")]
-body = '<p class="warn">Estos objetos son de TW y todavía no existen en Global: el nombre es el que sale en la captura.</p>' + '<div class="gear">' + "".join(img(f"s12_{i:03d}.png", f"<b>{s}</b>{n}", "tip") for i, (s, n) in enumerate(AS2)) + "</div>"
+body = '<div class="gear">' + "".join(img(f"s12_{i:03d}.png", f"<b>{s}</b>{n}", "tip") for i, (s, n) in enumerate(AS2)) + "</div>"
 section("assassin", "Assassin", "Equipo de referencia de un Assassin, pieza a pieza.", body, "TW")
 
 # ---------------------------------------------------------------- page
