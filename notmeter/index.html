@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NotMeter en 4 pasos · Guías de KoKoOP</title>
+<meta name="description" content="Guía rápida de NotMeter, el medidor de daño de AION 2, por Kala.">
+<meta property="og:title" content="NotMeter en 4 pasos · Guías de KoKoOP">
+<meta property="og:description" content="El medidor de daño que usa Kokito en directo, en 4 pasos.">
+<meta property="og:image" content="tarjeta.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg: #070d18; --glow: #7fe9ff; --ink: #eaf6ff; --muted: #9fb4cc; --card: rgba(17, 29, 50, .78); --line: rgba(127, 233, 255, .22); }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 "Outfit", "Segoe UI", system-ui, sans-serif; min-height: 100vh;
+    background-image: radial-gradient(900px 500px at 85% -10%, rgba(127,233,255,.16), transparent 60%),
+                      radial-gradient(700px 400px at -10% 30%, rgba(160,120,255,.12), transparent 60%); }
+  main { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: 14px; letter-spacing: .14em; text-transform: uppercase; }
+  .brand b { color: var(--glow); }
+  h1 { font-size: clamp(36px, 7vw, 58px); line-height: 1.02; margin: 14px 0 10px; font-weight: 800;
+    background: linear-gradient(90deg, #ffffff, var(--glow)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .sub { color: var(--muted); font-size: 19px; margin: 0 0 28px; }
+  .hero { width: 100%; border-radius: 22px; border: 1px solid var(--line); box-shadow: 0 30px 80px rgba(0,0,0,.5), 0 0 60px rgba(127,233,255,.12); display: block; }
+  ol { list-style: none; padding: 0; margin: 34px 0 0; counter-reset: s; display: grid; gap: 14px; }
+  li { counter-increment: s; background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 20px 22px 20px 82px; position: relative; backdrop-filter: blur(6px); }
+  li::before { content: counter(s); position: absolute; left: 20px; top: 20px; width: 44px; height: 44px; border-radius: 13px;
+    background: linear-gradient(135deg, var(--glow), #5aa8ff); color: #071224; font-weight: 800; font-size: 22px; display: grid; place-items: center;
+    box-shadow: 0 0 22px rgba(127,233,255,.45); }
+  li b { display: block; font-size: 20px; margin-bottom: 4px; }
+  li span { color: var(--muted); }
+  a { color: var(--glow); font-weight: 600; text-decoration: none; border-bottom: 1px solid rgba(127,233,255,.35); }
+  .cta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 12px; align-items: center; justify-content: space-between;
+    padding: 20px 22px; border-radius: 18px; border: 2px solid var(--glow); background: rgba(127,233,255,.07); }
+  .cta .l { color: var(--muted); font-size: 14px; letter-spacing: .1em; text-transform: uppercase; }
+  .btn { display: inline-block; padding: 12px 20px; border-radius: 12px; background: var(--glow); color: #071224; font-weight: 800; border: 0; }
+  footer { margin-top: 34px; color: var(--muted); font-size: 14px; text-align: center; }
+</style>
+</head>
+<body>
+<main>
+  <div class="brand"><b>KoKoOP</b> · Guías de AION 2 · por Kala</div>
+  <h1>NotMeter en 4 pasos</h1>
+  <p class="sub">El medidor de daño que usa Kokito en directo. Guía cortita de Kala 🤍</p>
+  <img class="hero" src="tarjeta.png" alt="NotMeter en 4 pasos, tarjeta de la guía">
+  <ol>
+    <li><b>Descárgalo de la web oficial</b><span>Entra en <a href="https://notmeter.com/?view=setup-guide">notmeter.com → Setup guide</a> y bájate el ZIP.</span></li>
+    <li><b>Instala Npcap</b><span>Lo necesita para leer el combate. Opciones por defecto e «Install». Si ya lo tienes, sáltate este paso.</span></li>
+    <li><b>Descomprime y abre NotMeter.exe</b><span>Acepta el permiso de Windows («Sí») y entra al juego: el panel aparece solo cuando peleas.</span></li>
+    <li><b>Míralo tras cada pelea</b><span>Daño total, DPS, crítico, perfecto y doble. Pega al muñeco de entrenamiento para comparar builds.</span></li>
+  </ol>
+  <div class="cta"><div><div class="l">Enlace oficial</div><a href="https://notmeter.com/?view=setup-guide">notmeter.com/?view=setup-guide</a></div>
+    <a class="btn" href="https://notmeter.com/?view=setup-guide">Descargar NotMeter</a></div>
+  <footer>Más guías en directo en <a href="https://www.twitch.tv/kokoop">twitch.tv/kokoop</a> · escribe !comandos en el chat</footer>
+</main>
+</body>
+</html>
