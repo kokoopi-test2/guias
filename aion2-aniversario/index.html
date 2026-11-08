@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AION 2: lo que anunció NC en el aniversario</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#080C1A; --card:#111833; --line:#26305A; --gold:#FFA64D; --ice:#7FE3FF; --txt:#E9ECF8; --mute:#9AA3C7; --red:#FF6B7A; --ok:#7CF0A6; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:radial-gradient(1200px 600px at 50% -10%, #1B2550 0%, var(--bg) 60%); color:var(--txt);
+         font:16px/1.55 Inter, system-ui, sans-serif; min-height:100vh; }
+  header { padding:36px 20px 12px; text-align:center; }
+  h1 { font-family:Cinzel, serif; font-size:clamp(26px,5vw,44px); margin:0; letter-spacing:.5px;
+       background:linear-gradient(180deg,#FFE2B8,var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sub { color:var(--mute); margin-top:8px; }
+  nav { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; padding:18px 12px; position:sticky; top:0;
+        background:rgba(8,12,26,.92); backdrop-filter:blur(6px); z-index:2; border-bottom:1px solid var(--line); }
+  nav button { background:var(--card); color:var(--txt); border:1px solid var(--line); border-radius:999px; padding:9px 16px;
+               font:600 15px Inter, sans-serif; cursor:pointer; }
+  nav button.on { background:linear-gradient(135deg,#3C220A,#1B2550); border-color:var(--gold); color:#FFE2B8; box-shadow:0 0 18px rgba(255,166,77,.25); }
+  main { max-width:900px; margin:0 auto; padding:22px 18px 60px; }
+  section { display:none; } section.on { display:block; }
+  .card { background:linear-gradient(160deg,rgba(17,24,51,.96),rgba(12,17,38,.96)); border:1px solid var(--line); border-radius:18px;
+          padding:20px 22px; margin:16px 0; }
+  .card h2 { margin:0 0 10px; font-size:21px; }
+  .date { display:inline-block; font-weight:800; color:var(--bg); background:var(--gold); border-radius:8px; padding:2px 10px; margin-right:8px; font-size:14px; }
+  .kala { border-left:4px solid var(--ice); background:rgba(127,227,255,.07); padding:14px 16px; border-radius:12px; margin:14px 0; }
+  .kala b { color:var(--ice); }
+  ul { margin:8px 0 0; padding-left:20px; } li { margin:6px 0; }
+  .tag { font-size:12px; font-weight:800; border-radius:6px; padding:2px 7px; margin-left:6px; vertical-align:2px; }
+  .conf { background:rgba(124,240,166,.15); color:var(--ok); border:1px solid rgba(124,240,166,.4); }
+  .rep { background:rgba(255,166,77,.13); color:var(--gold); border:1px solid rgba(255,166,77,.4); }
+  .no { background:rgba(255,107,122,.13); color:var(--red); border:1px solid rgba(255,107,122,.4); }
+  .big { font-size:19px; font-weight:800; }
+  .mute { color:var(--mute); font-size:14px; }
+  a { color:var(--ice); }
+  footer { text-align:center; color:var(--mute); font-size:13px; padding:0 18px 30px; }
+  .mark { font-family:Cinzel, serif; color:var(--gold); letter-spacing:1px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>AION 2 · Primer aniversario</h1>
+  <div class="sub">Lo que enseñó NC en Seúl el 8 de noviembre, contado por Kala para el Barrio 🤍</div>
+</header>
+<nav>
+  <button data-t="global" class="on">Para nosotros</button>
+  <button data-t="corea">Corea, por fechas</button>
+  <button data-t="combate">El combate</button>
+  <button data-t="ranger">La Ranger</button>
+  <button data-t="luego">Más adelante</button>
+  <button data-t="fuentes">Fuentes</button>
+</nav>
+<main>
+
+<section id="global" class="on">
+  <div class="card">
+    <h2>¿Y a Global cuándo llega?</h2>
+    <p class="big">De momento, sin fecha. NC no ha puesto fecha en Global a nada de lo que anunció.</p>
+    <ul>
+      <li>Todo lo que viene ahora es para <b>Corea y Taiwán</b>.</li>
+      <li>En Global seguimos en la <b>temporada 1, con nivel 45</b>, y esa temporada acaba en el mantenimiento del <b>15/16 de diciembre</b>.</li>
+      <li>Así que lo que veis en estas pestañas es lo que nos toca <i>en algún momento</i>, no la semana que viene.</li>
+    </ul>
+    <div class="kala"><b>Kala:</b> en cuanto NC diga una fecha para nosotros, la pongo aquí y en el chat. Hasta entonces, nada de «sale el miércoles»: eso es Corea.</div>
+  </div>
+</section>
+
+<section id="corea">
+  <div class="card">
+    <h2><span class="date">11 nov</span>La gran actualización</h2>
+    <ul>
+      <li><b>Casas:</b> abrir tu finca cuesta <b>1.000.000 de kinas</b>, unas 90 pyeong de interior, <b>286 muebles</b> al salir y hasta <b>40 visitas</b>. Los muebles no dan stats, son solo para decorar.</li>
+      <li><b>Nivel máximo de 50 a 55</b>, con <b>128 puntos nuevos</b> en el tablero de crecimiento.</li>
+      <li>El colgante sube hasta <b>+20</b>, <b>5 puntos más</b> de estigma superior y la ruptura pasa de <b>5 a 7</b>.</li>
+      <li>Mazmorras: la expedición de <b>Urugugu</b> rehecha, nueva Trascendencia en las <b>Ruinas de Erakus / Templo Hundido</b>, <b>planta V de Pesadilla</b> y la batalla de despertar del <b>Trono Sumergido</b>.</li>
+      <li>Las Trascendencias nuevas: <b>5 entradas a la semana a 80 de Odyle</b>; las de siempre pasan a costar 60.</li>
+      <li>Evento del primer aniversario.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2><span class="date">18 nov</span>Servidores y confianza</h2>
+    <ul>
+      <li><b>Cambio de servidor gratis</b> (Corea).</li>
+      <li>El nuevo sistema de <b>confianza</b> empieza a contar ese día (se prepara desde el 11; sin detalles aún).</li>
+      <li><b>Tinte a mitad de precio</b>, y para siempre.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2><span class="date">2 dic</span>Reto de Ludra</h2>
+    <ul><li>Evento de desafío de Ludra.</li></ul>
+  </div>
+  <div class="card">
+    <h2><span class="date">23 dic</span>La segunda tanda</h2>
+    <ul>
+      <li>Expedición <b>Arkanis del Vacío</b>.</li>
+      <li>Trascendencia del <b>Valle del Viento Helado</b>.</li>
+      <li><b>Planta VI de Pesadilla</b>.</li>
+      <li>Evento de Navidad.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2><span class="date">20 ene</span>Raid nueva</h2>
+    <ul><li>Santuario de la <b>Fortaleza de la Ascensión: Erek</b>, y evento de Año Nuevo.</li></ul>
+  </div>
+  <div class="card">
+    <h2><span class="date">1.er trim. 2027</span>Colaboraciones</h2>
+    <ul><li><b>Tres colaboraciones</b> con otras sagas. No han dicho cuáles.</li></ul>
+  </div>
+</section>
+
+<section id="combate">
+  <div class="card">
+    <h2>El cambio del combate (Corea, con la actualización)</h2>
+    <ul>
+      <li>El <b>macro de ratón se queda</b>. Lo que cambia es que jugar a mano, lanzando tú las habilidades en tu orden y a tu tiempo, rinde más: el objetivo de NC es <b>hasta un 20 % más de eficiencia</b> jugando a mano. Ojo: no es un 20 % más de daño plano.</li>
+      <li>Cada clase gana cosas que vigilar: <b>buffs que mantener, cargas y habilidades que se encadenan</b>.</li>
+      <li>El <b>golpe principal deja de critear siempre</b>: pasa a tener más probabilidad de crítico, y ese crítico asegurado se reparte a otras habilidades.</li>
+      <li>Los <b>stats de los dioses</b> convierten la mitad que antes (-50 %).</li>
+      <li>El ataque y la defensa de la <b>ruptura</b> pasan a ser <b>amplificación y resistencia de daño</b>.</li>
+      <li>La reducción de cooldown de las habilidades de derribo solo afecta ya a las de <b>maestría</b>, no a los estigmas.</li>
+      <li>Las clases que ya piden muchas teclas <b>se quedan casi como están</b>.</li>
+    </ul>
+    <div class="kala"><b>Kala:</b> traducido: el que juega con las manos va a notar la diferencia. El macro no muere, pero deja de ser lo mejor.</div>
+  </div>
+</section>
+
+<section id="ranger">
+  <div class="card">
+    <h2>La Ranger, con lupa</h2>
+    <p class="mute">Lo que hay publicado hoy sale de la prensa coreana. NC aún no ha colgado sus notas oficiales del 11 de noviembre, así que cada cosa lleva su etiqueta.</p>
+    <ul>
+      <li><b>Pierde la reducción de cooldown global del Poder de Vaizel.</b><span class="tag rep">PRENSA COREANA</span>
+        <div class="mute">GameVu: «궁성은 바이젤의 권능의 전체 재사용 대기시간 감소 효과를 제거한다».</div></li>
+      <li><b>Nueva cadena:</b> la Flecha de Ruptura te da un buff (en coreano 감흥) y, con él activo, la Flecha Explosiva activa la <b>Lluvia de Flechas</b>.<span class="tag rep">PRENSA COREANA</span>
+        <div class="mute">GameVu: «파열 화살로 감흥 버프를 얻은 뒤 폭발 화살을 사용해 화살 난사를 활성화하는 구조다». Los nombres en español son nuestra traducción.</div></li>
+      <li><b>Todo lo general del combate le toca también</b>: más rendimiento a mano, el golpe principal ya no critea siempre, los stats de los dioses rinden la mitad y la ruptura pasa a amplificación de daño.<span class="tag conf">CONFIRMADO</span></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>Lo que se dice en el chat y aún no está en ninguna fuente</h2>
+    <ul>
+      <li>Que ese buff se llama «Resonancia» y da daño y velocidad.<span class="tag no">SIN FUENTE</span>
+        <div class="mute">La prensa solo dice que la Flecha de Ruptura da el buff 감흥; qué hace exactamente no está publicado.</div></li>
+      <li>Que la habilidad de derribo se podrá lanzar sin que el bicho esté derribado y que resetea habilidades.<span class="tag no">SIN FUENTE</span>
+        <div class="mute">No aparece en nada publicado. Lo único que sí está es que la reducción de cooldown de derribo pasa a afectar solo a maestría.</div></li>
+      <li>Cifras de daño: <b>ninguna fuente da números</b> todavía.</li>
+    </ul>
+    <div class="kala"><b>Kala:</b> en resumen, a la Ranger le quitan un atajo (lo de Vaizel) y le dan una cadena nueva que premia jugar a mano. Si es subida o bajada lo dirán los números, y esos aún no los ha dado NC. Cuando salgan las notas del 11, actualizo esta pestaña.</div>
+  </div>
+</section>
+
+<section id="luego">
+  <div class="card">
+    <h2>Más adelante, sin fecha</h2>
+    <ul>
+      <li><b>Navegar y pescar</b>.</li>
+      <li><b>Laberinto</b>, una mazmorra en solitario.</li>
+      <li><b>RvR de maestro</b> en el Abismo superior.</li>
+      <li>Zonas nuevas: <b>Interdika</b>, <b>Velusran</b> y el <b>Reino del Dragón</b>.</li>
+      <li>La prueba de la <b>Cuna de la Nada</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="fuentes">
+  <div class="card">
+    <h2>De dónde sale todo esto</h2>
+    <ul>
+      <li>Presentación del primer aniversario de NCSOFT en Seúl, 8 de noviembre de 2026, y su diapositiva de calendario, recogida en <a href="https://timesaver.gg/blog/aion-2-roadmap">timesaver.gg</a>.</li>
+      <li>Prensa coreana: <a href="https://www.gamevu.co.kr/news/articleView.html?idxno=62125">GameVu</a>, <a href="https://www.techm.kr/news/articleView.html?idxno=157068">TechM</a>, <a href="https://www.gameple.co.kr/news/articleView.html?idxno=216919">Gameple</a>, <a href="https://www.gametoc.co.kr/news/articleView.html?idxno=112879">GameToc</a> e <a href="https://www.inven.co.kr/webzine/news/?news=323129&amp;site=aion2">Inven</a>.</li>
+      <li>Fechas de Corea; Global no tiene fechas anunciadas.</li>
+    </ul>
+    <p class="mute">Resumen y traducción no oficiales. Cuando NC publique las notas del parche, se corrige lo que haga falta.</p>
+  </div>
+</section>
+
+</main>
+<footer><span class="mark">KoKoOP</span> · hecho por Kala para el Barrio</footer>
+<script>
+  const show = (id) => {
+    if (!document.getElementById(id)) id = "global";
+    document.querySelectorAll("section").forEach(s => s.classList.toggle("on", s.id === id));
+    document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.t === id));
+  };
+  document.querySelectorAll("nav button").forEach(b => b.addEventListener("click", () => {
+    show(b.dataset.t); try { history.replaceState(null, "", "#" + b.dataset.t); } catch (e) {} window.scrollTo(0, 0);
+  }));
+  window.addEventListener("hashchange", () => show(location.hash.slice(1)));
+  show(location.hash.slice(1) || "global");
+</script>
+</body>
+</html>
