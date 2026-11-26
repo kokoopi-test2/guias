@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Tu Stremio en español</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Nunito:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#f6f7fb;--card:#fff;--ink:#1d2233;--soft:#5a6178;--line:#e1e4ee;--accent:#2f6fd6;--accent-ink:#fff;
+  --pop:#f3b63a;--pop-soft:#fff4dc;--ok:#1f8a5b;--ok-soft:#e3f5ec;--warn:#b4491f;--warn-soft:#fdece3;
+  --win:#1b2030;--win2:#252b3f;--win-ink:#dfe3f2;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;--body:"Nunito","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#12151f;--card:#1b2030;--ink:#eef0f7;--soft:#a5abc0;--line:#2c3246;--accent:#7aa7ff;--accent-ink:#0f1422;
+  --pop:#f3b63a;--pop-soft:#2e2715;--ok:#5fd39c;--ok-soft:#14291f;--warn:#ff9a6b;--warn-soft:#33201a;
+  --win:#0e111a;--win2:#171c2b;color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:128px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;
+  padding:0 max(16px,env(safe-area-inset-left,0px)) 64px max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:780px;margin:0 auto;display:grid;gap:22px;padding-top:max(20px,env(safe-area-inset-top,0px))}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,6vw,2.9rem);font-weight:800}
+h2{font-size:1.35rem;font-weight:800}
+h3{font-size:1.05rem}
+p{margin:0}
+a{color:var(--accent);font-weight:700;overflow-wrap:anywhere}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,select:focus-visible{outline:3px solid var(--pop);outline-offset:2px;border-radius:6px}
+svg{display:block}
+.ico{width:44px;height:44px;flex:none}
+.lead{font-size:1.1rem;color:var(--soft);max-width:62ch}
+
+/* hero: answer first */
+.hero{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px;display:grid;gap:16px;overflow:hidden}
+.hero-top{display:grid;gap:16px;grid-template-columns:1fr;align-items:center}
+@media (min-width:620px){.hero-top{grid-template-columns:1.25fr 1fr}}
+.art svg{width:100%;height:auto}
+.success{background:var(--ok-soft);border-radius:12px;padding:12px 14px;font-weight:700}
+.success small{display:block;font-weight:600;color:var(--soft)}
+.facts{display:flex;flex-wrap:wrap;gap:8px}
+.fact{background:var(--bg);border:1px solid var(--line);border-radius:99px;padding:4px 12px;font-weight:700;font-size:.9rem}
+.pieces{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.piece{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:44px 1fr;gap:4px 12px;align-items:center}
+.piece b{font-family:var(--display);font-size:1.05rem}
+.piece span{color:var(--soft);font-size:.92rem;grid-column:2}
+.piece.key{border-color:var(--pop);background:var(--pop-soft)}
+.need{background:var(--pop-soft);border-radius:14px;padding:16px 18px;display:grid;gap:6px}
+.need strong{font-family:var(--display)}
+
+/* legend */
+.legend{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px 16px}
+.legend summary{padding:10px 0}
+.legend dl{margin:0;display:grid;gap:10px;padding:4px 0 12px}
+.legend dt{font-family:var(--display);font-weight:800}
+.legend dd{margin:0;color:var(--soft);font-size:.95rem}
+
+/* sticky nav + progress */
+.nav{position:sticky;top:0;z-index:5;background:var(--bg);padding:10px 0 8px;display:grid;gap:8px;border-bottom:1px solid var(--line)}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:thin;padding-bottom:2px}
+.chip{flex:none;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:99px;padding:5px 12px;
+  font:600 .85rem var(--body);text-decoration:none;min-height:34px;display:inline-flex;align-items:center}
+.chip.done{border-color:var(--ok);color:var(--ok)}
+.chip.now{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.progress{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--soft);font-size:.92rem}
+.bar{flex:1;height:10px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:var(--ok);transition:width .3s}
+
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;display:grid;gap:14px}
+.step.done{border-color:var(--ok)}
+.head{display:flex;gap:14px;align-items:flex-start}
+.num{flex:none;width:40px;height:40px;border-radius:50%;background:var(--accent);color:var(--accent-ink);
+  font-family:var(--display);font-weight:800;font-size:1.15rem;display:grid;place-items:center}
+.step.done .num{background:var(--ok)}
+.head>div{min-width:0;display:grid;gap:4px}
+.why{color:var(--soft);font-size:.97rem}
+ol.do{margin:0;padding-left:1.3em;display:grid;gap:8px}
+ol.do li::marker{font-weight:800;color:var(--accent)}
+.ui{display:inline-block;font-family:var(--display);font-weight:600;font-size:.92em;padding:1px 8px;border-radius:7px;background:var(--bg);border:1px solid var(--line);white-space:nowrap}
+.btnlook{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.tip{border-left:4px solid var(--pop);padding:4px 0 4px 14px;color:var(--soft);font-size:.97rem}
+.alert{background:var(--warn-soft);border-left:4px solid var(--warn);border-radius:0 10px 10px 0;padding:10px 14px;font-size:.97rem}
+.good{background:var(--ok-soft);border-left:4px solid var(--ok);border-radius:0 10px 10px 0;padding:10px 14px;font-size:.97rem}
+
+/* chooser (device / operator / what do you see) */
+.pick{display:grid;gap:10px}
+.pick .row{display:flex;flex-wrap:wrap;gap:8px}
+.opt{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:99px;padding:7px 14px;font:700 .92rem var(--body);cursor:pointer;min-height:40px}
+.opt[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:transparent}
+.answer{background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:8px}
+.answer[hidden]{display:none}
+.label{font-weight:800;font-family:var(--display)}
+
+.addons{display:grid;gap:12px}
+.addon{border:1px solid var(--line);border-radius:14px;padding:14px 16px;display:grid;grid-template-columns:44px 1fr;gap:6px 14px}
+.addon.done{border-color:var(--ok);background:var(--ok-soft)}
+.addon>*:not(.ico){grid-column:2;min-width:0}
+.addon .ico{grid-row:1 / span 3}
+.addon .what{color:var(--soft);font-size:.95rem}
+.tag{justify-self:start;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ok)}
+.tag.must{color:var(--warn)}
+.url{display:flex;gap:8px;align-items:stretch}
+.url code{flex:1;min-width:0;background:var(--bg);border:1px solid var(--line);border-radius:9px;padding:7px 10px;font:600 .8rem ui-monospace,Consolas,monospace;overflow-x:auto;white-space:nowrap;user-select:all}
+.copy{flex:none;border:0;border-radius:9px;background:var(--accent);color:var(--accent-ink);font:700 .9rem var(--body);padding:0 14px;cursor:pointer;min-height:44px}
+.copy.ok{background:var(--ok);color:#fff}
+.mini{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;cursor:pointer;user-select:none}
+.mini input{width:20px;height:20px;accent-color:var(--ok);cursor:pointer}
+.mock{background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;display:grid;gap:8px;font-size:.95rem}
+.mock .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.mock .row span:last-child{font-weight:700}
+.check{display:flex;align-items:center;gap:10px;font-weight:700;cursor:pointer;user-select:none;justify-self:start;min-height:44px}
+.check input{width:24px;height:24px;accent-color:var(--ok);cursor:pointer}
+figure{margin:0;display:grid;gap:6px}
+figcaption{color:var(--soft);font-size:.85rem}
+figure svg{width:100%;height:auto;border-radius:12px}
+
+.faq h2{margin-bottom:10px}
+.search{width:100%;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:10px 14px;font:600 1rem var(--body);margin-bottom:10px}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+details+details{margin-top:8px}
+summary{cursor:pointer;font-weight:800;font-family:var(--display)}
+details[open] summary{margin-bottom:8px}
+details p+p{margin-top:8px}
+.none{color:var(--soft);padding:8px 2px}
+.bye{text-align:center;display:grid;gap:8px;padding-top:6px}
+.sign{font-family:var(--display);font-weight:800;font-size:1.3rem}
+.reset{justify-self:center;background:none;border:1px solid var(--line);color:var(--soft);border-radius:99px;padding:6px 16px;font:600 .85rem var(--body);cursor:pointer;min-height:36px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bar span{transition:none}.pulse{animation:none!important}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.pulse{animation:pulse 1.6s ease-in-out infinite}
+@media print{.nav,.reset,.copy,.search{display:none}.step,details,.addon{break-inside:avoid}details{display:block}details>*{display:block}}
+</style></head>
+<body>
+
+<!-- Sprite of the icons used all over the page (drawn here, not stock). -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-grid" viewBox="0 0 44 44"><rect width="44" height="44" rx="12" fill="#2f6fd6"/><rect x="9" y="9" width="11" height="11" rx="3" fill="#fff"/><rect x="24" y="9" width="11" height="11" rx="3" fill="#fff" opacity=".7"/><rect x="9" y="24" width="11" height="11" rx="3" fill="#fff" opacity=".7"/><rect x="24" y="24" width="11" height="11" rx="3" fill="#fff"/></symbol>
+    <symbol id="i-play" viewBox="0 0 44 44"><rect width="44" height="44" rx="12" fill="#e2603a"/><path d="M17 12.5v19l16-9.5z" fill="#fff"/></symbol>
+    <symbol id="i-cc" viewBox="0 0 44 44"><rect width="44" height="44" rx="12" fill="#1f8a5b"/><rect x="8" y="12" width="28" height="20" rx="5" fill="none" stroke="#fff" stroke-width="2.6"/><path d="M18.5 20.5a3.4 3.4 0 1 0 0 3M28.5 20.5a3.4 3.4 0 1 0 0 3" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/></symbol>
+    <symbol id="i-tv" viewBox="0 0 44 44"><rect width="44" height="44" rx="12" fill="#7a4fd6"/><rect x="8" y="11" width="28" height="19" rx="4" fill="none" stroke="#fff" stroke-width="2.6"/><path d="M16 35h12" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/><path d="M19 17.5v6l6-3z" fill="#fff"/></symbol>
+    <symbol id="i-star" viewBox="0 0 44 44"><rect width="44" height="44" rx="12" fill="#d63f8e"/><path d="M22 9l3.9 8.3 9.1 1.1-6.7 6.2 1.8 9L22 29.1 13.9 33.6l1.8-9L9 18.4l9.1-1.1z" fill="#fff"/></symbol>
+    <symbol id="i-film" viewBox="0 0 44 44"><rect width="44" height="44" rx="12" fill="#0f8aa6"/><rect x="10" y="10" width="24" height="24" rx="3" fill="none" stroke="#fff" stroke-width="2.6"/><path d="M10 17h24M10 27h24M17 10v24M27 10v24" stroke="#fff" stroke-width="2" opacity=".8"/></symbol>
+    <symbol id="i-ship" viewBox="0 0 44 44"><rect width="44" height="44" rx="12" fill="#c98a12"/><path d="M10 27h24l-3.5 7h-17zM22 10v17M22 12l9 10H22z" fill="#fff"/></symbol>
+  </defs>
+</svg>
+
+<div class="wrap">
+
+<header class="hero" id="inicio">
+  <div class="hero-top">
+    <div style="display:grid;gap:12px">
+      <h1>Holiii, vamos a dejarte Stremio listo 🤍</h1>
+      <p class="lead">Soy Kala, la asistente de AMO. Esta guía te monta Stremio como lo tenemos en casa, y te lo comprueba al final para que no te quedes con la pantalla bonita y nada que ver.</p>
+      <div class="success">Al terminar: abres una película y se reproduce, con los subtítulos en español.<small>Esa es la prueba que cuenta, y está en el paso 8.</small></div>
+      <div class="facts"><span class="fact">20 minutos</span><span class="fact">Todo gratis</span><span class="fact">Sin saber de ordenadores</span></div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 300 220" role="img" aria-label="Dibujo de una ventana de reproducción con portadas">
+        <rect width="300" height="220" rx="20" fill="var(--win)"/>
+        <rect x="14" y="14" width="272" height="22" rx="8" fill="var(--win2)"/><circle cx="28" cy="25" r="4" fill="#e2603a"/><circle cx="42" cy="25" r="4" fill="#f3b63a"/><circle cx="56" cy="25" r="4" fill="#5fd39c"/>
+        <rect x="14" y="46" width="130" height="86" rx="10" fill="#2f6fd6"/><path d="M62 70v38l32-19z" fill="#fff"/>
+        <rect x="154" y="46" width="62" height="40" rx="8" fill="#d63f8e"/><rect x="224" y="46" width="62" height="40" rx="8" fill="#0f8aa6"/>
+        <rect x="154" y="92" width="62" height="40" rx="8" fill="#7a4fd6"/><rect x="224" y="92" width="62" height="40" rx="8" fill="#c98a12"/>
+        <rect x="14" y="144" width="272" height="8" rx="4" fill="var(--win2)"/><rect x="14" y="144" width="150" height="8" rx="4" fill="#5fd39c"/>
+        <rect x="14" y="164" width="272" height="40" rx="10" fill="var(--win2)"/>
+        <text x="150" y="189" text-anchor="middle" fill="#fff" font-family="Nunito,Segoe UI,sans-serif" font-weight="700" font-size="14">Aquí van tus subtítulos en español</text>
+      </svg>
+    </div>
+  </div>
+</header>
+
+<section aria-label="Las tres piezas" class="pieces">
+  <div class="piece"><svg class="ico"><use href="#i-grid"/></svg><b>1 · Catálogos</b><span>Donde eliges qué ver: portadas, sinopsis, qué hay en cada plataforma.</span></div>
+  <div class="piece key"><svg class="ico"><use href="#i-play"/></svg><b>2 · Fuente de vídeo</b><span>Lo que hace que se pueda <em>ver</em>. Sin ella todo sale en pantalla y nada reproduce.</span></div>
+  <div class="piece"><svg class="ico"><use href="#i-cc"/></svg><b>3 · Subtítulos</b><span>Los que salen solos en español.</span></div>
+</section>
+
+<div class="need">
+  <strong>Antes de empezar, ten a mano:</strong>
+  <p>Un dispositivo (el ordenador va mejor para configurar), un correo tuyo y una contraseña nueva para Stremio. Todo esto es gratis: si una página te pide tarjeta o dinero, no es aquí, ciérrala.</p>
+</div>
+
+<details class="legend">
+  <summary>Cuatro palabras que vas a ver (pulsa si te suenan a chino)</summary>
+  <dl>
+    <div><dt>Complemento</dt><dd>Una pieza que le añades a Stremio para que sepa hacer algo más: enseñar catálogos, encontrar vídeo o poner subtítulos. En inglés se llaman «addons».</dd></div>
+    <div><dt>Catálogo</dt><dd>La estantería: te enseña pelis y series con portada y sinopsis. No reproduce nada.</dd></div>
+    <div><dt>Fuente</dt><dd>De dónde sale el vídeo. Cuando abres una película, Stremio te enseña una lista de fuentes y eliges una.</dd></div>
+    <div><dt>manifest.json</dt><dd>La dirección con la que Stremio reconoce un complemento. Todos los enlaces de esta guía acaban así.</dd></div>
+  </dl>
+</details>
+
+<nav class="nav" aria-label="Pasos de la guía">
+  <div class="progress" aria-live="polite"><span id="count">0 de 8 pasos</span><div class="bar"><span id="fill"></span></div></div>
+  <div class="chips" id="chips"></div>
+</nav>
+
+<!-- 1 -->
+<section class="step" id="paso-1" data-title="Descarga">
+  <div class="head"><div class="num">1</div><div><h2>Descarga Stremio</h2><p class="why">Es la aplicación donde lo verás todo. Se baja solo de su web oficial o de la tienda de aplicaciones de tu dispositivo.</p></div></div>
+  <div class="pick" data-group="dev">
+    <span class="label">¿Dónde la vas a usar?</span>
+    <div class="row" role="group" aria-label="Dispositivo">
+      <button class="opt" type="button" data-v="win">Ordenador con Windows</button>
+      <button class="opt" type="button" data-v="mac">Mac</button>
+      <button class="opt" type="button" data-v="mov">Móvil</button>
+      <button class="opt" type="button" data-v="tv">Tele</button>
+    </div>
+    <div class="answer" data-for="win" hidden>
+      <ol class="do"><li>Entra en <a href="https://www.stremio.com/downloads" target="_blank" rel="noopener">stremio.com/downloads</a> y pulsa el botón de <span class="ui">Windows</span>.</li>
+      <li>Abre el archivo descargado y dale a <span class="ui">Siguiente</span> hasta que termine. Las opciones marcadas están bien.</li>
+      <li>Si Windows pregunta «¿Permitir que esta aplicación se comunique…?», marca solo <span class="ui">Redes privadas</span> y pulsa <span class="ui">Permitir</span>.</li></ol>
+    </div>
+    <div class="answer" data-for="mac" hidden>
+      <ol class="do"><li>Entra en <a href="https://www.stremio.com/downloads" target="_blank" rel="noopener">stremio.com/downloads</a> y elige la versión de <span class="ui">macOS</span>.</li>
+      <li>Abre el archivo y arrastra Stremio a la carpeta Aplicaciones.</li></ol>
+    </div>
+    <div class="answer" data-for="mov" hidden>
+      <p>Instálala desde la tienda de aplicaciones del móvil (Google Play o App Store) buscando «Stremio». Para <strong>configurar</strong> los complementos es más cómodo hacerlo desde un ordenador con la misma cuenta; luego aparecen solos en el móvil.</p>
+    </div>
+    <div class="answer" data-for="tv" hidden>
+      <p>Si tu tele es Android TV, instálala desde su tienda de aplicaciones. Configura los complementos desde un ordenador o móvil con la misma cuenta, y en la tele aparecerán solos.</p>
+    </div>
+  </div>
+  <label class="check"><input type="checkbox" id="s1"> Hecho</label>
+</section>
+
+<!-- 2 -->
+<section class="step" id="paso-2" data-title="Cuenta">
+  <div class="head"><div class="num">2</div><div><h2>Crea tu cuenta</h2><p class="why">Con cuenta, lo que configures se guarda solo y lo tendrás igual en todos tus dispositivos.</p></div></div>
+  <ol class="do">
+    <li>Abre Stremio. La primera vez te pedirá entrar: elige <span class="ui">Registrarse</span> (en inglés <span class="ui">Sign up</span>).</li>
+    <li>Pon tu correo y una contraseña que no uses en ningún otro sitio.</li>
+    <li>Acepta y ya estás dentro.</li>
+  </ol>
+  <label class="check"><input type="checkbox" id="s2"> Hecho</label>
+</section>
+
+<!-- 3 -->
+<section class="step" id="paso-3" data-title="Español">
+  <div class="head"><div class="num">3</div><div><h2>Ponlo todo en español</h2><p class="why">Aquí decides el idioma de los menús, del audio y de los subtítulos.</p></div></div>
+  <ol class="do">
+    <li>Pulsa la rueda dentada de <span class="ui">Ajustes</span> (abajo a la izquierda, o en el menú de tu perfil arriba a la derecha).</li>
+    <li>En <span class="ui">Idioma de la interfaz</span> elige <strong>Español (España)</strong>. Tiene que poner «España»: el otro deja menús en inglés.</li>
+    <li>Baja hasta el <span class="ui">Reproductor</span> y déjalo así:</li>
+  </ol>
+  <div class="mock" role="group" aria-label="Cómo debe quedar el reproductor">
+    <div class="row"><span>Idioma de audio</span><span>Español</span></div>
+    <div class="row"><span>Idioma de audio secundario</span><span>Inglés</span></div>
+    <div class="row"><span>Idioma de subtítulos</span><span>Español</span></div>
+    <div class="row"><span>Subtítulos secundarios</span><span>Inglés</span></div>
+    <div class="row"><span>Elegir subtítulos automáticamente</span><span>Activado</span></div>
+    <div class="row"><span>Siguiente episodio automático</span><span>Activado</span></div>
+  </div>
+  <p class="tip">Los nombres cambian un poco según la versión. Si no encuentras uno igual, busca el que diga casi lo mismo.</p>
+  <label class="check"><input type="checkbox" id="s3"> Hecho</label>
+</section>
+
+<!-- 4 -->
+<section class="step" id="paso-4" data-title="Cómo se instala">
+  <div class="head"><div class="num">4</div><div><h2>Aprende a instalar un complemento (una sola vez)</h2><p class="why">Todos entran igual. Este método no falla aunque el navegador no sepa abrir Stremio.</p></div></div>
+  <figure>
+    <svg viewBox="0 0 560 250" role="img" aria-label="Dibujo orientativo: página de Complementos con el botón de añadir arriba a la derecha y el cuadro donde se pega el enlace">
+      <rect width="560" height="250" rx="14" fill="var(--win)"/>
+      <rect x="0" y="0" width="64" height="250" rx="14" fill="var(--win2)"/>
+      <circle cx="32" cy="34" r="12" fill="#7a4fd6"/><rect x="18" y="64" width="28" height="6" rx="3" fill="#5a6178"/><rect x="18" y="86" width="28" height="6" rx="3" fill="#5a6178"/>
+      <rect x="18" y="108" width="28" height="22" rx="6" fill="#2f6fd6"/><path d="M26 119h4v-3h4v3h4v4h-4v3h-4v-3h-4z" fill="#fff"/>
+      <text x="92" y="38" fill="#dfe3f2" font-family="Nunito,Segoe UI,sans-serif" font-weight="800" font-size="16">Complementos</text>
+      <g class="pulse"><rect x="388" y="16" width="156" height="32" rx="9" fill="#2f6fd6"/><text x="466" y="37" text-anchor="middle" fill="#fff" font-family="Nunito,Segoe UI,sans-serif" font-weight="800" font-size="13">+ Añadir complemento</text></g>
+      <circle cx="374" cy="32" r="12" fill="#f3b63a"/><text x="374" y="37" text-anchor="middle" fill="#1d2233" font-family="Nunito,sans-serif" font-weight="800" font-size="13">1</text>
+      <rect x="92" y="64" width="452" height="38" rx="9" fill="var(--win2)"/><rect x="104" y="78" width="120" height="8" rx="4" fill="#5a6178"/>
+      <rect x="92" y="110" width="452" height="38" rx="9" fill="var(--win2)"/><rect x="104" y="124" width="150" height="8" rx="4" fill="#5a6178"/>
+      <rect x="150" y="150" width="340" height="88" rx="12" fill="#12151f" stroke="#f3b63a" stroke-width="2"/>
+      <text x="170" y="174" fill="#dfe3f2" font-family="Nunito,sans-serif" font-weight="700" font-size="12">Pega aquí el enlace del complemento</text>
+      <rect x="170" y="184" width="300" height="24" rx="6" fill="#252b3f"/><text x="180" y="201" fill="#a5abc0" font-family="Consolas,monospace" font-size="11">https://…/manifest.json</text>
+      <circle cx="140" cy="196" r="12" fill="#f3b63a"/><text x="140" y="201" text-anchor="middle" fill="#1d2233" font-family="Nunito,sans-serif" font-weight="800" font-size="13">2</text>
+      <rect x="400" y="212" width="70" height="20" rx="6" fill="#2f6fd6"/><text x="435" y="226" text-anchor="middle" fill="#fff" font-family="Nunito,sans-serif" font-weight="800" font-size="11">Instalar</text>
+      <circle cx="486" cy="222" r="12" fill="#f3b63a"/><text x="486" y="227" text-anchor="middle" fill="#1d2233" font-family="Nunito,sans-serif" font-weight="800" font-size="13">3</text>
+    </svg>
+    <figcaption>Dibujo orientativo: tu versión puede verse un poco distinta, pero el botón de arriba a la derecha y el cuadro de pegar están siempre.</figcaption>
+  </figure>
+  <ol class="do">
+    <li>En Stremio pulsa el icono del puzle: <span class="ui">Complementos</span>.</li>
+    <li>Arriba a la derecha pulsa el botón de añadir un complemento (<span class="ui">Add addon</span> o <span class="ui">Añadir complemento</span>).</li>
+    <li>En el cuadro pega el enlace: botón <span class="ui btnlook">Copiar</span> de esta guía y luego <strong>Ctrl + V</strong> (en Mac, <strong>Cmd + V</strong>).</li>
+    <li>Pulsa <span class="ui btnlook">Instalar</span> y confirma. El complemento aparece en tu lista.</li>
+  </ol>
+  <p class="tip">Un enlace bueno acaba en <strong>manifest.json</strong>. Si no acaba así, no es el del complemento.</p>
+  <label class="check"><input type="checkbox" id="s4"> Entendido</label>
+</section>
+
+<!-- 5 -->
+<section class="step" id="paso-5" data-title="Catálogos">
+  <div class="head"><div class="num">5</div><div><h2>Añade los catálogos</h2><p class="why">Llenan el inicio de pelis, series y anime con título y portada en español. <strong>Solo enseñan, no reproducen:</strong> eso lo hace el paso 6.</p></div></div>
+  <div class="addons">
+    <div class="addon" data-addon="tmdb">
+      <svg class="ico"><use href="#i-film"/></svg>
+      <span class="tag">Catálogo en español</span><h3>The Movie Database</h3>
+      <p class="what">Tendencias, lo más visto y novedades, con sinopsis en español. Este se configura antes en su web.</p>
+      <p>Entra en <a href="https://tmdb.elfhosted.com/configure" target="_blank" rel="noopener">tmdb.elfhosted.com/configure</a>, elige idioma <strong>Español (España)</strong> y pulsa <span class="ui btnlook">Install</span>. Si el navegador pregunta si abre Stremio, di que sí.</p>
+      <label class="mini"><input type="checkbox" class="ad" id="a-tmdb"> Ya lo tengo</label>
+    </div>
+    <div class="addon" data-addon="cat">
+      <svg class="ico"><use href="#i-tv"/></svg>
+      <span class="tag">Qué hay en cada plataforma</span><h3>Streaming Catalogs</h3>
+      <p class="what">Qué hay ahora en Netflix, Disney+, Prime Video, Max, Apple TV+, Paramount+ y Crunchyroll, en España. Este enlace ya viene preparado.</p>
+      <div class="url"><code id="u-cat">https://7a82163c306e-stremio-netflix-catalog-addon.baby-beamup.club/bmZ4LGRucCxhbXAsYXRwLGhibSxwbXAsbmZrLGNydTo6RVM6MTc2NzQ0NDczMjU2NTp0cnVlOjA6/manifest.json</code><button class="copy" type="button" data-for="u-cat">Copiar</button></div>
+      <label class="mini"><input type="checkbox" class="ad" id="a-cat"> Ya lo tengo</label>
+    </div>
+    <div class="addon" data-addon="kitsu">
+      <svg class="ico"><use href="#i-star"/></svg>
+      <span class="tag">Anime</span><h3>Anime Kitsu</h3>
+      <p class="what">El catálogo de anime, con temporadas y episodios ordenados.</p>
+      <div class="url"><code id="u-kitsu">https://anime-kitsu.strem.fun/manifest.json</code><button class="copy" type="button" data-for="u-kitsu">Copiar</button></div>
+      <label class="mini"><input type="checkbox" class="ad" id="a-kitsu"> Ya lo tengo</label>
+    </div>
+  </div>
+  <label class="check"><input type="checkbox" id="s5"> Paso hecho</label>
+</section>
+
+<!-- 6 -->
+<section class="step" id="paso-6" data-title="Fuente de vídeo">
+  <div class="head"><div class="num">6</div><div><h2>Añade la fuente de vídeo: el paso que lo hace ver</h2><p class="why">Sin esta pieza abres una película y Stremio dice que no hay nada que reproducir. Es la que busca dónde verla.</p></div></div>
+  <div class="addons">
+    <div class="addon" data-addon="tor">
+      <svg class="ico"><use href="#i-play"/></svg>
+      <span class="tag must">Imprescindible</span><h3>Torrentio</h3>
+      <p class="what">Busca las fuentes de cada película, serie y anime y te las pone en una lista para elegir. Esta versión prioriza lo que está en español y descarta las calidades malas.</p>
+      <div class="url"><code id="u-tor">https://torrentio.strem.fun/language=spanish%7Cqualityfilter=480p,scr,cam,threed/manifest.json</code><button class="copy" type="button" data-for="u-tor">Copiar</button></div>
+      <label class="mini"><input type="checkbox" class="ad" id="a-tor"> Ya lo tengo</label>
+    </div>
+  </div>
+  <div class="pick" data-group="isp">
+    <span class="label">¿Qué internet tienes en casa? (te digo si te va a afectar algo)</span>
+    <div class="row" role="group" aria-label="Operador de internet">
+      <button class="opt" type="button" data-v="tele">Movistar</button>
+      <button class="opt" type="button" data-v="tele">O2</button>
+      <button class="opt" type="button" data-v="tele">Digi</button>
+      <button class="opt" type="button" data-v="otro">Vodafone</button>
+      <button class="opt" type="button" data-v="otro">Orange</button>
+      <button class="opt" type="button" data-v="otro">MásMóvil o Yoigo</button>
+      <button class="opt" type="button" data-v="otro">Otro o no lo sé</button>
+    </div>
+    <div class="answer" data-for="tele" hidden>
+      <div class="alert"><strong>Con tu operador hay cortes reportados.</strong> Movistar, O2 y Digi han bloqueado Torrentio a ratos como efecto de la lucha de LaLiga contra el fútbol pirata, porque comparten servidores. Pasa sobre todo en horas de partido. No es un fallo tuyo ni de la guía.</div>
+      <p>Si a esa hora no salen fuentes: espera un rato, o usa una VPN. Y mira «Si algo no sale» más abajo, que tiene la comprobación.</p>
+    </div>
+    <div class="answer" data-for="otro" hidden>
+      <div class="good">En las fuentes que revisé no hay reportes de bloqueo para tu operador, pero un bloqueo puede aparecer en cualquiera. Si algún día no salen fuentes, la comprobación de «Si algo no sale» te lo aclara en un minuto.</div>
+    </div>
+  </div>
+  <label class="check"><input type="checkbox" id="s6"> Paso hecho</label>
+</section>
+
+<!-- 7 -->
+<section class="step" id="paso-7" data-title="Subtítulos">
+  <div class="head"><div class="num">7</div><div><h2>Añade los subtítulos</h2><p class="why">Con estos dos, casi todo trae subtítulos en español, y si uno falla tira el otro.</p></div></div>
+  <div class="addons">
+    <div class="addon" data-addon="os3">
+      <svg class="ico"><use href="#i-cc"/></svg>
+      <span class="tag">El oficial</span><h3>OpenSubtitles v3</h3>
+      <div class="url"><code id="u-os3">https://opensubtitles-v3.strem.io/manifest.json</code><button class="copy" type="button" data-for="u-os3">Copiar</button></div>
+      <label class="mini"><input type="checkbox" class="ad" id="a-os3"> Ya lo tengo</label>
+    </div>
+    <div class="addon" data-addon="ospro">
+      <svg class="ico"><use href="#i-cc"/></svg>
+      <span class="tag">El que más trae en español</span><h3>OpenSubtitles PRO</h3>
+      <p class="what">Ya va configurado en español.</p>
+      <div class="url"><code id="u-ospro">https://opensubtitlesv3-pro.dexter21767.com/eyJsYW5ncyI6WyJzcGFuaXNoIl0sInNvdXJjZSI6ImFsbCIsImFpVHJhbnNsYXRlZCI6dHJ1ZSwiYXV0b0FkanVzdG1lbnQiOmZhbHNlfQ==/manifest.json</code><button class="copy" type="button" data-for="u-ospro">Copiar</button></div>
+      <label class="mini"><input type="checkbox" class="ad" id="a-ospro"> Ya lo tengo</label>
+    </div>
+  </div>
+  <p class="tip">Mientras ves algo, el botón de subtítulos (el bocadillo o «CC») te deja cambiarlos si unos van desfasados. Prueba el siguiente de la lista.</p>
+  <label class="check"><input type="checkbox" id="s7"> Paso hecho</label>
+</section>
+
+<!-- 8 -->
+<section class="step" id="paso-8" data-title="Pruébalo">
+  <div class="head"><div class="num">8</div><div><h2>Pruébalo de verdad</h2><p class="why">Que estén instalados no significa que funcionen. Esta es la prueba que cuenta.</p></div></div>
+  <ol class="do">
+    <li>Cierra Stremio del todo y vuelve a abrirlo.</li>
+    <li>En <span class="ui">Complementos</span> → <span class="ui">Mis complementos</span> tienen que estar: The Movie Database, Streaming Catalogs, Anime Kitsu, Torrentio, OpenSubtitles v3 y OpenSubtitles PRO (más Cinemeta, que viene de serie).</li>
+    <li>En el <span class="ui">Inicio</span> abre cualquier película conocida. Tiene que salir una <strong>lista de fuentes</strong> con «Torrentio». Pulsa una.</li>
+    <li>Dale al botón de subtítulos: tiene que salir <strong>Español</strong>.</li>
+  </ol>
+  <div class="pick" data-group="see">
+    <span class="label">¿Qué te ha pasado? Pulsa y te digo qué hacer.</span>
+    <div class="row" role="group" aria-label="Resultado de la prueba">
+      <button class="opt" type="button" data-v="ok">Reproduce, con subtítulos</button>
+      <button class="opt" type="button" data-v="nolist">No sale lista de fuentes</button>
+      <button class="opt" type="button" data-v="nostart">Sale la lista pero no arranca</button>
+      <button class="opt" type="button" data-v="nosub">Reproduce pero sin subtítulos en español</button>
+    </div>
+    <div class="answer" data-for="ok" hidden><div class="good"><strong>Ya está.</strong> Marca el paso como hecho y disfruta. Si algún día falla, vuelve aquí.</div></div>
+    <div class="answer" data-for="nolist" hidden>
+      <p>1. Mira en «Mis complementos» que <strong>Torrentio</strong> esté (paso 6). Sin él no hay lista.</p>
+      <p>2. Si está, abre <a href="https://torrentio.strem.fun/manifest.json" target="_blank" rel="noopener">torrentio.strem.fun/manifest.json</a> en el navegador. Si carga un texto con llaves, el servicio vive y prueba otra película. Si no carga, es el bloqueo del operador: espera unas horas o usa una VPN.</p>
+    </div>
+    <div class="answer" data-for="nostart" hidden>
+      <p>Prueba con otra fuente de la lista (la siguiente, o una con más «seeds», que son las personas que la comparten). Algunas fuentes están muertas y es normal. Si ninguna arranca, espera unos minutos y reinicia Stremio.</p>
+    </div>
+    <div class="answer" data-for="nosub" hidden>
+      <p>Revisa el paso 3 (subtítulos en Español y «elegir automáticamente» activado) y que estén los dos OpenSubtitles (paso 7). Mientras ves algo, abre el botón de subtítulos y prueba otro de la lista: a veces el primero va desfasado.</p>
+    </div>
+  </div>
+  <label class="check"><input type="checkbox" id="s8"> Me reproduce algo con subtítulos</label>
+</section>
+
+<section class="faq" aria-label="Si algo no sale" id="problemas">
+  <h2>Si algo no sale</h2>
+  <label class="label" for="q" style="display:block;margin-bottom:6px">Escribe lo que te pasa y te enseño solo lo que cuadra</label>
+  <input class="search" id="q" type="search" placeholder="Ej: no hay fuentes, subtítulos, el botón no hace nada…" autocomplete="off">
+  <div id="faqlist">
+  <details data-k="fuentes lista torrentio reproduce nada ver vacio sin fuentes streams"><summary>Abro una película y no hay ninguna fuente</summary>
+    <p>Mira primero que Torrentio esté en <span class="ui">Mis complementos</span> (paso 6). Sin él no hay nada que reproducir.</p>
+    <p>Si está y aun así no sale nada, abre <a href="https://torrentio.strem.fun/manifest.json" target="_blank" rel="noopener">torrentio.strem.fun/manifest.json</a> en el navegador. Si carga un texto con llaves, el servicio está vivo y el problema es otro. Si no carga, es el bloqueo de tu operador (Movistar, O2 y Digi lo sufren a ratos, sobre todo cuando hay fútbol): espera unas horas o usa una VPN.</p></details>
+  <details data-k="install boton abre stremio navegador no hace nada enlace"><summary>El botón Install no abre Stremio</summary>
+    <p>Pasa si el navegador no sabe qué app abre los enlaces de Stremio. Usa el método del paso 4: copia el enlace y pégalo en el cuadro de añadir complemento dentro de Stremio. Con los complementos de esta guía no depende del navegador.</p>
+    <p>Para The Movie Database, que sí necesita su web: abre Stremio una vez antes, vuelve a la web y pulsa Install. Si el navegador enseña una ventanita para abrir Stremio, acéptala.</p></details>
+  <details data-k="subtitulos ingles español desfasados salen no hay"><summary>Los subtítulos salen en inglés, desfasados o no salen</summary>
+    <p>Revisa el paso 3: subtítulos en <strong>Español</strong> y «elegir subtítulos automáticamente» activado. Comprueba que estén los dos OpenSubtitles. Luego prueba otro de la lista con el botón de subtítulos.</p></details>
+  <details data-k="repetido repetidas duplicado doble dos veces"><summary>Me sale todo repetido</summary>
+    <p>Has instalado el mismo complemento dos veces. En <span class="ui">Mis complementos</span> quita el duplicado.</p></details>
+  <details data-k="ingles menus idioma interfaz"><summary>Los menús están en inglés</summary>
+    <p>En Ajustes, <span class="ui">Idioma de la interfaz</span> tiene que decir «Español (España)». Reinicia Stremio después de cambiarlo.</p></details>
+  <details data-k="movil tele television android tv iphone otros dispositivos"><summary>Quiero verlo en el móvil o en la tele</summary>
+    <p>Instala Stremio en ese dispositivo y entra con la misma cuenta: los complementos aparecen solos. Revisa también el idioma en Ajustes.</p></details>
+  <details data-k="carga lento cortes buffering se para atasca"><summary>Se para o va a tirones</summary>
+    <p>Elige otra fuente de la lista, mejor una con más «seeds» (personas que la comparten) y calidad 1080p si tu conexión es floja con 4K. Cerrar otras descargas del ordenador también ayuda.</p></details>
+  <p class="none" id="none" hidden>No he encontrado nada con eso. Hazle una foto a la pantalla y pásasela a AMO, que me la enseña.</p>
+  </div>
+</section>
+
+<section class="step" id="extra" data-title="Extra">
+  <div class="head"><div class="num" style="background:var(--pop);color:#1d2233">+</div><div><h2>Extra: One Piece en español</h2><p class="why">Solo si te gusta One Piece. «One Pace» es una versión sin relleno, con los episodios en español.</p></div></div>
+  <div class="addon" style="grid-template-columns:44px 1fr">
+    <svg class="ico"><use href="#i-ship"/></svg>
+    <h3>One Pace en español</h3>
+    <div class="url"><code id="u-onepace">https://63929344cee7-onepacetvstremioesp.baby-beamup.club/manifest.json</code><button class="copy" type="button" data-for="u-onepace">Copiar</button></div>
+  </div>
+</section>
+
+<footer class="bye">
+  <p>Si algo no te sale igual que aquí, hazle una foto a la pantalla y pásasela a AMO, que me la enseña y lo vemos juntas.</p>
+  <p class="sign">Kala 🤍</p>
+  <button class="reset" id="reset" type="button">Borrar mis marcas</button>
+</footer>
+</div>
+
+<script>
+(function(){
+  var STORE='guia-stremio-v3';
+  function load(){try{return JSON.parse(localStorage.getItem(STORE)||'{}')}catch(e){return {}}}
+  function save(){try{localStorage.setItem(STORE,JSON.stringify(state))}catch(e){}}
+  var state=load();
+
+  /* progress and chips */
+  var boxes=[].slice.call(document.querySelectorAll('.step input[type=checkbox]:not(.ad)'));
+  var adds=[].slice.call(document.querySelectorAll('input.ad'));
+  var steps=[].slice.call(document.querySelectorAll('.step[data-title]'));
+  var chips=document.getElementById('chips');
+  steps.forEach(function(s){
+    var a=document.createElement('a');a.className='chip';a.href='#'+s.id;a.textContent=s.getAttribute('data-title');a.setAttribute('data-step',s.id);chips.appendChild(a);
+  });
+  function paint(){
+    var done=0;
+    boxes.forEach(function(b){
+      var st=b.closest('.step');st.classList.toggle('done',b.checked);
+      var c=chips.querySelector('[data-step="'+st.id+'"]');if(c)c.classList.toggle('done',b.checked);
+      if(b.checked)done++;
+    });
+    adds.forEach(function(b){b.closest('.addon').classList.toggle('done',b.checked)});
+    var sc=document.querySelectorAll('.step[data-title]');
+    document.getElementById('count').textContent=done+' de '+boxes.length+' pasos';
+    document.getElementById('fill').style.width=(100*done/boxes.length)+'%';
+  }
+  boxes.concat(adds).forEach(function(b){
+    b.checked=!!state[b.id];
+    b.addEventListener('change',function(){state[b.id]=b.checked;save();paint()});
+  });
+  paint();
+
+  /* which step is on screen */
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          [].forEach.call(chips.children,function(c){c.classList.toggle('now',c.getAttribute('data-step')===e.target.id)});
+        }
+      });
+    },{rootMargin:'-30% 0px -60% 0px'});
+    steps.forEach(function(s){io.observe(s)});
+  }
+
+  /* choosers: device, operator, what happened */
+  [].forEach.call(document.querySelectorAll('.pick'),function(p){
+    var g=p.getAttribute('data-group');
+    var opts=[].slice.call(p.querySelectorAll('.opt'));
+    function show(v,label){
+      opts.forEach(function(o){o.setAttribute('aria-pressed',(o.getAttribute('data-v')===v&&(!label||o.textContent===label))?'true':'false')});
+      [].forEach.call(p.querySelectorAll('.answer'),function(a){a.hidden=a.getAttribute('data-for')!==v});
+    }
+    opts.forEach(function(o){o.setAttribute('aria-pressed','false');
+      o.addEventListener('click',function(){
+        var v=o.getAttribute('data-v');show(v,o.textContent);
+        state['pick-'+g]=[v,o.textContent];save();
+      });
+    });
+    var s=state['pick-'+g];if(s)show(s[0],s[1]);
+  });
+
+  /* copy buttons */
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest&&e.target.closest('.copy');if(!btn)return;
+    var el=document.getElementById(btn.getAttribute('data-for'));if(!el)return;
+    var txt=el.textContent.trim();
+    function mark(ok){btn.textContent=ok?'Copiado':'Selecciona y copia';btn.classList.toggle('ok',!!ok);
+      setTimeout(function(){btn.textContent='Copiar';btn.classList.remove('ok')},2200)}
+    function fb(){try{var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);
+      mark(document.execCommand&&document.execCommand('copy'))}catch(x){mark(false)}}
+    try{navigator.clipboard.writeText(txt).then(function(){mark(true)},fb)}catch(x){fb()}
+  });
+
+  /* troubleshooting search */
+  var q=document.getElementById('q'),list=[].slice.call(document.querySelectorAll('#faqlist details'));
+  function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+  q.addEventListener('input',function(){
+    var t=norm(q.value).split(/\s+/).filter(Boolean),n=0;
+    list.forEach(function(d){
+      var hay=norm(d.getAttribute('data-k')+' '+d.textContent);
+      var ok=t.every(function(w){return hay.indexOf(w)>-1});
+      d.hidden=!ok;if(ok)n++;
+      if(t.length&&ok)d.open=true;else if(!t.length)d.open=false;
+    });
+    document.getElementById('none').hidden=n>0;
+  });
+
+  document.getElementById('reset').addEventListener('click',function(){
+    state={};save();boxes.concat(adds).forEach(function(b){b.checked=false});
+    [].forEach.call(document.querySelectorAll('.pick .opt'),function(o){o.setAttribute('aria-pressed','false')});
+    [].forEach.call(document.querySelectorAll('.pick .answer'),function(a){a.hidden=true});
+    paint();
+  });
+})();
+</script>
+</body></html>
